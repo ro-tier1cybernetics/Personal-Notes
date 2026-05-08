@@ -1,0 +1,144 @@
+Planning and Implementing a Security Incident Response
+
+
+Threat Modeling:
+*Your looking from the attackers point of view. This allows one to determine and prioritize what needs to be protected. Think like an attacker without being the attacker. How likely will the company be attacked? Determine what mitigations should be in place. What are the consequences if an attack is successful on an asset? All of this will help you understand your attack surface and develop a plan to reduce it.
+
+
+
+STRIDE:
+1. Spoofing Identity: Illegally accessing and then using a users credentials
+2. Tampering with data: The alteration of data as it flows between two computers
+3. Repudiation: Users who deny performing an action without other parties having a way to prove otherwise.
+4. Information disclosure: The exposure of information to a user who doesn't have authority to hold the information.
+5. Denial of service: Denies servers to valid users.
+6. Elevation of privilege: A non privileged user gains privileged access.
+
+------------------------------------------------------------------------------------------------------------
+
+NIST Cybersecurity Framework (National Institute for Standards and Technology - CSF): Defined as a violation or imminent threat of a violation of computer security policies, acceptable use policies, or standard security practices.
+
+1. Identify:  
+
+*Asset Management, including data, personnel, and sensitive devices.
+*Business Environment, including job roles, responsibilities, and cyber attack responses.
+*Governance, resilience requirements to support the delivery of critical services across the organization.
+*Risk Assessment, the company understands the cybersecurity risk including missions, functions, image, reputation, organizational assets, and individuals.
+*Protective Technology, includes the system that's tasked with ensuring the security and resilience of other systems and assets need to be managed and monitored to ensure they comply with policies, procedures and agreements.
+
+2. Protect:
+
+*Anomalies and Events, Anomalies should be detected in a timely manner and the potential impact of events should be understood.
+*Security Continuous Monitoring, information systems and assets should be monitored in discrete inter roles to identify cybersecurity events and verify the effectiveness of the protective measures that are in place in the organization.
+*Detection Process, should be maintained and tested to ensure timely and adequate awareness of anomalies events.
+* Planning, response processes and procedures should be executed and maintained to ensure timely response and to detect cybersecurity events.
+* Communications, response activities should be coordinated with internal and external stakeholders as appropriate to include external support from law information agencies in the event of a cyberattack.
+* Analysis, should be conducted to ensure adequate response and support recovery activities.
+*Mitigation, activities should be performed to prevent expansion of an event, mitigate its effect, and eradicate the incident.
+*Improvements, organizational response activities should be improved by incorporating lessons learned from the current and previous detection response activities.
+
+3. Detect:
+
+4. Respond & Prepare:
+*Minimize the number and severity of security incidents, Assemble the core Computer Security Incident Response Team (CSIRT), define an incident response plan, contain the damage, and minimize the risks. 
+*Incident Response, how did they get in and what did they do? identify attacker tools and access, known compromised hosts and accounts, extend potential compromise given access obtained, should take 1-4weeks.
+*Tactical Recovery, remove known attacker access points, plan then act at once to maximize disruption, no guarantee of complete eradication, should take 2-12 weeks.
+*Strategies Recovery, for when attacker has had broad or unlimited access, requires rebuilding of most systems, must plan for safe interaction, performed in phases starting with high value assets, should take months or years.
+*Things to remember in an incident, keep calm, do no harm to the internal systems, management support, be accurate, get help when needed, initiate your incident response team, and implement your response plan.
+
+5. Recover:
+*Validate backup and recovery capabilities for critical data
+*Create technical documentation/automation
+*Compromised account recovery procedures
+*Compromised host recovery procedures for both workstations and servers
+*Network segregation and isolation procedures
+*Key points of a strong response program: Strongly integrated with business priorities and leadership, IT operations, business continuity management and disaster recovery, and content from internal and external sources. Continuous learning culture and processes. Documentation and technical readiness for major incidents. 
+*Critical Success Factors include clear plan and limited scope, clear plan and ownership, stakeholder communications, know your capabilities and know your limits, and capture lessons learned.
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+Building a CSIRT Overview:
+
+*Building the CSIRT Team
+1. Preparation
+2. Detection and Analysis
+3. Containment Eradication and Recovery
+4. Post-Incident Activity
+
+*Preparations: team should consist with a group of people with responsibilities for dealing with any kind of security incident, team members should have clearly defined duties to ensure no area of the response is uncovered.
+ 
+Actions to be addressed:
+1. Determine the mission, goals, and objectives of the CSIRT. 
+2. Determine who is supported or served by the team.
+3. Obtain management buy in by C-level sponsors.
+4. Create a project plan, should include reporting structure and authority and when the team will be operational.
+5. Determine the type of amount of security incident services that can be provided.
+6. Cross-train the CSIRT staff.
+7. Define a workflow that includes roles and responsibilities of the team.
+8. Create a taxonomy of terms to produce a shared understanding across the team.
+9. Continue to look for ways to enhance collaboration among team members and others in the security field in the organization.
+
+Team Duties:
+1. Monitor systems for security breaches including event correlation and analysis, integrated threat intelligence, user and entity behavioral analytics, ability to detect, and machine learning analytics.
+2. Serve as a central communication point.
+3. Document and catalog security incidents.
+4. Promote security awareness.
+5. Support system and network auditing.
+6. Learn about new vulnerabilities.
+7. Research new software patches.
+8. Analyze and develop new technologies.
+9. Continually improve.
+
+Team Preparations:
+1. Train them
+2. Assemble all relevant communication information
+3. Validate backup and recovery capability
+4. Place all emergency system information in a central, offline location
+5. Create technical documentation/automation
+6. Compromised host recovery procedures for all computing systems.
+7. Network segregation and isolation procedures
+
+Establishing Team Roles:
+1. CSIRT Team Leader: Individual is responsible for the activity of the CSIRT team.
+2. CSIRT Incident Lead: Responsible for coordinating the response, this person has ownership of the security or set of related security incidents, all communication of the event is coordinated through the incident lead and represents the entire team when speaking with those outside of the CSIRT team, 
+3. CSIRT Associate Members such as, CSIRT Lead from Legal will evaluate and managing legal risk, CSIRT communications lead is in charge of communication aspects of the security incident, IT contact is responsible for finding people in the IT group to handle security events, and Management will vary depending on the incident and is responsible for approving and directing security policy and also is responsible for determining the total impact both financial and otherwise of the incident in the organization.
+
+CSIRT Communications:
+1. CSIRT communications lead
+2. Develop a communications portion of existing incident response plans, including clear ownership and approval processes.
+3. Map the stakeholders, they made need to receive information regarding the incident in a timely manner.
+4. Develop draft media holding statements, includes other materials for the major types of incidents that are of most concur to the company, intended to be used with the press during the early stages of the investigation when many details of the incident are unknown, its also important to develop key communications considerations for each of the incidents which can help guide decision making when an incident occurs.
+5. Host a table top exercise, hosted with members from the entire response team to tests how they will react to the media, often best done in conjunction with outside legal council and are intended to focus on the non technical aspects of the incident response.
+
+Recovering:
+1. The CSIRT should thoroughly document all processes when dealing with the security incident and should include a description of the brief, who took actions, when they took it, and the reasoning behind it.
+2. Safeguard evidence collected, should be two people present during all phases who could sign off on each step because it may be an insider threat.
+
+Reviewing Response and Updating Policies:
+1. Preparing for a major incident can reduce damage to the organization, as well as reduce incident cost and management difficulty.
+2. Managing major cybersecurity incidents must be part of standard business risk management processes.
+3. Effective cybersecurity incident management requires collaboration and coordination of technical, operations, communication, legal, and governance functions.
+4. Overreacting can be as damaging as underreacting.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Security Incident Response Report Overview:
+
+*Purpose of the SIR documents the security event and the actions taken to mitigate the security incident. Helps prevent future security incident occurrences.
+1. Document all pertinent information that can be used to prevent similar hacks.
+2. An event is a system occurrence that could happen regularly or due to a software or hardware malfunctions and is not necessarily caused by a security compromise, and incident is an event that has been classified as being malicious, violating a security control, and containing the potential harm of an attack.
+
+Practice Security and Incident Response Report:
+* The Security Incident Report is a post activity that gives the organization the opportunity to review what happened in the incident and lessons learned.
+1. Company Information, includes basic organizational information, date of report, incident detection date. and if the incident has been resolved.
+2. Incident Overview, high level report of the incident including the incident site.
+3. Nature of Incident, includes the nature of the incident
+4. Incident Severity, talking about the incident security based on a standardized rating, NIST SP-861 document provides incident severity, this should also include how did the organization first become aware of the incident.
+5. General Description, provides a general description of the incident such as a letter of how the incident happened including dates and times. All details are provided of the incident, this should be easy to understand and readable in court.
+6. Incident Report, this characterizes the impact of the incident on the organization and the steps taken to investigate the nature and severity of the incident. Should also include what systems were impacted such as IP addresses of affected systems, FQDN of affected systems, Role of affected systems (domain controller/dns/dhcp/web server), Operating systems of affected systems, Patch level of affected systems, and   any additional details such as which applications were impacted, what unauthorized data access occurred, which privileged user account were impacted, which unprivileged user accounts were impacted, and which third parties were impacted (vendors/contractors/partners). Describe the sensitivity of the compromised data and what would be the consequences be of the data that was accessed in an unauthorized manner becoming public.
+7. Next Steps, review the process thoroughly, determine with your team which steps were executed successfully, determine which mistakes were made, look for opportunities for improvement.
+
