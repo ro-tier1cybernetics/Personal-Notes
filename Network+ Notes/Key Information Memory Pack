@@ -1,0 +1,241 @@
+Network+ Key Information Memory Pack
+
+
+
+common ports and protocols:
+port 20/21 - FTP (file transfer protocol): used for file transfers. port 20 = active data, port 21 = control
+port 22 - ssh (secure shell): encrypted remote login and file transfer (SFTP, SCP)
+port 23 telnet (insecure): remote login, cleartext. never secure
+port 25 - SMTP (simple mail transfer protocol): used to send email
+Port 53 - DNS (domain name system): converts domain names into IP addresses. UDP for queries, TCP for zone transfers
+Port 67/68 - DHCP (dynamic host configuration protocol): automatically assigns IP addresses. server uses 67, client uses 68
+Port 60 - HTTP (hypertext transfer protocol): unencrypted web traffic
+Port 110 - POP3 (post office protocol v3): retrieves email from server
+Port 143 - IMAP (internet message access protocol): retrieves email, allows multiple devices sync
+Port 161/162 - SNMP (simple network management protocol): used for device monitoring and management
+port three hundred and eight nine. LDAP lightweight directory access protocol. accessing directory service s like active directory
+port four hundred and forty three. HTTPS HTTP secure. encrypted wen traffic using SSL/TLS
+port four hundred and forty five SMB. server message block. widows file/printer sharing
+port three thousand three hundred and eighty nine RDP. remote desktop protocol. remote windows GUI access
+
+
+
+
+
+
+
+OSI model (seven layer):
+
+remember "please do not throw sausage pizza away"
+
+physical - cables hubs connectors bits
+data link MAC addresses switches, frames
+network, UP addresses, router, objects
+transport, TCP/UDP, segments
+session, establish, maintain, and end sessions
+presentation, encryption, compression, formatting
+application, user applications, HTTP, SMTP, DNS
+if a question asks about troubleshooting layers - layer one is cables, layer three is IP, layer four is ports
+
+
+
+
+
+
+
+
+
+Wireless Standard (IEEE 802.11)
+
+WEP, weak, obsolete
+WPA., better, but outdated
+WPA2-PSK (AES), strong, still common
+WPA3, latest, strongest
+Enterprise mode, uses RADIUS authentication
+
+
+
+
+
+
+
+
+
+
+
+Cabling and Connectors:
+
+UTP/STP unshielded/shielded twisted p[air, common ethernet cables
+cat5e, one gigabyte
+cat 6/6a, ten gigabits
+cat 7/8, data centers, higher shielding
+fiber optic, long distance, high bandwidth. single modem, long range. multi mode, short range, hundreds of meters.
+connectors, rj45 Ethernet, rj11 phone, lc/sc/st fiber.
+
+
+
+
+
+
+
+
+
+
+
+
+Security Concepts
+
+access control list: filters traffic on firewalls/routers
+VPN virtual private network: sure tunneling
+TLS transport security layer: modern encryption protocol (replaced SSL)
+IPsec: encryption IP traffic (AH - authentication, ESP - encryption
+authentication methods.: RADIUS centralized, UDP based. TACACS+ Cisco, TCP based)
+IDS/IPS: detects vs prevents intrusion
+WAF web application firewall: protects against web app attacks
+
+
+
+
+
+
+
+
+
+
+
+Troubleshooting Model:
+
+identify the problem.
+establish a theory of probably cause
+test the theory
+establish a plan of action
+implement the solution
+verify full functionality
+document findings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+common tools and commands:
+
+ping, test reachability
+tracert/traceroute, shows path
+ipconfig/ifconfig, ip info
+nslookup/dig, DNS inquiries
+netstat, active connections
+nmap, port scanner
+arp -a, ARP table
+
+
+
+
+
+
+
+
+
+
+
+a technician was called to an office where users could not reach website by domain names but could connect using IP addresses./ the technician brought a laptop with Wireshark and basic command line tools like nslookup and ipconfig. after testing they saw DNS queries were failing. they verified the DNS servicer settings tin the FHCP scope and corrected them, to point to the company's primary DNMS. Next time they made a not to always check DNS resolution early when only names are affected.
+
+A network administrator responded to a report that wireless connections key dropping in a busy warehouse they carried a spectrum analyzer and a laptop with WIFI scanning software. they discovered that many devices were competing on the same 2.4 gigahertz channel. they reconfigured the access points to use 5 gigahertz with WPA2 encryption for stability. a helpful tip was to always survey the environment for interference sources like cordless phones and microwaves before finalizing settings.
+
+a junior technician was sent to troubleshoot slow file sharing between two departments. they brought a cable tester and their toolbelt, they quickly found one run of cabling was old cat 5 which limited speed to 100 megabits while the switches supported gigabit. they replaced the cable with cat6 and performance improved. lesson learned was to always verify cabling matches the network speed requirements and to keep[ spare cable in the kit.
+
+a help desk worker investigated why a user could not log into a remoter window server. they used RDP but the connection failed. they checked with telnet to port 3389 and found it closed. after looking at the firewall they saw RDP was blocked for that subnet. they worked with firewall team to add an ACL permitting the use. the takeaway was that knowing key port number helps isolate service failures fast.
+
+a field engineer was asked to check why two branch router were not passing traffic between networks. they brought a console cable and laptop. after connecting they used show ip route and noticed missing static routes. they adde4d the proper routes and verified with ping and tracert. fort future assignments they wrong aa checklist to always confirm routing tables during initial troubleshooting
+
+a contractor responded to a complaint about VoIP phones with poor call quality. they had a packet capture tool and QoS monitoring software. they observed high jitter and packet loss due to data traffic overwhelming the link. they implemented QoS to prioritize voice packets. they reminded themselves that voice traffic is sensitive to delay and must be given higher priority in mix4ed network
+
+a network technician was called when users reported intermittent connectivity on a switch., they brough a spare switch and diagnostic tools. after testing cables and confirming power they check switch logs and found excessive CRC errors. replacing the faulty switch solved the issue. they noted that monitoring logs early can save time compared to resting each p[ort individually.
+
+an onsite engineer investigated why employees in one department has self assigned IP addresses in the 169.254 range. they used ipconfig to confirm DHCP was not working. they checked the DHCP server and discovered the scope was out of available addresses. expanding the scope fixed the issue. the tip for the future was to always associate APIPA addresses with DHCP failures
+
+a support specialist received a ticket for slow access to cloud application. they brough a laptop with traceroute and ping utilities. they saw high latency at the company firewall. checking configurations revealed a misapplied packet inspection rule slowing all outbound traffic. disabling deep inspection for cloud domains restored performance. the lesson was to balance security with performance and to revie firewall policies during troubleshooting
+
+a network auditor shadowed a team after repeated reports of unauthorized access attempts. they used IDS and IPS logs to monitor. they confirmed multiple failed SSH login attempts from an external IP. they worked with security team to0p block the IP at the firewall and enforced stronger password policies. the learning was to always correlate IDS alerts with firewall logs fort a clearer security picture.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a technician was asked to check why an office printer kept losing tits network connection. they brought a cable tester and laptop. after testing the line they found the patch cable had a bent pin in the rj45 connector. replacing the cable fixed the problem. the tip was to always inspect physical connections before spending time on complex troubleshooting.
+
+a network engineer visited a branch site after reports that wireless users could connect but not reach the internal file server. they used ipconfig to confirm clients were getting IP addresses. a traceroute showed traffic stopping at the default gateway. they checked the router and found a missing static route to the file server subnet. adding the route solved the issue. they noted to always confirm routing when only internal resources are affected.
+
+a help desk analyst was tasked with fixing a laptop that could not reach email servers. they tested using ping and saw responses from local devices but not from the mail server. they checked firewall settings and discovered outgoing port 25 was blocked for that user group. after adjusting the policy the laptop send email successfully. the reminder was that firewalls often block traffic based on ports and user roles.
+
+an administrator investigated why users could not authenticate to the company WIFI with enterprise credentials. they carried a laptop and tested with Wireshark. they noticed RADIUS requests were not reaching the server. checking the controller showed the wrong RADIUS IP was configured. correcting the IP restored service. they learned to verify authentication servers whenever enterprise wireless fails.
+
+a junior engineer was called to troubleshoot why a server could not be reached by hostname but worked fine with its IP. they used nslookup and found no record in the DNS server. adding the host record resolved the problem. the takeaway was that missing DNS entries are a common reason services fail by name but not by address
+
+a support tech responded to a call where a user reported slow access to a database server. they checked network path with traceroute and saw latency spikes inside the LAN. they then tested cabling with a tester and discovered one run had significant attenuation. replacing the cable restored normal speed. they reminded themselves that layer one issues can masquerade as complex problems.
+
+an engineer checked why remote workers could not connect to the company VPN. they tried to connect themselves and say the tunnel failing during authentication. reviewing the vpn concentrator logs showed expired certificates. they renewed the certificates and remote access was restored. the reminder was to always track certificate expiration dates to prevent downtime
+
+a technician was asked to assist when a new VoIP phone system produced no dial tone. they brought a PoE capable switch for testing. they confirmed the phones were not getting power over ethernet. replacing the non PoE switch with the proper model solved the issue. the lesson was to check power requirements for devices that rely on PoE.
+
+a support worker was dispatched when users in one department could not access the internet. they checked ip settings and found everyone on the same subnet had the same default gateway misconfigured. correcting the DHCP option fixed the issue. the lesson learned was to verify DHCP options whenever multiple users show identical misconfigurations
+
+a contractor was hired to troubleshoot why a cloud application was unreachable. they brought laptop tools and checked name resolution. ping by ip worked fine but names failed. they identified a misconfigured DNS forwarder on the internal dns server. correcting the forwarder allowed proper resolution. they emphasized that dns misconfiguration in one of the most common causes of application outages.
+
+an engineer visited a warehouse where wireless scanners could not stay connected. they surveyed the site with a WIFI analyzer and found overlapping channels on multiple access points. they adjusted the APs to use non overlapping channels. the result was stable connections. they added to their checklist to always check channel planning in high density environments.
+
+a help desk tech was sent to fix why a group of laptops had no connectivity. they check4ed sw3itch ports and saw they were all administratively down. enabling the reports restored service. the tip was that sometimes solutions are simple configuration oversights rather than hardware problems.
+
+a network administrator was investigating why a new firewall was blocking legitimated web traffic. they used packet capture to confirm that tls traffic on port 443 was dropped. reviewing the ACL showed an error in the rule ordering. adjusting the acl order resolved the issue. the reminder was that rule order in firewalls can make or break connectivity
+
+a technician was asked to troubleshoot why a server in the data center was unreachable. they used a cable tester and verified good cabling. they then checked ARP tables and saw duplicate MAC addresses. removing the misconfigured device fixed the conflict. they learned that duplicate add4rsssing can cause symptoms that look like outages.
+
+an engineer check why employees could not send files to a shared network folder. they trusted SMB connectivity on port 445 and saw it blocked. the firewall policy had been tightened during a recent change. they worked with security to allow SMB for the file share subnet. the lesson was to always review recent changes when new issues appear
+
+a support specialist was tasked with setting up a new wireless network for guests. they configured a separate SSID with WPA2 personal and CLAN segmentation. they tested isolation to ensure guest traffic could not reach internal networks. the tip was to always segment guest traffic for security
+
+a technician was called when users noticed that logins to the corporate intranet were taking unusually long. they tested LDAP queries on port 389 and saw timeouts. checking the authentication server showed it was overloaded,. they balanced requests across a second server and performance improved. they learned that redundancy is critical fort authentication services
+
+an administrator investigated reports found unusual traffic on the network. they used nmap to scan and discovered an unauthorized device running telnet. they disabled the port and documented the incident. the lesson was that network scanning tools are invaluable for detecting rogue devices.
+
+a field engineer visited a site after reports of internet outages every evening. they brought monitoring tools and tracked utilization. they discovered nightly backup jobs were saturating the WAN link. they rescheduled backups to off peak hours and service stabilized. the reminder was to always consider bandwidth usage patterns when diagnosing recurring outages
+
+an analyst was reviewing logs after repeated security alerts. they saw failed login attempts across multiple accounts at off hours. they correlated this with firewall logs and identified a brute force attack. they enforced stronger password policies and enabled account lockout features. they reminded themselves that log correlation is essential for spotting attack patterns
+
+a technician was dispatched to a branch office after several employees reported that they could not access internal applications but were still able to browser the internet. the technician started with ipconfig and noticed that the default gateway and DNS settings were correct. they then attempted to ping the internal application server by IP and received replies. however pinging by hostname failed. using nslookup they confirmed that the DNS server had non entry for the application server. they corrected the record and flushed DNS on the clients. service was restored. the lesson learned was that when internal application are unreachable by name but reachable by address it is almost always a dens problem and checking dns records should be one of the first steps
+
+a network administrator was asked to troubleshoot why video calls were dropping during peak business hours. they brought a laptop with Wireshark and ran captures during a call. the capture showed heavy packet loss and jitter during the business part of the day. further investigation of the switch revealed that no QoS policies were applied and voice traffic was competing with large file transfers. the administrator applied QoS rules to prioritize RTP traffic used by VoIP. after changes calls became stable. the reminder was that real time traffic must be given priority in environments with mixed workloads
+
+a support technician responded to a floor where the users could not reach the internet. the technician brought a cable tester and laptop. they confirmed the users were receiving APIPA addresses in the 169.254 range which meant DHCP was failing. they checked the DHCP server and saw that the scope had run out of available addresses due to old leases not expiring. the technician cleared the leases and extended the scope. the users immediately pulled valid IPs and regained internet access. the technician make a note to always associate APIPA addresses with DHCP issues and to monitor scopes for exhaustion
+
+a field engineer was called when a warehouse scanner system would not stay connected to wireless. they carried a wireless analyzer and laptop. walking the floor they noticed multiple access po9ints had been configured to use the same channel which created interference. they reconfigured the access points to use non overlapping channels and increased coverage in dead zones. they tested again with scanners and observed stable connectivity., the engineer wrote a recommendation for proper site surveys before deployment to prevent channel overlap and interference.
+
+a junior network engineer investigated reports that remote users could not connect to the VPN. they attempted to connect themselves and saw the tunnel fail after credentials were entered. they checked the VPN concentrator logs and found that the authentication certificate had expired. after renewing and applying the certificate the VPN service worked again. the engineer added a calendar reminder to track certificate expiration dates so remote connectivity would not break unexpectedly in the future.
+
+an administrator was sent to investigate why a file share could not be reached by a department. they tested SMB connectivity on port 445 using telnet and confirmed it was blocked. checking the firewall logs they discovered a recent rule change had disabled SMB traffic for that subnet. after correcting the firewall the ACL rule and testing again the share became reachable. the reminder was to always review recent configuration changes when a service suddenly stops working.
+
+a technician was asked to troubleshoot a new VoIP system that produced no dial tone. they tested power and confirmed the phone were not receiving power over Ethernet. they brought in a PoE capable switch and connected one of the phones which immediately powered up and registered. replacing the original switch with the correct PoE model restored the entire system. the technician learned that verifying hardware capabilities before deployment saves time and avoids downtime.
+
+a support worker was called to resolve slow performance on the corporate intranet. they used traceroute to map the path from the client to server and observed high latency at the first hop outside the client subnet. checking the switch logs showed many CRC errors which suggested a cabling issue. testing the uplink cable with a cable tester confirmed excessive crosstalk. replacing the cable resolved the latency problem. the lesson was to always consider physical layer issues when latency is localized to a single hop.
+
+an engineer responded to repeated outages in a branch office where internet access would fail every evening. they installed a monitoring tool and tracked traffic pattens over several days. they discovered nightly backup jobs were saturating the WAN link. by rescheduling the backup to off peak hours they eliminated the outage pattern. the engineer reminded themselves to always consider scheduled tasks and bandwidth usage patterns when troubleshooting recurring outages.
+
+a network administrator was asked to investigate suspicious login attempts flagged by the IDS. they used logs from the IDS and firewall and discovered repeated failed SSH logins from a foreign IP. they coordinated with the firewall team to block the address and then enforced stronger password complexity and account lockout policies. the incident reinforced the importance of correlating IDS alerts with firewall and authentication logs to detect brute force attacks.
