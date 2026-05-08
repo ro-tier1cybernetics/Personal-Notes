@@ -1,0 +1,398 @@
+Lesson 1: Comparing and Contrasting Different Types of Social Engineering Techniques
+
+*Social Engineering attacks leverage the weakest link, which is typically the human user. If an attacker can get a user to reveal information it is much easier for the attacker to cause harm than it is by using some other method of reconnaissance. Social engineering can be accomplished through email or misdirection of web pages, prompting a user to click something that leads to the attacker gaining information.
+
+
+1.1: Social Engineering Fundamentals
+
+*Social engineering is the act of manipulating users into revealing confidential information or performing other actions detrimental to the user. Common social engineering techniques include phishing and smear phishing, smishing, vishing, spam, spam over internet messaging (SPIM), dumpster diving, should surfing, pharming, tailgating, eliciting information, whaling, prepending, identity fraud, invoice scams, credential harvesting, reconnaissance, hoax, impersonation or pretexting, eavesdropping, baiting, watering hole attack, and typo squatting.
+
+
+Phishing and Spear Phishing
+---------------------------
+Phishing, is the attempt at fraudulently obtaining private information. A phisher usually masquerades as someone else. There are two main differences between phishing and pretexting. Pretexting, is the act of impersonating or spoofing someone else's identity. An attacker could impersonate and employee of a company or business partner to attempt to steal sensitive data from the victim. Phishing is usually done by electronic communication, not in person. Second, little information about the target is necessary. A phisher might target thousands of individuals without much concern as to their background.
+
+
+Smishing
+--------
+Because phishing has been an effective tactic for threat actors they have found ways other than using email to fool their victims into following malicious links or activating malware from emails. A number of phishing campaigns have used short message service (SMS) to send malware or malicious links to mobile devices. This social engineering technique is also known as smishing.
+
+
+Vishing
+-------
+Phishing attacks can also be accomplished by telephone conversations. Phone or voice phishing known as vishing works in the same manner as phishing but is initiated by a phone call often using VoIP systems.
+
+
+Spam and Spam over Internet Messaging (SPIM)
+--------------------------------------------
+Spam has traditionally been the term used to describe unwanted and unsolicited email messages. However emails messages are not the only way that attackers or malicious users send spam. Users may also receive spam via social media sites and instant/internet messaging applications. 
+
+
+Dumpster Diving
+---------------
+When a person literally scavenges for private information in garbage and recycling containers, that is known as dumpster diving.
+
+
+Shoulder Surfing
+----------------
+Occurs when a person uses direct observation to find out a targets password, pin, or other such authentication methods.
+
+
+Pharming
+--------
+Used to describe a threat actor redirecting a victim from a valid website or resource to a malicious one that could be made to appear as the valid site to the user. From there and attempt is made to extract confidential information from the user or to install malware in the victims system. Pharming can be done by altering the hosts file on a victims system, through DNS poisoning, or by exploiting a vulnerability in a DNS server.
+
+
+Piggybacking or Tailgating
+--------------------------
+When an unauthorized person tags along with an authorized person to gain entry to a restricted area, usually with that persons consent, that person is piggybacking. Tailgating is essentially the same with one difference, it is usually without the authorized persons consent.
+
+
+Eliciting Information
+---------------------
+Key components of social engineering are how someone influences, interrogates, and impersonates others. Eliciting information is the act of gaining knowledge or information from people. In most cases an attacker gets information from the victim without directly asking for that particular information. Interrogators pay close attention to the victims body language, the coloring in the victims skin, the direction of the victims head and eyes, movement of the victims hands and feet, and the victims mouth and lip expressions.
+
+
+Whaling
+-------
+Whaling is similar to phishing and spear phishing however with whaling the attack is targeted at high=profile business executives and key individuals in a corporation.
+
+
+Prepending
+----------
+You can often configure your email servers or email cloud services to prepend a message in the email subject line to identify emails that are coming from outside of the organization. This technique is also known as prepending.
+
+
+Impersonation or Pretexting
+--------------------------
+Pretexting is a type of social engineering attack in which a person incents a scenario or pretext in the hope of persuading a victim to divulge information. By impersonating the appropriate personnel or third party entities a person performing a pretext hopes to obtain records about an organization, its data, and its personnel.
+
+
+Baiting
+-------
+Is a strategy in which a malicious individual leaves malware-infected removable media such as a USB drive or optical disc lying around in plain view. It might have an interesting logo or distinctive look about it. When a person takes it and connects it to his or her computer the malware infects the computer and attempts to take control of it and/or the network the computer is a member of.
+
+
+Watering Hole Attack
+--------------------
+Is a strategy that targets users based on the common websites that they frequent. The attacker loads malware beforehand on one or more websites in the hopes that the user will access those sites and activate the malware, ultimately infecting the users system and possibly spreading through the network.
+
+
+Typo Squatting
+--------------
+Is a technique used by adversaries that leverages human error when typing a URL in their web browser. For instance, users often enter typos or a wrong URL for a given website.
+
+
+1.2: User Security Awareness Education
+
+*The user could be the single most exploitable resource of a company. People aren't computes, some might be compared to robots but no matter how logical and discipled a person might be there is always the potential for human error. There are several roadblocks when it comes to user training. The first is organizational acceptance, are the executives of a company on board with the idea? Then there are the employees to be trained themselves. Some will put up a fight when it comes to education, the secret ingredient here is to pique the interest of the users. Some basic rules you can convey when training employees are never under any circumstances give out any authentication details such as passwords, pins, company ID, tokens, and smart cards. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Lesson 2: Analyzing Potential Indicators to Determine the Type of Attack
+
+*To combat the various security threats that can occur on a computer system you first need to classify them. Then you need to define how these threats can be delivered to the target computer. Afterward you can discuss how to prevent security threats from happening and troubleshoot them if they do occur. 
+
+
+2.1: Malicious Software (Malware)
+
+*Malicious software or malware is software designed to infiltrate a computer system and possibly damage it without the users knowledge or consent. Malware is a broad term used by computer professionals to include viruses, worms, trojan horses, spyware, rootkits, adware, and other types of undesirable software. To defend against it you firs need to define it and categorize it then you can put preventative measures into place. Its also important to locate and remove or quarantine malware from a computer system in the case that it does manifest itself.
+
+
+Ransomware and Crypto-malware
+-----------------------------
+Some less than reputable persons use a particularly devious malware known as ransomware- a type of malware that restricts access to a computer system and demands that a ransom be paid. Ransomware informs the user that in order to decrypt the files or unlock the computer to regain access to the files a payment would have to be made to one of several banking services. It often propagates as a trojan or worm. Ransomware is also often referred to as crypto-malware. Todays crypto-malware leverages advanced encryption techniques to prevent files from being decrypted without a unique key.
+
+
+Remote Access Trojans (RATs) and Rootkits
+-----------------------------------------
+Are the most common type of trojan. Examples include Back Orifice, NetBus, and SubSeven. Their capability to allow an attacker higher administration privileges than those of the owner of the system makes them quite dangerous. The software effectively acts as a remote administration tool which happens to be another name for the acronym. These programs have the capability to scan for unprotected hosts and make all kinds of changes to a host when connected. They are not necessarily designed to be used maliciously but are easy for an average person to download and manipulate computers with. When a target computer is controlled by an attacker it could easily become a robot or simple a bot, carrying out the plans of the attacker on command.
+
+A rootkit is a type of software designed to gain administrator-level control over a computer system without being detected. The term is a combination of the words root meaning the root user in a UNIX/Linux system or administrator in a Windows system, and kit meaning software kit. Usually the purpose of a rootkit is to perform malicious operations on a target computer at a later date without the knowledge of the administrators or users of that computer. A rootkit is a variation of a virus that attempts to dig in to the lower levels of the operating system/components of the OS that start up before any antimalware services come into play. Rootkits can target the UEFI/BIOS, boot loader, kernel, and more.
+
+
+Worms
+-----
+A worm is much like a virus except that it self-replicates whereas the virus does not. It does this in an attempt to spread to other computers. Worms take advantage of security holes in operating systems and applications including backdoors. They look for other systems on the network or through the internet that are running the same applications and replicate to those other systems. With worms the user doesn't need to access and execute the malware. A virus needs some sort of carrier to get it where it wants to go and needs explicit instructions to be executed or it must be executed by the user. The worm does not need this carrier or explicit instructions to be executed.
+
+
+Fileless Virus
+--------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Lesson 10: Summarizing Virtualization and Cloud Computing Concepts
+
+*These days more and more organizations are transferring some or all of their server and network resources to the cloud. This effort creates many potential hazards and vulnerabilities that you as the security administrator and the cloud provider must address. Top among these concerns are the servers where all data is stored and accessed. Servers of all types should be hardened and protected from a variety of attacks to keep the integrity of data from being compromised. However data must also be available. Therefore you must strike a balance of security and availability. This lesson provides details about several virtualization and cloud computing concepts.
+
+
+10.1: Cloud Models
+
+*Cloud computing can be defined as a way to offering on demand services that extend the capabilities of a persons computer or an organizations network. These might be free services such as personal browser based emails from various providers or they could be offered on a pay per use bases such as services that offer data access, data storage, infrastructure, and online gaming. A network connection of some sort is required to make the connection to the cloud and gain access to these services in real time. 
+
+*Some benefits to an organization using cloud based services include lowered cost, less administration and maintenance, more reliability, increased scalability, and possible increased performance. A basic example of a cloud based service would be browser based email. A small business with few employees definitely needs email but it cant afford the costs of an email servicer and perhaps does not want to have its own hosted domain and the costs and work that go along with that. By connecting to a free web browser based service the small business can obtain near unlimited email, contacts, and calendar solutions. However there is no administrative control and there are some security concerns.
+
+*Could computing services are generally broken down into several categories of services:
+
+Software as a service (SaaS):
+-----------------------------
+The most commonly used and recognized of the cloud service categories, SaaS offers users access to application that are provided by a third party over the internet. The applications need not be installed on the local computer. In many cases these applications are run within a web browser and in other cases the user connects with screen sharing programs or remote desktop programs. A common example is webmail. 
+
+
+Infrastructure as a Service (IaaS):
+-----------------------------------
+This service offers computer networking, storage, load balancing, routing, and VM hosting. More and more organizations are seeing the benefits of offloading some of their networking infrastructure to the cloud.
+
+
+Platform as a Service (PaaS):
+-----------------------------
+This service provides various software solutions to organizations especially the ability to develop applications in a virtual environment without the cost or administration of a physical platform. PaaS is used for easy to configure operating systems and on demand computing. Often this utilizes IaaS as well for an underlying infrastructure to the platform. Cloud based virtual desktop environments and virtual desktop infrastructures are often considered to be part of this service but can be part of IaaS as well. 
+
+
+Anything as a Service (XaaS):
+-----------------------------
+There are many types of cloud based services. If they font fall into the previous categories they often fall under the category "anything as a service". For instance a service in which a large service provider integrates its security services into the company's/customers existing infrastructure is often referred to as security as a service (SECaaS). The concept is that the service provider can provide the security more efficiently and more cost effectively than a company can especially if it has a limited IT staff or budget.
+
+
+
+10.2: Cloud Service Providers
+
+*A could service provider (CSP) such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) might offer one or more of the aforementioned services. CSPs have no choice but to take their security and compliance responsibilities very seriously. For instance Amazon created a shared responsibility model to define in detail the responsibilities of AWS customers as well as those of Amazon. You can access the Amazon Shared Responsibility Model at aws.amazon.com. 
+
+*Similar to the CSP is the managed service provider (MSP) which can deliver network, application, system, and management services using a pay as you go model. MSP is an organocation that can manage your network infrastructure, servers, and in some cases your security devices. Those companies that provide services to manage your security devices and can also help monitor and respond to security incidents are called managed security service providers (MSSP).
+
+
+10.3: Cloud Architecture Components
+
+*Cloud computing allows you to store and access you data, create applications, and interact with thousands of other services over the internet (off-premises) instead of your local network and computers (on-premises). With a good internet connection cloud computing can be execute anytime anywhere. There are several cloud related architecture components such as:
+
+		The concept of fog and edge computing
+
+		Thin Clients
+
+		Containers
+
+		Microservices and related APIs
+
+Fog and Edge Computing:
+-----------------------
+The two architectural concepts called fog computing and edge computing are often used interchangeably. However there are a few differences. The term edge computing describes an ecosystem of resourced and applications in new network services including 5G and IoT. One of the main benefits is to provide greater network speeds, low latency, and computational power near the user.
+
+*The edge in edge computing is the location nearer the consumer and where data is processed or stored without being backhauled to a central location. This service edge is optimized to provide a low cost solution, increase performance, and provide a better user experience.
+
+*The term fog computing was originally created by Cisco in the early 2010s. It describes the decentralization of computing infrastructure by bringing the cloud to the ground this the term fog. This architecture enables components of the edge computing concept to easily push compute power away from the public cloud to improve scalability and performance. Fog computing accomplishes this by putting data, compute, storage, and applications near the end user or IoT device.
+
+*Other similar and related concepts have been adopted throughout the years. 
+
+
+Thin Clients:
+-------------
+Thin clients are computer systems that run from resources stored on a central server or from the cloud instead of a local system. When you use a thin client you connect remotely to a server based computing environment where the applications, sensitive data, and memory are stored.
+
+*Thin clients can be used in several ways:
+
+		Shred Terminal Services: Users at thin client stations share a server based operating system and applications.
+
+		Desktop Virtualization: A full desktop machine including the operating system and applications lives in a virtual machine in an on premises server or in the cloud which is off premise.
+
+		Browser Based Thin Client: All applications are accessed within a web browser.
+
+
+Containers:
+-----------
+Before you can even think of building a distributed system you must first understand how the container images that contain your applications make up all the underlying pieces on such a distributed system. Applications are normally comprised of a language runtime, libraries, and source code. These shared libraries are typically shipped as shared components in the operating system that you installed on a system. The dependency on these libraries introduces difficulties when an application developed on your desktop, laptop, or any other development machine has a dependency on a shared library that isn't available when the program is deployed out to the production system.
+
+
+Microservices and APIs:
+-----------------------
+The term microservices describes how applications can be deployed as a collection of services that are highly maintainable and testable and independently deployable. Microservices are organized around business capabilities and enable the rapid, frequent, and reliable delivery of large complex applications. Most microservices developed and deployed by organizations are based on containers.
+
+*Application Programing Interfaces (APIs) such as RESTful APIs are the frameworks through which developers can interact with an application. Microservices use APIs to communicate between themselves. These APIs can be used for inter microservice communication and they can also be used to expose data and application functionality to third party systems. 
+
+*Microservices and APIs need to be secured. Traditional segmentation strategies do not work well in these virtual and containerized environments. The ability to enforce network segmentation in container and VM environments is what people call micro segmentation. Micro segmentation is at the VM level or between containers regardless of a VLAN or subnet. Micro segmentation solutions need to be application aware. This means that the segmentation process starts and ends with the application itself. 
+
+*Most micro segmentation environments apply zero trust model. This model dictates that users cannot talk to applications and that applications cannot talk to other applications unless a defined set of policies permits them to do so.
+
+
+Infrastructure as Code:
+-----------------------
+Modern applications and deployments require scalability and integration with numerous systems, APIs, and network components. This complexity introduces risks, including network configuration errors that can cause significant downtime and network security challenges. Consequently networking functions such as routing, optimization, and security have also changed, The next generation of hardware and software components in enterprise networks must support both the rapid introductions and rapid evolution of new technologies and solutions.
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Lesson 29: Applying Mitigation Techniques or Controls to Secure an Environment
+
+
+29.1: Reconfigure Endpoint Security Solutions
+
+*Endpoints are among the biggest targets for cybercriminals because these devices are especially vulnerable to various attacks. Criminals often attempt to use endpoint devices as entry points to access corporate networks and steal data, leverage existing software vulnerabilities, or hold information hostage. The most effective practices to detect, respond, and protect your endpoints from these threats include a layered defense-in-depth approach.
+
+Application Approved Lists
+--------------------------
+Antivirus, firewall, and endpoint security management systems generally have application approved lists, sometimes called application whitelists. If you are currently using a block list you might consider also implementing an application approved list, one that is centrally managed which gives you more granular control. Application approved lists are where you spend the time up front building the allow list of approved applications. Then with your central management or endpoint security solution, you roll out the allow list enterprise-wide. After an incident you should spend the time building or updating an application approved list and then enable and enforce it. It will keep users from installing unauthorized application that could lead to breaches.
+
+
+Application Block List/ Deny List
+--------------------------------
+An application block list or deny list is a basic access control mechanism that denies specific applications or code on the list from being installed or run. After an incident, part of the mitigation strategies should be to review all rogue and unauthorized applications that were installed by the attacker. You can start with these reports to help build your block/deny list. There are also public block lists you can use to add to your own list. The problem with block lists is the upkeep and maintenance. Its a simple process for attackers to use renamed or rehashed applications to bypass these lists.
+
+
+Quarantine
+----------
+The quarantine function is to safely store reported objects such as malware, infected files, or potentially unwanted applications. If Microsoft Defender Antivirus is configured to detect and remediate threats on your device, it quarantines suspicious files. By default the Microsoft Defender Antivirus quarantine storage is located under the following path: C:\ProgramData\Microsoft\Windows Defender\Quarantine.
+
+Defender creates a threat log during an investigation. This should be one of the places investigators check first for evidence and history of suspect files. Revers-engineering these quarantined files can provide insight into the attacker who created, modified, or used the files. After the investigation has wrapped up the security team should review all files that were quarantined and all those that were missed but eventually found.
+
+
+29.2: Configuration Changes
+
+*A flaw in your organization's security setting like failing to secure your infrastructure could leave your entire network and every device connected to it vulnerable to an attack. Configuration vulnerabilities are easily preventable provided secure best practices are allowed. Applying mitigation techniques after an incident requires a thorough assessment of all network devices. 
+
+
+Firewall Rules
+--------------
+The firewall was introduced in 1988 and currently there are many brands and types of firewalls on the market. These firewalls differ not only in cost but also their functionalities. The firewall at the perimeter of a network is the first line of defense against external attacks. To mitigate the attacks the firewall divides the network into two zones, Trusted Zone where authorized users are in a private network or access a private network, and Least-Trusted Zones where users from the internet are trying to access the private network. The job of the firewall is to either permit or deny the traffic based on the firewall rules. Firewalls filter packets and mitigate attacks by utilizing best practices and consistent audits before and after attacks. 
+
+
+MDM
+---
+Security Posture Assessment provides functionality and control over enterprise devices by enabling the enrollment of enterprise devices for management functions such as provisioning devices, tracking inventory, changing configurations, updating, managing applications, and enforcing policies. Unified endpoint management (UEM) expands on MDM by providing unified capabilities and also including content and threat management, identity and access management, and application containerization. Some of the core functions of MDM are Ensuring that diverse user equipment is configured to a consistent standard/supported set of applications, functions or corporate polices, updating equipment, applications, functions, or policies in a scalable manner, ensuring that users use applications in a consistent and supportable manner, ensuring that equipment performs consistently, monitoring and tracking equipment such as location, status, ownership, and activity, and being able to efficiently diagnose and troubleshoot equipment remotely. 
+
+
+29.3: Isolation
+
+*Once a compromised endpoint has been isolated because of malware, a virus, or a trojan, or it is part of a much wider attack it is automatically quarantined and isolated or manually isolated. At this point there are three things to consider,
+
+1. Is there something on this host, private data or critical evidence, that cannot be obtained from some other source.
+
+2. Can you safely reimage the device? In other words can you trust underlying systems, BIOS/UEFI, drivers, firmware, or other operating systems after the reimage?
+
+3. Can you wait until the investigation is completed before attempting any action?
+
+*These questions and corporate policy will help you determine the right course of action. 
+
+
+29.4: Containment
+
+*When you know where the issue is and what systems have been affected you should isolate or quarantine those systems so that threats cannot spread through the network. To do this you need to disable network access for the affected computers and devices or place them in a sandbox network. Then you need to reset passwords and other credentials like certificates and block accounts that seem suspicious or that are not on the list of approved accounts with access. Make sure you don't delete information that may be useful in forensic investigations, which could help ensure this kind of even does not occur again. After the system has been released you should run the appropriate measures to recover, remediate, or reimage the system. Ultimately, for a system to have integrity it is highly recommended that system firmware and BIOS/UEFI be checked and verified and then the system be reimaged. 
+
+*To perform containment on a system you disconnect the network connection or disable the port on the switch. If you're using the system for forensic examination you create a sandbox network that has faux services like DNS and other hosts to monitor the infected or suspect host. 
+
+
+29.5: Segmentation
+
+*Network security posture assessment is an architectural approach that divides a network into multiple network, subnets, or segments. This segmentation allows network administrators to control the flow of traffic between these networks based on granular policy. After an incident/investigation has been completed and things return to normal operations, network administrators and engineers should segment high-value networks.
+
+*Another type of isolation is more of a secure asset protection segmentation method. In this method you can use private virtual local-are networks (VLANs) and access control lists (ACLs) to allow only certain hosts in certain networks to talk to other specific hosts, ensuring that device is protected from unwanted access. The inherent weakness of assumed trust is the key reason that many organizations have begun to adopt the zero trust strategy.
+
+*There are a few types of network segmentations such as Physical Segmentation which separates networks via a firewall or other access controls, and a Virtual Segmentation where VLANs divide network traffic but devices can still communicate with each other.
+
+*Segmenting a network leads to better performance due to less congestion with fewer devices. With fewer hosts per subnet, a segmented network minimizes local traffic and reduce the noise in broadcast traffic. Another benefit of a network segmentation policy is that it helps with identification and compliance requirements. One important item to remember after an attack is to split a network into zones that contain data with the same compliance or regulatory rules and restrict access to only authorized IP sources addresses.
+
+
+29.6: SOAR
+
+*Security Orchestration, Automation and Response (SOAR) alerts for suspected phishing emails, endpoint attacks, failed user logins, malware, and other threat information that come from a variety of detection sources such as SIEMs, systems, switches, and logging services. As the SOAR platform aggregates the suspected threats it automatically triggers a process to inform affected users about the possible threats. It assigns an incident severity value and check for cross-referencing the data against external threat intelligence databases. 
+
+*A runbook consists of a series of conditional steps to perform actions such as enriching data, containing threats, and sending notifications automatically as part of the incident response or security operations process. This automation helps accelerate the assessment, investigation, and containment of threats to speed up the overall incident response process. Runbooks can also include human decision making elements as required, depending on the particular steps needed within the process and the amount of automation the organization is comfortable using.
+
+*A SOAR playbook is a linear-style electronic checklist of required steps and actions needed to successfully respond to specific incident types or threats. Incident response playbooks provide a simple top down step by step approach to orchestration. They help establish formalized incident response processes and procedures within investigations by identifying required steps systematically followed, which can help meet and comply with regulatory requirements. Playbooks support both human and automated actions. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Lesson 30: Understanding the Key Aspects of Digital Forensics
+
+*Digital forensic science is a branch of forensic science that is focused on the recovery and investigative materials found in digital devices related to cybercrime. Digital forensics is the process of identifying, preserving, analyzing, and documenting digital evidence. This is done in order to solve a crime and present evidence in a court of law. There are five stages to digital forensics which are Identification, Preservation, Analysis, Documentation, and Presentation.
+
+
+30.2: Acquisition
+
+*Forensic acquisition is the process of collecting specific data related to an attack, intrusion, or investigation. Items can include computer media such as hard drives, thumb drives, servers, phones, tablets, and other devices that store electronic data. Investigators need to follow clear and precise steps when acquiring data from a crime/investigation scene so that all collected data retains its integrity. 
+
+*Order of Volatility, the collection of evidence should start with the most volatile item and end with the least volatile. The order of volatility is the order in which the digital evidence is collected. Highly volatile data resides mostly in the memory, cache, or CPU registers and it will be lost as soon as the power to the computer is turned off. Less volatile data is not lost so easily and is relatively stable because it may be stored on disk drives or other permanent storage media, such as CD-ROM discs. The order of volatility is,
+
+		1. Cache, registers
+		2. ARP cache, routing table, memory, kernel statistics, process table
+		3. Temporary files
+		4. Disk
+		5. Monitoring data and remote logging pertaining to the computer in question
+		6. Physical configurations, network topology
+		7. Archival media
+
+*Random Access Memory (RAM), there are several reasons that a complete random access memory capture might prove useful; most often they revolve around the key difference between data stored in RAM and data stored on a hard disk drive. RAM is considered volatile memory and is perceived to be more trusted than nonvolatile memory such as ROM, disk, magnetic, optical storage. Investigations using live forensic techniques require special handling because the volatile data in RAM can be lost if the system if turned off. The type of information in RAM might not even be intentional or it could be a byproduct of malware. Certain malware can be completely memory resident and leave critical information available that may lead to the author. RAM contains unsaved documents, passwords, credentials, and who is logged into a system.
+
+*Swap/Pagefile, a swap file or pagefile is an area  of the hard drive that the operating system can use to store data from RAM that has not been used in recent activity, typically moving data/apps required from disk to RAM and from RAM back to disc, hence the name "swapping". Pagefile.sys is used within windows operating systems to store data from RAM when it becomes full. Pagefile.sys is a contiguous file so it can be read more quickly; it is located on the root of the hard drive and normally the more infrequently used files are stored to. It can also be used as a data backup in the even of a system crash.
+
+*Operating System, operating system forensics is the process of retrieving useful information from the OS of the computer, PC, or mobile device in question. OS forensics involves forensic examination of the PC's operating system. The foremost commonly used operating systems are windows, macOS, and Linux. The file system also identifies how disk drives store data. Another important aspect of OS forensics is memory forensics which includes vital storage, windows memory, Linux memory, macOS memory, memory extraction, and swap spaces. OS forensics also involves web browsing artifacts like messaging and email artifacts. 
+
+
+30.4: Integrity
+
+*forensic investigators play crucial roles within the legal system and are constantly under various pressures when performing analytical work, generating reports based on their analyses, or testifying to the content of these reports. Maintaining the scientific integrity of these actions is paramount to supporting a functional legal system and the practice of a good part of the science. There must be transparency and professionalism in the forensic field to ensure integrity and to reduce conflicts of interest. 
+
+1. Hashing, is a calculation that is performed before and after the creation of a forensic image. It ensures that the image wasn't altered during the duplication process. In addiction, it is essential to verify periodically that the hash of the image copy being used for forensic examination has not changed or been altered. Hash functions have four defining properties that make them useful which are,
+
+	Collision resistant: A collision occurs where multiple inputs are found to produce a common output or common hash value. Because potential inputs are infinite and the output is a fixed length, collisions are bound to occur.
+
+	Deterministic: For any given input a hash function must return the same value each and every time that input is processed.
+
+	Computationally Efficient: You can expect that a hash function will be computationally efficient or in other words, speedy.
+
+	Pre-image Resistant: All hash functions must be pre-image resistant. The has function should not provide any clue about the size or content of the input.
+
+2. Checksums, to produce checksum you run a program that puts that file through an algorithm. Typical algorithms used for this process include MD5, SHA-1, SHA-256, and SHA-512. The algorithm uses a cryptographic hash function that takes an input and produces a string, a sequence of numbers and letters of a fixed length. The input file can be small 100KB file or a massive 4GB file but either way you end up with checksum of the same length.
+
+3. Provenance, data provenance refers to the establishment of a chain of custody for information that can describe its generation and all subsequent modifications that have led to its current state. An advanced data provenance proactive or system gives forensic investigators a transparent idea about the data's lineage and helps resolve disputes over controversial pieces of data by providing digital evidence. The first step to being able to make use of provenance for forensic purposes is to be able to ensure that it is collected in a secure and trustworthy fashion. However the collection process alone raises several significant challenges with approaches to provenance collection from application to operating system level, and this process should rely on a provenance monitor to assure the complete collection of data.
+
+
+30.5: Preservation
+
+*Handling of digital evidence is the most important aspect in digital forensics. This process is known as preservation of evidence, isolation and protection of digital evidence exactly as found without alteration so that it can later be analyzed. Sometimes this process involves a forensic copy of hard disk from a system or logs being collected by another system. Collection is the gathering of devices and duplication of electronically stored information for the purpose of preserving digital evidence, an exact copy of the original that remains untouched whole digital forensics is performed. In certain cases you might have to turn off the device or isolate ESI in a way that will not alter evidence.
+
+*Dead box forensic collection, imaging a device after it is powered off in order to collect digital evidence still remains an essential part of the digital forensic process. Live box forensics is growing increasingly important with todays technology, with exploit codes capable of remaining in memory. If a device is encrypted without the passcode or encryption key you may never have another chance to acquire valuable evidence if that device powers off or locks due to inactivity. 
+
+
+30.6: E-Discovery
+
+*E-discovery, is the process of identifying, preserving, collecting, processing, reviewing, and analyzing electronically stored information in litigation. The digital forensics process involves identifying, preserving, collecting, analyzing, and reporting on digital information. In an e-discovery matter the role of the expert is to provide the information to legal teams in a reviewable format for the analysis. When leveraging digital forensics the expert performs the analysis of the information and reports the findings to the legal teams. 
+
+
+30.7: Data Recovery
+
+*Forensic data recovery is the extraction of data from damaged, deleted, or purposely destroyed evidence sources in a forensically sound manner. This method of recovering data means that any evidence resulting from it can later be relied on in a court of law. Deleting files from your computer doesn't mean the files are necessarily gone even after being deleted and emptied in the recycle bin. What really happens is that you are deleting the location of those files which merely hides them from the operating system. Emptying the recycle bin frees up disk space and removes the pointer details from the file directory but the files remain unless that data has been physically written over or removed from the hard drive, those files can be recovered with forensic recovery even if the entire drive has been formatted and seemingly wiped clean.
+
+
+30.8: Nonrepudiation
+
+*Nonrepudiation is the assurance that someone cannot deny the validity of something, where a statements author cannot dispute its authorship. Nonrepudiation is a legal concept that is widely used in information security and refers to a service that provides proof of the origin and integrity of the data. Nonrepudiation makes it difficult to successfully deny who and where a message came from as well as the authenticity and integrity of that message. In forensics and digital security nonrepudiation means a service or system that provides proof of the integrity and origin of data, and authentication that can be said to be genuine with high confidence. 
+
+
+30.9: Strategic Intelligence/Counterintelligence
+
+*Strategic intelligence is the strategy of narrowing down an investigation to relevant information gathering initially which is the use of all resources to make determinations that limit the investigation's scope to a manageable level. Counterintelligence is information gathered and activities conducted to protect against espionage, other intelligence activities, or sabotage conducted by or on behalf of other elements. The intelligence is deigned to quickly direct resources to the most significant problems first and address them head on. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Lesson 31: Comparing and Contrasting the Various Types of Controls
+
