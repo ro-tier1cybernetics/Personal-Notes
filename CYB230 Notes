@@ -1,0 +1,141 @@
+CYB-230 (Based on CompTIA A+ (220-1101 & 220-1102))
+
+
+Lesson 1: Motherboards, Processors, and Memory
+
+*The computers we use daily from the largest servers to the smallest smart watches and everything in between are collections of different electronic components and software working together in a system. Digital computers have been around since the late 1930s so they aren't new news. As technology improved over the years computers got smaller and fast and inventors added features that required new hardware devices. Inspired by typewriters, keyboards were added for ease of input. Visual displays required a monitor and a video card and a standard interference between them. Sound was provided by a different expansion card and speakers. Because of the newly added features, PCs were modular by necessity. Along the way in the late 1960s the term personal computer (PC) was coined to differentiate between computers designed to be used by one person versus other options such as a mainframe or one where multiple users share a processor. This course and the CompTIA A+ exams focus on PC hardware and software.
+
+
+1.1: Understanding Motherboards
+-------------------------------
+
+*The spine of the computer is the motherboard otherwise known as the system board or mainboard. This is the printed circuit board (PCB) which is a conductive series of pathways laminated to a nonconductive substrate that lines the bottom of the computer and is often of a uniform color such as green, blue, brown, black, or red. It is the most important component in the computer because it connects all the other components together. On the system board you will find the central processing unit (CPU) slot or integrated CPU underlining circuitry, expansion slots, video components, random access memory (RAM) slots, and a variety of other chips. 
+
+Motherboard Form Factors, There are hundreds of different motherboards in the market today. It can be overwhelming trying to figure out which one is needed. To help, think of motherboards in terms of which type they are, based on a standard classification. System boards are classified by their form factor (design) such as ATX and ITX. Exercise vigilance when acquiring a motherboard and components separately. Motherboards will have different expansion slots, support certain processors and memory, and fit into some cases but not others.
+
+
+Advanced Technology Extend, Intel developed the advanced technology extend (ATX) motherboard in the mid-1990s to improve upon the classic AT-style motherboard architecture that has ruled the PC world for many years. The ATX motherboard has the processor and memory slots at right angles to the expansion cards. This arrangement puts the processor and memory in line with the fan output of the power supply allowing the processor to run cooler. And because those components are not in line with the expansion cards you can install full-length expansion cards-adapters that extend the full length of the inside of a standard computer case-in an ATX motherboard machine. ATX and its derivatives such as micro ATX is the primary PC motherboard form factor in use today.
+
+
+Information Technology Extended (ITX), the ITX line of motherboard form factors was developed by VIA technologies in the early 2000s as a low-power small form factor (SFF) board for specialty uses including home theater systems, compact desktop systems, gaming systems, and embedded components. ITX itself is not an actual form factor but a family of form factors. The family consists of the following form factors:
+
+		1. Mini-ITX--6.7"x6.7"
+		2. Nano-ITX--4.7"x4.7"
+		3. Pico-ITX--3.9"x2.8"
+		4. Mobile-ITX--2.4"x2.4"
+
+The mini-ITX motherboard has four mounting holes that line up with three or four of the holes in the ATX and micro-ATX form factors. In mini-ITX the rear interfaces are placed in the same location as those on the ATX motherboards. These features make mini-ITX boards compatible with ATX cases. This is where the mounting compatibility ends because despite the PC compatibility of the other ITX form factors, they are used in embedded systems such as set-top boxes, home entertainment systems, and smartphones, and lack the requisite mounting and interface specifications. 
+
+
+System Board Components, the following list summarizes key concepts you need to know about motherboards:
+
+		1. Bus architecture BIOS boot sequence chipsets
+		2. Expansion slots
+		3. Memory slots and cache
+		4. Central processing units and processor sockets
+		5. Power connectors
+		6. Onboard non-volatile storage connectors such as for hard drives
+		7. Motherboard headers
+		8. BIOS/UEFI/firmware
+		9. CMOS and CMOS battery
+		10. Front-panel connectors and headers
+
+
+Bus Architecture, In a PC data is sent from one component to another via a bus which is a common collection of signal pathways. In the very early days, PCs used serial buses which sent one bit at a time and were painfully slow. Brilliant engineers realized that they could redesign the bus and send 8 bits at a time over synchronized separate lines which resulted in a big speed increase. This was known as a parallel bus. The downside of parallel communications is the loss of circuit length (how long the circuit could be) and throughput (how much data could move at one time). The signal could travel only a short distance and the amount of data was limited due to the careful synchronization needed between separate lines, the speed of which must be controlled to limit skewing the arrival of the individual signals at the receiving end. Engineers have discovered methods to make serial transmissions work at data rates that are many times fast than parallel signals. Therefore nearly everything you see today uses a serial bus. The only limitation of serial circuits is in the capability of the transceivers which tend to grow signals. On a motherboard several different buses are used. Expansion slots of various architectures such as PCIe are included to allow for the insertion of external devices or adapters. Other types of buses exist within the system to allow communication between the CPU, RAM, and other components with which data must be exchanged. Except for CPU slots and sockets and memory slots, there are no insertion points for devices in many closed bus systems because no adapters exist for such an environment. 
+
+
+Chipsets, a chipset is a collection of chips or circuits that perform interface and peripheral functions for the processor. This collection of chips is usually the circuity that provides interfaces for memory, expansion cards, and onboard peripherals and it generally dictates how a motherboard will communicate with the installed peripherals. Chipsets are usually given a name and model number by the original manufacturer. For example B550 and X570 are chipsets that support Advanced Micro Devices Inc. (AMD) processors and Z490 and H410 are intel motherboard chipsets. Typically the manufacturer and model tell you that your particular chipset has a certain set of features such as the type of CPU and RAM supported, type and brand of onboard video, and so on. You can look them up online to understand their features. Chipsets can be made up of one or several integrated circuit chips. Intel-based motherboards typically use two chips. To know for sure you must check the manufacturers documentation especially because of the cooling mechanisms frequently obscure todays chipset chips, sometimes hindering visual brand and model identification. Chipsets can be divided into two major functional groups called Northbridge and Southbridge.
+
+
+Northbridge, the northbridge subset of a motherboards chipset is the set of circuity or chips that perform one very important function: management of high-speed peripheral communications. The Northbridge is responsible primarily for communications with integrated video using PCIe, for instance, and processor-to-memory communications capability with the peripherals it controls. The communication between the CPU and memory occur over what is known as the front-side bus (FSB) which is just a set of signal pathways connecting the CPU and main memory. The clock signal that drives the FSB is used to drive communications by certain other devices such as PCie slots, making them local-bus technologies. The back-side bus (BSB) is present is a set of signal pathways between the CPU and external cache memory. The BSB uses the same clock signal that drives the FSB. If no back-side bus exists the cache is placed on the front-side bus with the CPU and main memory. The Northbridge is directly connected to the Southbridge. It controls the Southbridge and helps to manage the communications between the southbridge and the rest of the computer.
+
+
+Southbridge, the southbridge subset of the chipset is responsible for providing support to the slower onboard peripherals (USB, Serial and Parallel ATA, parallel ports, serial ports, and so on), managing their communications with the rest of the computer and the resources given to them. These components do not need to keep up with the external clock of the CPU and do not represent a bottleneck in the overall performance of the system. Any component that would impose such a restriction on the system should eventually be developed for FSB attachment. If you're considering any component other than the CPU, memory and cache, or PCIe slots, southbridge is in charge. Most motherboards today have integrated USB, network, and analog and digital audio ports for the southbridge to manage. The southbridge is also responsible for managing communications with the slower expansion buses, such as PCI and legacy buses.
+
+
+Expansion Slots, The most visible parts of any motherboard are the expansion slots. These are small plastic slots usually from 1 to 6 inches long and approximately a half inch wide. As their name suggests these slots are used to install various devices on the computer to expand its capabilities. Some expansion devices that might be installed in these slots include video, network, sound, and disk interface cards. 
+
+
+PCI Expansion Slots, they are easily recognizable because they are only around 3 inches long and classically white although modern boards take liberties with the color. PCI slots became extremely popular with the advent of Pentium class processors in the mid-1990s. Although popularity has shifted from PCI to PCIe the PCI slots service to the industry cannot be ignored it has been an incredibly prolific architecture for many years.
+
+
+PCIe Expansion Slots, the most common expansion slot architecture that is being used by motherboards is PCI Express (PCIe). It was designed to be a replacement for PCI as well as an older video card standard called accelerated graphics port (AGP). PCIe has the advantage of being faster than AGP while maintaining the flexibility of PCI. PCIe has no plug capability with either AGP or PCI. PCIe is casually referred to as a bus architecture to simplify its comparison with other bus technologies. True expansion buses share total bandwidth among all slots, each of which taps into different points along the common bus lines. In contrast, PCIe uses a switching component with point to point connections to slots giving each component full use of the corresponding bandwidth and producing more of a star topology versus a bus. PCIe uses the concept of lanes which are the switched point to point signal paths between any two PCIe components. Each lane that the switch interconnects between any two intercommunicating devices comprises a separate pair of wires for both directions of traffic.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Lesson 13: Operating System Basics
+
+*The majority of this information will be on Microsoft Windows operating systems, which you must know well for the 220-1102 certification exam. However the 220-1102 exam also requires basic knowledge of the macOS and Linux operating systems. These are covered in Lesson 16 "Working with macOS and Linux".
+
+
+13.1 Understanding Operating Systems
+
+*Computers are pretty much useless without software. A piece of hardware might just as well be used as a paperweight or doorstop if you don't have an easy way to interface with it. The software provides that way. While there are many types of software or programs the most important one you'll ever deal with is the operating system. Operating systems have many different complex functions but two of them jump out as being critical: interfacing with the hardware and providing a platform on which other applications run. Here are three major distinctions of software about which you should be aware of
+
+		1. Operating system: The operating system provides a consistent environment for other software to execute commands. The OS provides users with an interface with the computer so that they can send commands (input) and receive feedback or results (output). To do this the OS must communicate with the computer hardware to perform the following tasks: disk storage and file management, device access, memory management, and output formatting. Once the OS has organized these basic resources users can give the computer instructions through input devices such as a keyboard or mouse. The OS becomes the center through which the system hardware, other software, and the user communicate. The rest of the components of the system work together through the OS which coordinates their communication.
+
+		2. Application: Used to accomplish a particular task, an application is software that is written to supplement the commands available to a particular OS. Each application is specifically compiled for the OS on which it will run. For this reason the application relies on the OS to do many of its basic tasks. Examples of applications include complex programs such as Microsoft Word and Microsoft Edge as well as simple programs such as a command-line FTP program. Whether complex or simple, when accessing devices and memory the programs can simply request that the OS do it for them.
+
+		3. Drivers: Drivers are extremely specific software written for the purpose of instructing a particular OS on how to access a piece of hardware. Each modem or printer has unique features and configuration settings and the driver allows the OS to understand how the hardware works and what it is able to do.
+
+
+*Operating System and Terms and Concepts, The following are some terms that you will come across as you study this lesson and work in the computer industry:
+
+		1. Version: A version is a particular revision of a piece of software normally described by a number that tells you how new the product is in relation to other versions of the project.
+
+		2. Source: The source code is the actual code that defines how a piece of software works. Computer operating systems can be open source meaning that the OS can be examined and modified by anyone or that they can be closed source meaning that only an owner or developer can modify or examine the code. As an example, Microsoft and macOS are closed source operating systems and Linux is an open source operating system.
+
+		3. Shell: A shell is a program that runs on top of the OS and allows the user to issue commands through a set of menus or another interface. Shells make an OS easier to use by changing the user interface. Explorer is the name of the shell that has been used with the Windows operating system since Windows 95.
+
+		4. Graphical User Interface: A graphical user interface (GUI) is a method by which a person communicates with a computer using graphical images, icons, and other methods other that text. GUIs allow a user to use a mouse, touchpad, or another mechanism to interact with the computer to issue commands.
+
+		5. Network: a network is nay group of computers that have communication link between them. Networks allow computers to share information and resources quickly and securely.
+
+		6. Cooperative Multitasking: Cooperative multitasking is a multitasking method that depends on the application itself to be responsible for using the processor and then freeing it for access by other applications. This is the way very early versions of Windows managed multiple applications. If any application locked up while using the processor, the application was unable to free the processor to do other tasks and the entire system locked, usually forcing a reboot.
+
+		7. Preemptive Multitasking: Is a multitasking method in which the OS allots each application a certain amount of processor time and then forcibly takes back control and gives another application or task access to the processor. This means that if an application crashes the OS takes control of the processor away form the locked application and passes it on the next application which should be unaffected. Although unstable programs still lock only the locked application will stall not the entire system. 
+
+		8. Multithreading: Is the ability of a single application to have multiple requests in to the processor at one time. This results in faster application performance because it allows a program to do many things at once.
+
+		9. 32-Bit: Operating system is one that can not only run on a 32-bit processor but can utilize the capabilities of the processor fully. While this may sound simple the truth of the matter is that it took many years after the 32-bit processor became available before operating systems were able to utilize their features.
+
+		10. 64-Bit: Operating system is one that is written to utilize the instructions possible with 64-bit processors. Originally these were more common with servers than desktops but they have now become ubiquitous in the market with both Intel and AMD processors. You cannot mix 64-bit software with 32-bit hardware but you can run most 32-bit software on 64-bit hardware.
+
+		11. X86: Is commonly used to refer to operating systems intended to run on the Intel processor. Intel initially identified its 32-bit processors with numbers ending in 86 prior to switching to the Pentium line.
+
+		12. X64: Is commonly used to denote operating systems that can run on 64-bit processors. This is also commonly referred to as AMD64 because AMD defined the 64-bit instruction set used today.
+
+		13. ARM: the term ARM us commonly used to denote operating systems that can run on advanced risc machine (ARM) processors. ARM operating systems use a reduced instruction set computing (RISC) instruction set commonly found on tablet and phone processors. ARMv8-A processor can support 64-bit operating systems so you will find 32-bit and 64-bit operating systems. 
+
+		14. Random Access Memory: (RAM) is used to describe the amount of memory installed and accessible for an operating system. The operating system uses RAM to hold its operating system code as well as the programs you open on the operating system. Each program you install will have a minimum RAM requirement and recommended RAM requirement. Most computer systems on the market today are sold with at least 4 gigabytes of RAM. 
+
+
+Operating Systems, when we think of an operating system, Windows or macOS is probably the first that comes to mind. These operating systems comprise only one category of operating systems. We use other operating systems such as Android and Apple, and don't even realize how much they have become part of our daily life. The CompTIA exam recognized these various operating systems and integrated them into the 220-1102 exam.
+
+
+Operating System Categories, an operating system category defines the use and function of both the operating system and the hardware. All operating systems fit into one of four different broad categories: server, workstation, mobile, or cloud-based operating systems.
+
+		1. Server: Operating system allow for the sharing of information and application by workstation operating systems. The operating system is optimized for background processes used for access by clients as opposed to the foreground processes such as the GUI.
+
+		2. Workstation: Operating systems allow end users to access information and application on server operating systems as well as independently run application locally. The operating system is optimized for foreground processes such as the GUI. Background sharing is usually limited to a specific number of users, workstation versions of Microsoft Windows are limited to 10 concurrent users. 
+
+		3. Mobile: Operating systems are found on mobile devices such as phones and tablets. The mobile operating system is generally optimized for touch based devices where one program us used at a time.
+
+		4. Cloud-based: Operating systems are a new breed of operating system that has emerged from the mobile computing era. Cloud based operating systems are also considered stateless operating systems since personal data is not primarily stores on the device but in the cloud. Mobile operating systems can be considered cloud based operating systems. So this category takes on a dual role of defining a category and describing where the data is stored, The Chrome operating system is not a mobile operating system and fits into this category.
+
+
+13.2: Understanding Applications
+
+*An operating system without any application installed on it isn't very useful. Even back when Windows 1.0 was released 30 years ago, it came with applications such as Minesweeper, a file manager, and a simple word processor.
+
+
+Application Installation, Once the requirements are met for an application and the considerations are investigated you are ready to install the application. You must now consider how the application will be installed; the number of machines on which the application will be installed will factor into this consideration. 
+
+
+Optical Disc, If the installation is a one-off installation then a CD/DVD drive might be your best option. In recent years applications have even been shipped on Blu-ray media. If you must install the application on several different PCs then this method may not be the preferred installation method. When installing from optical media even the fastest optical drive is slow compared to other methods such as USB.
+
+
+ISO Mountable, although optical discs have been around since the mid 1990s and have been the most popular method of installing applications and operating systems, the optical disk is quickly becoming a relic. When you use a virtualization 
