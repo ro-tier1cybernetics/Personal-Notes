@@ -1,0 +1,124 @@
+Google Project Management
+
+Project management is critical to the success of projects big or small. It is the application of knowledge, tools, skills, and techniques to meet the project requirements and meet the desired outcome. 
+
+Cross-Functional Teams: A project manager whose working with this type of team must clarify goals, get team members with the right skills, measure progress, and recognize efforts.
+
+Skills: A project manager must be able to plan and schedule software (templates, workflows, calendars), collaborate tools (email, collaboration software, dashboards), documentation (files, plans, spreadsheets), quality assurance tools (evaluations, productivity trackers, reports).
+
+Each project comes with its own needs, no two projects are the same. 
+
+Project Lifecycle: Most have four major phases, initiate the project, make a plan, execute and complete tasks, and close the project.
+
+Initiating Phase: This is the phase were projected goals are thought of and summarized, the project manager defines what needs to be done to project stakeholders and team members, the project manager will define the skill sets required, and they will also give a timeline of the project and define how much the project will cost at each stage of the project.
+
+Planning Phase: Now that the project has been officialized and signed off on the project manager will make a plan for the project from start to finish. This plan will assure all stakeholders and team members of what their designated tasks are. Its important to outline deadlines and tasks for the project to be successful. There should be a schedule to account for all resources, materials, and tasks needed to complete the project.
+
+Executing and Completing tasks Phase: In this phase the project managers plan will go into motion and work will commence. The project manager will monitor the teams as they complete tasks and help break down any barriers that would slow or stop the team from completing their tasks. The project manager is also supposed to communicate schedule and quality expectations. They will also communicate to stakeholders the project status and gather feedback from them, this keeps the project on schedule and within the budget.
+
+Closing the Project: After the project has been successfully completed the project manager and their team will discuss documents and lessons learned from the project, what worked well and what could be better next time.
+
+
+
+Waterfall and Agile Comparison:
+
+
+							                                              Waterfall:											                                                                                Agile:
+
+
+1. Project manager's role: Project manager serves as an active leader by prioritizing and assigning tasks to team members.     Scrum Master acts primarily as a facilitator, removing any barriers the team faces. 
+																Team shares more responsibility in managing their own work.
+																    
+
+2. Scope: Project deliverables and plans are well-established and documented in the early stages of initiating and planning.   Planning happens in shorter iterations and focuses on delivering value quickly.
+                                     Changes go through a formal change request process.  							                                                   Subsequent iterations are adjusted in response to feedback or unforeseen issues.
+
+
+
+3. Schedule: Follows a mostly linear path through the initiating, planning, executing, and closing phases of the project.       Time is organized into phases called Sprints. Each Sprint has a defined duration,  
+																	with a set list of deliverables planned at the start of the Sprint.
+
+
+
+4. Cost: Costs are kept under control by careful estimation up front and close monitoring throughout the life cycle of		                    Costs and schedule could change with each iteration. 
+				                                       the project.
+
+
+
+5. Quality: Project manager makes plans and clearly defines criteria to measure quality at the beginning of the project.        Team solicits ongoing stakeholder input and user feedback by testing products in the 																		field and regularly implementing improvements.
+
+
+
+6. Communication: Project manager continually communicates progress toward milestones and other key indicators to  		Team is customer-focused, with consistent communication between users and the 
+                	stakeholders, ensuring that the project is on track to meet the customer’s expectations.								                                                  project team.	
+
+
+
+7. Stakeholders: Project manager continually manages and monitors stakeholder engagement to ensure the project is on track.     Team frequently provides deliverables to stakeholders throughout the project. 																		Progress toward milestones is dependent upon stakeholder feedback.
+
+
+
+Lean methodology is often referred to as Lean Manufacturing because it originated in the manufacturing world.             The main principle in Lean Methodology is the removal of waste within an operation. By optimizing process steps and eliminating waste, only value is added at each phase of production.
+
+*8 Types of Waste in Lean Methodology:
+
+1. Lack of proper documentation
+2. Lack of process standards
+3. Not understanding the customers needs
+4. Lack of effective communication
+5. Lack of process control
+6. Inefficient process design
+7. Failures of management
+
+These issues create waste in project management.
+
+Use lean project management when you want to use limited resources, reduce waste, and streamline processes to gain maximum benefits. For this you can use the "Lean 5S" quality tool. 
+
+Lean 5S steps:
+1. Sort, remove all items not needed for current production operations and leave only the bare essentials.
+2. Set in Order, arrange needed items so that they are easy to use. Label items so that anyone can find them or put them away.
+3. Shine, keep everything in the correct place and clean your workspace everyday.
+4. Standardize, perform the process in the same way every time.
+5. Sustain, make a habit of maintaining correct procedures and instill this discipline within your team.
+
+The Lean 5S methodology helps boost performance.
+
+You can use a Kanban scheduling system to manage the project flow. The Kanban scheduling system is a visualization tool that enables you to optimize work flow of your teams work. It give the team a visual display to identify what needs to be done and when, its read from left to right.
+
+To reduce variations by ensuring that quality processes are followed every time use "Six Sigma". 
+
+7 Key Principles of Six Sigma:
+1. Always focus on the customer
+2. Identify and understand how the work gets done, understand how work really happens
+3. Make your processes flow smoothly
+4. Reduce waste and concentrate on value
+5. Stop defects by removing variation
+6. Involve and collaborate with your team
+7. Approach improvement activity in a systemic way.
+
+Use this methodology to find aspects of the project or process that are measurable like time, cost, or quantity.
+
+
+
+Common project management approaches and how to select one:
+
+*You have been learning a lot about different project management approaches and when to use them. In this reading, we will briefly recap some of the most common ones and recommend a couple of articles with supporting information. You’ll continue to learn more about these approaches throughout this certificate program. 
+
+Popular project management approaches:
+Below is a brief recap of some of the project management approaches you’ve been introduced to so far:
+
+1. Waterfall is a traditional methodology in which tasks and phases are completed in a linear, sequential manner, and each stage of the project must be completed before the next begins. The project manager is responsible for prioritizing and assigning tasks to team members. In Waterfall, the criteria used to measure quality is clearly defined at the beginning of the project.
+
+2. Agile involves short phases of collaborative, iterative work with frequent testing and regularly-implemented improvements. Some phases and tasks happen at the same time as others. In Agile projects, teams share responsibility for managing their own work. Scrum and Kanban are examples of Agile frameworks, which are specific development approaches based on the Agile philosophy.
+
+3. Scrum is an Agile framework that focuses on developing, delivering, and sustaining complex projects and products through collaboration, accountability, and an iterative process. Work is completed by small, cross-functional teams led by a Scrum Master and is divided into short Sprints with a set list of deliverables.
+
+4. Kanban is a tool used in both Agile and Lean approaches that provides visual feedback about the status of the work in progress through the use of Kanban boards or charts. With Kanban, project managers use sticky notes or note cards on a physical or digital Kanban board to represent the team’s tasks with categories like “To do,” “In progress,” and “Done.”
+
+5. Lean uses the 5S quality tool to eliminate eight areas of waste, save money, improve quality, and streamline processes. Lean’s principles state that you can do more with less by addressing dysfunctions that create waste. Lean implements a Kanban scheduling system to manage production.
+
+6. Six Sigma involves reducing variations by ensuring that quality processes are followed every time. The Six Sigma method follows a process-improvement approach called DMAIC, which stands for define, measure, analyze, improve, and control.
+
+7. Lean Six Sigma is a combination of Lean and Six Sigma approaches. It is often used in projects that aim to save money, improve quality, and move through processes quickly. Lean Six Sigma is also ideal for solving complex or high-risk problems. The 5S organization framework, the DMAIC process, and the use of Kanban boards are all components of this approach. 
+
+
