@@ -1,0 +1,1040 @@
+Threat stats: 
+
+1. Trojan Attacks
+The most frequent attack indicated in the chart is a Trojan attack. The name is a historical reference to the battle of Troy, when the Greeks were said to sidestep the defenses of the Trojans by tricking them into wheeling a wooden horse full of enemy soldiers into their own city. This is an umbrella term that covers several attack types, including the following:
+
+Exploit Trojans 
+
+Downloader Trojans 
+
+Ransom Trojans 
+
+Backdoor Trojans 
+
+2. Ransomware Attacks
+The second most common type of attack from the previous data is ransomware. Recall that ransomware is an approach to cybercrime that is designed to cause disruption to services. This approach is featured frequently in the news due to the scope of impact. It is not uncommon for these attacks to occur on a national scale, with infrastructure and vital services being the target. Recent examples include:
+
+Ireland’s Health Service’s Executive (HSE) in 2021.
+
+Critical Ukraine infrastructure in 2022. 
+
+Costa Rica, which declared a state of emergency when 30 institutions of government were held to ransom. 
+
+The methodology behind these types of attacks is to gain access to a system and lock out the legitimate owner until a demand has been met. One approach to best mitigate against this type of attack is to ensure that no external actors gain access to your system.
+
+3. Botnet Attacks
+Next is Botnet attacks, which represent 13% of the documented attacks in the chart above. A bot can be defined as an online software program that performs automated and repetitive tasks. They are a means of creating a Denial of Service to an organization. If a Trojan attack is a subtle attempt to circumnavigate an application’s defenses, a bot attack could be described as a full scaling of the walls. These attacks are orchestrated so that a system is plagued with innumerable requests for information and services. These requests can come from any capable devices on the Internet of Things (IoT) that have an IP address. 
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Threat Landscape:
+
+1. Vulnerability: Poor password
+
+Passwords are the first step in protecting a business, as they offer a legitimate way for an authorized user to gain access to a system. Using an oversimplified password poses a severe risk to an organization. 
+
+Risk: Brute force attack 
+
+A brute force attack involves running through a list of common passwords in an effort to see whether a password can be guessed to gain access to a system.
+
+Attack: Ransomware
+
+Once an external party has gained access to a system, it is possible for them to make internal changes that could have very harmful side effects for a business. One potential danger might be locking the account owner from the system until such a ransom is paid. 
+
+Mitigation: Choose strong passwords, and never use the same passwords for different applications.
+
+2. Vulnerability: Poor cyber hygiene 
+
+Cyber hygiene is the practice of maintaining the health and security of a system and includes such habits as regularly updating software and scanning for malware and other unwanted elements. Poor cyber hygiene opens the door for malware, which is one of the oldest forms of carrying out a cyberattack. It involves getting a legitimate user within a system to trigger some code from within the system that is designed to alter the system in some unintended way. Malware often requires a user within a system to click on a link. This is often achieved by sending an email with a link or an attachment and directions to click on it to claim a reward.
+
+Risk: Trojans 
+
+A trojan is an umbrella term for several attacks that can be executed by unsuspectingly clicking on a link containing malware.
+Attack: Malware 
+
+Malware can be designed to perform any number of ill effects on a system once executed. It is a blanket term that can encompass theft of information, disruption of services, or application of ransomware. Injecting it into a system by unsuspectingly clicking on a link can be very harmful. 
+
+Mitigation: 
+
+Generally, practicing good cyber hygiene can mitigate against malware. Be careful when clicking on external links, and always check email addresses to ensure that they originate from a trusted source. Watch the language used in emails, which is often an indicator of a dubious source and can be identified through poor grammar and spelling. The image below provides an example of a potentially malicious email:
+
+3. Vulnerability: Outdated Software
+
+When software is first released it is prone to bugs or flaws in it that were not identified previously. Once these bugs are discovered, a patch to close or fix them will typically be released in the form of an update. This is why it is so important to always keep your software updated. 
+
+Risk: Virus  
+
+Outdated software builds up an increasing risk of viruses as more and more bugs are found with the application.
+
+Attack: Exploiting software bug 
+
+Outdated software can leave an opening in your firewall that a malicious actor can exploit. Depending on the flaw any number of attacks may be released. 
+
+Mitigation: 
+
+Enable automatic updates on your software if available or check for updates and install them on a regular basis.
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Types of Operating Systems:
+
+1. Batch Operating Systems (BOS)
+A BOS allows multiple users to work in tandem by compartmentalizing each user’s actions and only allowing one user control at any given time. Users cannot communicate with one another and when the task is complete, control is passed to the next user. The advantage of this approach is that it allows many users to work on large projects at the same time.
+
+2. Time-Sharing Operating Systems (TOS)
+This approach is also known as a Multitasking System as it enables the execution of many different tasks. A TOS operates in a timed manner: a unit of time called a quantum is allocated to each task. These tasks are queued for the CPU, which will work on each one for a quantum before rotating to the next task. 
+
+3. Distributed Operating Systems (DOS) 
+This approach to processing is a natural progression as internet communication improves. A DOS connects several dispersed CPUs to execute tasks. There is no central source and communication is achieved through using clear protocols on a communication network. 
+
+4. Network Operating Systems (NOS) 
+This type of operating system runs on a network and allows for the sharing of users, groups, securities, and applications. Typically, the network would contain one server-based OS that interacts with the OS of each individual device on the system. It is possible to have any number of devices on the network, and they can be of different types. For example, you could add a printer, digital thermometer, and several computers to one system and have them all interact. This type of approach would be considered tightly-coupled, as the devices utilize a shared network and demonstrate high interactivity with each other.
+
+5. Real-time Operating Systems (RTOS) 
+An RTOS is a type of OS for applications that need real-time computations. While many approaches may share resources and operate under a time share, RTOS differs in that it prioritizes tasks by importance. This approach is event-driven with an emphasis on engaging and completing tasks as soon as they arise. This distinguishes RTOS from the other approaches mentioned, in which the priority of a task is determined by the time allocated. These operating systems are generally task-specific approaches and are commonly found in systems such as autonomous cars, air traffic controls, and more.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Machine Learning:
+
+Introduction:
+If you follow the news, you may have heard quite a bit in recent years about artificial intelligence, otherwise known as AI. These days, it seems to be capable of everything from automation of work tasks to conversing with people online.  This “intelligence” is the outcome of machine learning, a field focused on training machines through specialized data processing techniques. Machine learning plays an important role in the evolution of medicine, agriculture, and other fields. In this reading, you’ll explore one of these practical applications.  
+
+So, what “behaviors” are made possible through machine learning? Some of the more common broad capabilities include the following:
+
+Anomaly detection - The capability to automatically detect errors or unusual activity in a system.
+
+Computer vision - The capability of software to interpret the world visually through cameras, video, and images.
+
+Natural language processing - The capability of a computer to interpret written or spoken language and respond in kind.
+
+Knowledge mining - The capability to extract information from large volumes of often unstructured data to create a searchable knowledge store.
+
+
+Machine learning in Cybersecurity 
+So, you’ve observed some general examples of machine learning, but how might it be used to improve the safety of your digital information? Fortunately, the use of machine learning in cybersecurity works in a similar fashion. Imagine that you want to create a system to monitor credit card transactions for fraudulent activity. To reduce illegal activity, sophisticated machine learning models are trained to identify anomalies in a customer’s action. To train a learning model for this, a representation of your daily activities is constructed. When processing images, these data points could be represented by pixels. In this instance, the same algorithm can instead take in different data points, such as:
+
+The frequency of activity.
+
+The location from where a transaction was executed.
+
+The amounts spent.
+
+The types of purchases made.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Types of Topologies:
+
+
+Network: A group of connected devices that can communicate with one another and share information. 
+
+Types of networks:
+
+1. PAN, personal area network which is used to connect devices close to each other. 
+
+2. LAN, local area network which is used to connect devices in a small area.
+
+3. WLAN, wireless local area network which uses wireless technology to connect devices.
+
+4. WAN, wide are network which is used to connect LANs in separate locations.
+
+5. MAN, metropolitan area network which is used to connect LANs in different area of the building or the city.
+
+6. SAN, storage area network which is used to provide multiple servers access to storage devices such as hard drives. 
+
+7. VPN, virtual private network used to provide a secure connection between two devices over an unsecured network.
+
+--------------------------------
+
+Topologies:
+
+
+*Used to arrange a network's physical and logical structure. The term topology is used for the networks shape.
+
+Different Topologies:
+
+1. Bus topology, which is when all devices are connected to a single cable or line. 
+
+2. Ring topology, which connects devices in a loop or circle. Data travels in one direction.
+
+3. Star topology, devices are connected to a central switch.
+
+4. Mesh topology, devices are connected to each other in a network of interlocking nodes, meaning a device is connected to two devices in a network.
+
+5. Tree topology, devices are connected to a central bus or line and then subnetworks are created with their own bus or line. This is where multiple star topologies need to be connected together.
+
+----------------------------------
+
+Physical and Logical Topology Diagram:
+
+Starts with the Internet connected to a modem, the modem connects to a firewall, the firewall connects to a router, the router connects to a switch, the switch connects to a pc/printer/ and game console, the switch can also be connected to a laptop or phone wirelessly.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Introduction to Networking and Cloud Computing:
+
+
+IP Addressing:
+
+*Internet Protocol is a set of rules and how data is sent from one device to another on the internet. Any device that connects to the internet or data network needs to have an IP address.
+
+*TCP, transmission control protocol
+
+*An IP address simply identifies an address on the network so data can be sent or received from it.
+
+*The IVP4 address first three parts specifies the class of the network. The last part specifies the device.
+
+The Difference Between an IVP4 and IVP6 is that IVP6 provides the needed expanded address space to allow ever-increasing devices to connect to the internet. IVP4 uses broadcast traffic to find devices it hasn't communicated with yet which slows the Network traffic down.
+
+
+-----------------------------
+
+Using IP addresses on a network:
+
+*Subnets are lots of small networks that are connected to form a larger network. This improves security, performance, and is easier to manage. Router help route IP packets between networks. Routers create a table that tells them their position and what route they can use to connect to an IP address.
+
+Class			Network size			Range
+
+A			Large				10.0.0.0-10.255.255.255
+
+B			Medium				172.16.0.0 - 172.31.255.255
+
+C			Small				192.168.0.0 - 192.168.255.255
+
+
+--------------------------------
+
+Hybrid Networking:
+
+*A combination of networks that uses different connective technologies to connect devices. It brings together wired, wireless, and cellular. Provides flexibility to users. A router can act as a switch and wireless port all in one. 
+
+*Digital signals are zeros and ones.
+
+*A firewall defends a network and the devices connected to it. Firewalls can be built into routers.
+
+*A modem converts analog signals into digital and vice versa.
+
+-------------------------------
+
+Introduction to Cloud Computing:
+
+*Cloud computing gives access to many other components that your device has available. The cloud is a physical data center that provides storage and computation. It needs an internet connection. 
+
+*Public cloud is operated by a third party. Microsoft Azure provides a public cloud
+
+*Private cloud is used just for the employees of that business. 
+
+Hybrid cloud interconnects a public and private cloud
+
+*Multi cloud is when the user is using more than one cloud service.
+
+*A VPN provides a point-to-point connection between components of a private network through a public network such as the internet.
+
+*Remote Access VPN connections enable users who are working at home, at customer sites, or from public wireless access points to access a server that exists in the organizations private network.
+
+*Site-To-Site VPN connections known as router-to-router VPN connections enable your organization to have routed connections between separate offices or with other organizations over a public network while maintaining secure communications.
+
+*IoT (Internet of Things) refers to connected devices that don't always need direct human input and can communicate amongst themselves and the cloud. This is possible because of technological advances in computer chips that have made them smaller, less expensive, and better able to deal with power demands.
+
+*An IoT devices is made up of a circuit board with sensors connected to a Wi-Fi network that connects to the internet. Typically IoT devices record and send data from the sensors to back-end services in the cloud. They may also share data with other devices. The back-end-services receive all data from the sensors and can use it to report to a human or generate an action.
+
+*A VPN securely connect sites and remote users to the cloud.
+
+*An ISP (internet service provider) is needed to connect to different networks on the internet.
+
+------------------------------------
+
+OSI Model (Open Systems Interconnection Model):
+
+*Explains how data travels from one device to another, ensures communication to computers is set up in an efficient and consistent way. Describes networking as a series of protocol layers with specific functions allocated to each layer. Each layer offers specific services to higher layers. There are seven layers. 
+
+1. Physical Layer: Converts data into wireless or electrical signals or transmission through the air or through cables
+
+2. Data Link Layer, ensures that the data is ready for transmission. Data is converted into wireless or electrical signals. 
+
+3. Network Layer, selects best path to route data packets over a network and addresses devices with an IVP4 and IVP5 protocol.
+
+4. Transport layer, establishes connections between devices and can ensure reliable connection between the two.
+
+5. Session Layer, responsible for managing communication sessions or states between applications.
+
+6. Presentation Layer, deals with data formatting, encryption and decryption, and data presentation.
+
+7. Application Layer, provides and interface which you can access the network to perform necessary tasks.
+
+-----------------------------------
+
+TCP/IP versus OSI:
+
+*TCP/IP is the primary protocol used all over the work by millions of people to send information online to several networks. Data is broken down into smaller packets and sent to their destination so that multiple computers can send data each taking quick turns. The IP insures the packets get to the right destination and the TCP ensures the packets arrive safely and in the correct order.
+
+*There are several steps of the TCP/IP Stack:
+
+1. Data is divided into smaller parts call packets before being sent over the network.
+
+2. Packets travel over the network which may be physical wires or wireless signals to reach their destination.
+
+3. The destination device collects all of the packets and puts them to recreate the original data.
+
+4. Checks to make sure all the packets are correct and have arrived in the correct order.
+
+*There's a sequence number and an acknowledgement number which lets you know where the data is in its journey. The sequence number is the order of the packets, the acknowledgement number is where the data is in its journey.
+
+1. Network Interface Layer, physical link between computer and network.
+
+2. internet Layer, forwards packets from the source to the destination, Ensures the best path for data to reach its destination.
+
+3. Transport Layer, works in the background and ensures that the data is sent reliably and verified through the TCP protocol, for data that needs to be transmitted quickly like video data it uses User Datagram Protocol which does not include verification and speeds up the transmission.
+
+4. Application Layer, deals with the applications running on the devices and the data they generate.
+
+--------------------------------------
+
+Protocols and Ports:
+
+*IP addresses have different terminals or gates known as ports that allow various data to be sent and received by specific applications.
+
+*If data is sent to a network without the proper port number the firewall will block the data's entry. Both TCP and UDP use port numbers to identify themselves.
+
+*Port numbers are assigned at the transport layer in the OSI and TCP/IP suites.
+
+*There are several commonly used network communication protocol:
+
+1. Hypertext Transfer Protocol(HTTP), uses TCP/IP to deliver web page content from a server to your browser. It can also handle the download and upload of files from remote servers.
+
+2. File Transfer Protocol (FTP), is used to transfer files between different computers on a network.
+
+3. Post Office Protocol 3 (POP3), is one of three email protocols. Its most commonly used by and email client to receive emails and it uses TCP to manage and deliver.
+
+4. Simple Mail Transfer Protocol (SMTP), is another email protocol used to send emails from an email client via email server and it uses the TCP for managing and transmitting emails.
+
+5. Interactive Mail Access Protocol (IMAP), is more powerful of the three email protocols. It lets you manage a single mailbox on an email server in your organization using an email client.
+
+Network Security Protocols:
+
+1. Secure Socket Layer (SSL), is a standard encryption and security protocol. It provides a secure and encrypted connection between your computer and the target server or device that you accessed over the internet.
+
+2. Transport Layer Security (TLS), is the successor to SSL and provides a stronger and more robust security encryption protocol. Based on the internet engineering task force standard, its designed to stop message forgery and tampering and eavesdropping.
+
+3. Hypertext Transfer Protocol Secure (HTTTPS), provides a more secure version of the standard HTTP protocol by using the TLS or SSL encrypted standard. This combination of protocols ensures that all data is transmitted between the server and the web browser is encrypted and secure from eavesdropping or data packet sniffing.
+
+4. Secure Shell (SSH), is a cryptographic network security protocol that provides a secure data connection across a network. SSH is designed to support command-line execution of instructions which includes remote authentication to servers. FTP uses many of the SSH functions to provide a secure file transfer mechanism.
+
+Network Management Protocols:
+
+1. Simple Network Management Protocol, is an internet protocol that allows for the collection of data from devices on your network and the management of those devices. The device has to support SNMP to gather information. Devices that typically support SNMP are switches, routers, servers, laptops, desktops, and printers.
+
+2. Internet Control Message Protocol (ICMP), is one of the protocols included within the internet protocol suite. It allows network connected devices to send warning and error messages along with operation information about the success or failure of a connection request or if a server is unavailable. ICMP isn't used to send or receive data from devices on the network.
+
+--------------------------------------
+
+Ports:
+
+1. Well-known Ports (0 - 1,023), are reserved for specific protocols and services used by system processes and applications.
+
+2. Registered Ports (1,024 - 49,151), are assigned by IANA for specific services or protocols and can also be used by user applications.
+
+3. Dynamic or Private Ports (49,152 - 65,535), are used by client applications to connect to servers and are assigned temporarily for the duration of a session.
+
+---------------------------------------
+
+Network Traffic Monitoring:
+
+
+DNS (Domain Name System) and Networking:
+
+*DNS, Is a service that translates a human readable domain name (URL) to the IP address of the server that's hosting the site or service.
+
+*The DNS server acts as a translator.
+
+Different Records:
+
+1. A-Record (address record), web simply looking website name translation
+
+2. Domain Name System Service Record (SRV), tells a device what services are available for a particular website.
+
+*DNS uses port number 53
+
+*ISP provides DNS servers for its customers.
+
+Four Different DNS Servers:
+
+1. Recursive DNS Server, a recursive server or resolver which is usually the DNS server on your device with its IP address configured manually or via DHCP. 
+
+2. Root Domain Server, There are 13 root domain servers spread across the world and are all looked after by a governing body called the internet assigned numbers authority. The root domain servers job is to direct queries to the correct location.
+
+3. Top-Level DNS Server, look after large areas and even countries. Domain name extensions like .com, co.uk, .net, and .org are all different TLD servers. 
+
+4. Authoritative DNS Servers, hold the specific information the client has been trying to obtain. It will provide the necessary website name-to-IP-address translation for the recursive DNS server. This server is where companies register their name known as domain names. These servers are spread over hundreds of locations providing the many DNS servers needed to support the internet.
+
+DNS Attacks:
+
+1. DNS Spoofing, this type of attack involves altering DNS records that store the translations between website names and IP addresses at the DNS resolvers, altering their cache or memory.
+
+2. DNS Hijacking, Is similar to spoofing but redirects DNS queries to a DNS server under the attackers control. This means they can send users anywhere they want them to be.
+
+3. DNS Tunneling, Hides other protocols inside DNS queries and responses payload data. Attackers use this to pass malware or other protocols to take over a server remotely. These attacks generally involve hiding something from a firewall by having one protocol that it sees on the outside but is actually very different inside.
+
+4. DNS Amplification, is aimed at creating a denial of service. It aims to overwhelm a server so it cannot perform its intended job. For DNS this involves sending DNS requests with a fake source IP address.
+
+5. DNS Flood Attack, is similar to amplification but instead of targeting another source server, the attack overwhelms the DNS server itself by sending thousands of spoofed DNS requests. This stops any genuine requests from working.
+
+
+Health and Metric Analysis:
+
+*Are about spotting trends and patters in data collected from network traffic monitoring. The identified trends and patters can then be used to proactively to introduce traffic management methods to keep the network healthy.
+
+*Metric Analysis involves measuring key performance statistics to understand how something is performing to predict its future performance based on its gathered data, tools for this analysis need at least 30 days to collect data.
+
+Different Network Metrics used to Determine Network Health and Performance:
+
+1. Bandwidth, is about checking to ensure the user isn't going over the available bandwidth. If too high it can slow the networks performance.
+
+2. Packet Loss, when lost packets create too much congestion on the network.
+
+3. Latency, this is how long the packet takes to move across the network and back again.
+
+4. Network Availability, reflects uptime on the network, tells when the network is working and when its not.
+
+------------------------------------------
+
+
+Network Client and Server:
+
+
+Client-Server Network:
+
+*Provides companies with a secured and efficient way to centralize their data and applications. 
+
+Request Response Model:
+
+1. Peer-to-Peer (P2P), has no central server, all devices on the network can act as both a client and a server sharing data and resources with each other, 
+
+2. Publish-Subscribe Model, the server sends data to clients who have subscribed to receive updates on specific topics or events. The clients do not send requests to the server they receive data whenever the server publishes updates. 
+
+
+Different Types of Servers:
+
+1. File Server, is a server that stores and manages files for clients on a network. it allows users to share files and access files from a central location. File servers are often used in business environments to facilitate employee collaboration and file sharing. 
+
+2. Web Server, is a server that delivers web pages to clients over the internet. When a client requests a web page the web server retrieves the page from its storage and sends it to the client's web browser.
+
+3. Mail Server, is a server that handles email communications between clients on a network. It allows users to send and receive email messages and manage their email accounts. Mail servers are commonly used in business environments to facilitate email communication among employees.
+
+4. Database Server, is a server that stores and manages databases for clients on a network. It allows users to access and manipulate data in a centralized location. Database servers are commonly used in business environments to manage large amounts of data such as customer information and inventory data. 
+
+5. Application Server, is a specialized type of server that hosts applications for clients on a network. It allows users to access and use applications from a centralized location. Application servers are commonly used in business environments to manage enterprise applications such as customer relationship management applications and enterprise resource planning systems. 
+
+6. Print Server, is a server that manages printing resources for clients on a network. It allows users to send print jobs to printers from a centralized location.
+
+7. Media Server, is a computer system or application that stores, manages, and distributes multimedia content such as audio, video, and images. It allows users to stream or share media files over a network.
+
+8. Game Server, provides a wide range of services and resources to users and devices over networks. It plays a critical role in the modern digital landscape.
+
+-----------------------------------------
+
+Remote Access:
+
+*The ability to access a computer, network, or data from anywhere in the world. 
+
+------------------------------------------
+
+
+DHCP IP Assignment Steps:
+
+1. DHCP Discover, is a device shouting "hello is there anyone out there who can give me an IP address?"
+
+2. DHCP Offer, is a DHCP server that receives the DHCP Discover message and sends out "yes I can help you out"
+
+3. DHCP Request, happens after it receives the DHCP Offers message and says "yes I want that IP address please"
+
+4. DHCP Acknowledgment, happens when the DHCP server gives an address to the device and says "sure that IP address is yours, and here are some additional details you need to know". 
+
+
+DHCP IP Renewal Process:
+
+1. DHCP Lease Time, is when a device gets an IP address from a DHCP server and the server also assigns a lease time to that address. 
+
+2. DHCP Renewal, as the lease time nears its end the device starts to get nervous and sends a DHCP Renewal request to the DHCP server.
+
+3. DHCP Server Response, the DHCP server receives the DHCP Renewal request and checks if the IP address is still available, if it is the DHCP server sends an DHCP Acknowledgment message that renews the lease time for the device. 
+
+4. DHCP Address Release, if the device doesn't renew the lease or the DHCP server doesn't respond to the renewal request the lease time expires. The IP address id then released back to the pool of available addresses.
+
+--------------------------------------------
+
+
+Authentication and Authorization:
+
+
+Internet, Extranet, and Intranet:
+
+1. Internet, is a public network that allows you to access information and services from anywhere in the world.
+
+2. Intranet, is similar to the internet but is restricted to authorizes users. You can access it from within the organizations network but it can also be accessed remotely through a VPN connection.
+
+3. Extranet, takes an intranet a step further. It also provides a network and its used for sharing information and resources securely between an organization and its external partners, vendors, and customers. Internal users access it just like an Intranet but it is also accessible to authorized external users.
+
+
+Wireless Router Security Protocols:
+
+1. WEP, is an older version of wireless security that is no longer considered secure. WEP uses a shared key to authenticate users and encrypt data.
+
+2. WPA (Wi-Fi Protected Access), is a wireless security protocol that provides a stronger encryption and authentication that the older WEP standard. WPA uses a passphrase or key to authenticate users and encrypt data. 
+
+3. WPA2 (Wi-Fi Protected Access 2), is the most widely supported wireless security protocol. It uses a stronger encryption algorithm than WPA and provides better protection against hacking and security breaches.
+
+4. WPA2-PSK (Wi-Fi Protected Access 2 with Pre-Shared Key), Is a version of WPA2 that uses a pre-shared key for authentication.
+
+5. EAP-TLS (Extensible Authentication Protocol-Transport Layer Security), is a wireless security protocol that is widely used in enterprise-level networks. It provides strong security by using digital certificates to authenticate users and encrypt data.
+
+6. MAC-Based Security, is a wireless security protocol that uses the Media Access Control address of a device to authenticate users and grant access to the wireless network. Its more secure than WEP but less secure than WPA or WPA2.
+
+
+Different Types of Authentication Protocols used by VPNs:
+
+1. Remote Authentication Dial-In User Service (RADIUS), is an authentication protocol that uses a centralized server to authenticate and authorize users.
+
+2. Lightweight Directory Access Protocol (LDAP), is often used to manage authentication and user permissions and access control policies ensuring that only authorized users can access network resources.
+
+3. Terminal Access Controller Access Control System Plus (TACACS+), is a security protocol that provides centralized authentication, authorization, and accounting services. It separates the authentication, authorization, and accounting functions allowing for more granular control over access to network resources.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Introduction to Azure:
+
+*It is a cloud computing platform, its flexible and scalable, provides computing resources/ networking/ storage/ and security resources.
+
+*Provides virtual machines that can run any OS, 
+
+*Provides virtual networks, Load balancers, and traffic manager.
+
+*Provides blob storage, File storage, queue storage, and table storage. 
+
+1. Blob Storage, ideal for storing unstructured data such as images, videos, and documents
+
+2. File Storage, ideal for storing structured data such as databases.
+
+3. Queue Storage, ideal for data passing between different components of an application
+
+4. Table Storage, ideal for reading and writing data from tables.
+
+------------
+
+*Azure Security center is a central dashboard that gives businesses a central node for analyzing their security posture.
+
+
+Cloud Computing:
+
+*Cloud Computing is a term used in the tech industry to describe how individuals access computer services like storage, applications, and other resources over the internet instead of keeping everything on their own devices.
+------------------
+
+
+Azure Network Services:
+
+1. Azure Virtual Network, enables businesses to create and manage virtual networks.
+
+2. Azure Load Balancer, distributes incoming network traffic across multiple virtual machines to improve the availability and scalability of business applications.
+
+3. Azure VPN Gateway, provides secure access to a business's virtual network from remote locations or on-premise datacenters.
+
+
+Azure Analytics:
+
+1. Azure Stream Analytics, a real-time data streaming service that allows businesses to analyze and process large amounts of data in real time. This service can be used to monitor events, detect anomalies, and generate alerts.
+
+2. Azure Data Lake Analytics, is a distributed analytics service that allows businesses to perform big data analysis on a large scale. The service can be used to process and analyze data from a variety of sources including social media, IoT devices, or any logs that can be extracted from any web server.
+
+
+Azure Security Services:
+
+1. Azure Firewall, provides network level protection against cyberthreats.
+
+2. Azure Security Center, provides security management and threat protection for virtual machines and applications.
+
+3. Azure Key Vault, enables businesses to store and manage cryptographic keys, certificates, passwords, and pins used by their applications.
+
+
+Azure Bot Service:
+
+*Prides businesses with intelligent bots who can streamline ordering processes, provide customer support, and facilitate customer feedback. 
+
+-------------
+
+
+Types of AI:
+
+1. Reactive Machines, are designed to react to specific inputs and perform a specific task. They do not have the ability to store past experiences or use them to inform future decisions.
+
+2. Limited Memory AI, is an extension of reactive machines that can store past experiences and use them to inform future decisions. These systems are designed to perform tasks that require some degree of memory or context.
+
+3. Narrow AI, is the most common type of AI in use today. It is designed to perform specific tasks such as image recognition, speech recognition, or language translation.
+
+4. Theory of Mind AI, is designed to understand the intentions, beliefs, and emotions of other agents. These systems are designed to be more human-like in their interactions and are intended to facilitate more natural and effective communication.
+
+5. General AI, is a theoretical type of AI that could be capable of performing any intellectual task that a human could. General AI could be capable of learning, reasoning, and problem solving in any domain, making it highly versatile and adaptable.
+
+6. Self Aware AI, a type of AI that has the ability to understand its own existence and make decisions based on that understating. These systems are purely theoretical and are not currently possible with the technology available today.
+
+7. Super AI, is another theoretical type of AI that could be capable of surpassing human intelligence in all domains. Although super AI is currently just a theoretical concept, some experts believe that it could be possible in the future.
+
+
+--------------
+
+
+Business Benefits of XaaS:
+
+*XaaS (Anything as a service), is the alternative to businesses providing services by themselves like having their own servers and datacenters.
+
+Main Types of XaaS:
+
+1. Software as a Service (SaaS), allows users to connect to and use cloud-based applications over the internet. SaaS applications are also known as hosted applications. Users don't have to install software.
+
+2. Platform as a Service (PaaS), is a complete development and deployment environment in the cloud. Developers and software companies use PaaS to create and publish new programs or apps quickly and easily without having to take care of the required infrastructure themselves.
+
+3. Infrastructure as a Service (IaaS), is a type of cloud computing service that offers computing, storage, and networking resources on demand. IaaS offerings enable organizations to remove the cost and complexity of buying and managing physical servers and datacenter infrastructure.
+
+----------------------------------------------------
+
+
+Threat Vectors:
+
+Evading Detection:
+
+*Metamorphic Malware, continually changes its code while keeping its functionality the same. It does this by obfuscation techniques to change its code. Metamorphic Malware can rearrange code blocks, insert junk code, rename variables, and more all to generate a new variant of itself that looks different on the surface but does the same thing.
+
+Heuristic Analysis and Behavioral Analysis:
+
+1. Heuristic Analysis, relies on previously established rules to determine if something is a threat or not. The analysis takes advantage of all the previous analysis or experience.
+
+2. Behavioral Analysis, looks at the purpose of a file and can determine if that purpose is a threat or not. If a file is studied and its only function is to delete other files this behavior matches that of a virus, the file can be isolated and an alert can be triggered.
+
+
+Polymorphic Malware:
+
+*Changes its code to evade detection but instead of obfuscating itself, polymorphic malware encrypts its malicious code once it infects a system. It carries its encrypted code along with a decryption module to unlock it. 
+
+
+Detecting the Shapeshifters:
+
+*Malware can change and evolve may appear frightening however there are ways to spot them. Organizations should ensure that they have solid security policies, these should include:
+
+1. Strong passwords and multi-factor authentication.
+
+2. Robust security solutions such as firewalls and specialized detection software.
+
+3. Mandatory software security updates.
+--------------------
+
+
+Types of Phishing:
+
+1. Pretexting, is a technique where the attacker creates a false pretext or scenario to extract sensitive information from the target.
+
+2. Baiting, lures victims with a seemingly genuine offer that entices them to disclose personal details or download malware.
+
+3. Smishing or Vishing, is where cybercriminals trick their victims using text messages and voice calls. 
+
+4. Cold Calling, is where cybercriminals place unsolicited phone calls to targets. 
+
+5. Impersonation, involves an attacker contacting a target and pretending to be a trusted individual or authority figure to manipulate the target into providing information or access. 
+
+6. Tech Support Scams, is used by cybercriminals to call you directly on your phone while posing as a representative of a software firm.
+
+7. Quid Pro Quo, offers the target something in exchange for sensitive information.
+
+8. Tailgating (piggybacking), involves physically following an authorized person into a restricted area. The attacker gains access by appearing to be accompanying the authorized individual or by deceiving them into holding a door open for the attacker.
+
+9. Spear Phishing, targets specific individuals by sending phishing emails tailored to that specific target.
+
+10. Whaling, is a specialized form of spear phishing that targets high-level executives like CEOs. 
+
+11. Dumpster Diving, comprises searching through a targets trash for data that may be utilized for identity theft or social engineering.
+
+12. Reverse Social Engineering, preys on the helpfulness and willingness of humans to assist others in need.
+
+13. Typosquatting or URL Hijaking, is where attackers create malicious websites with domain names similar to popular, trusted websites, hoping that victims mistype the URL and visit the malicious site instead.
+
+14. SQL Injection, exploits vulnerabilities in web applications that use SQL databases. 
+
+15. Supply Chain Attack, is a cyberattack done using third-party software vendors.
+---------------------------------
+
+
+Firewalls:
+
+1. Stateful Inspection (Dynamic Packet Filtering or Stateful Firewall), adds an additional layer of security by maintaining information about the state of active connections. This approach allows firewalls to examine not only individual packets but also the context of the connection in which they are transmitted.
+
+---------------------------------
+
+Encryptions:
+
+1. Rivest-Shamir-Adleman (RSA), is based on mathematical functions with large prime numbers making it almost impossible to crack. It uses to keys, a public key and a private key, to encrypt and decrypt data.
+
+
+Encryption Tools:
+
+1. Pretty Good Privacy (PGP), is used to enable secure transmission of sensitive information such as emails and text messages through end-to-end encryption.
+
+2. Bitlocker and Filevault, are encryption tools used to protect data on Windows and Mac OSs. They encrypt the entire hard drive including the OS and all user data.
+
+3. VeraCrypt/TrueCrypt, are open-source encryption tools that can be used to encrypt individual files or entire disks. They use various encryption algorithms including AES.
+
+4. VPN, is an encryption tool that creates a secure and private network connection over the internet. 
+
+-----------------------------------
+
+
+Formation of Symmetric Standards:
+
+*Involves using a single key for both data encryption and decryption. It ensures secure communication.
+
+
+AES:
+
+*Uses a block cipher structure which encrypts data in fixed size blocks. The size of the block is 128 bits, and the key length can be 128, 192, or 256 bits. The key size determines the level of security provided by AES with larger key sizes providing greater security.
+
+*An initialization vector (IV) us a fixed-size input that is typically random or pseudorandom and used in cryptographic algorithms. Its often used in block cipher models of operation which are methods to apply a cipher to data that are larger than the ciphers block size.
+
+*AES is faster, more efficient, and has longer key length than DES which makes it more secure against brute-force attacks.
+
+AES Techniques:
+
+1. Key Schedule, is an essential tool that generates the round keys used in encryption and decryption and determines the strength of the encryption.
+
+2. Substitution-Permutation Network (SPN), consists of repeated rounds of substitution and permutation operations. These operations ensure that the input data is transformed in a non-linear way making it difficult to decrypt without the key.
+
+3. Mix-Column, is used in the encryption and decryption process to ensure that the input data is mixed in a way that makes it difficult to decrypt without the key.
+
+4. Shift Rows, ensures that the data is shifted in a non-linear way.
+
+
+AES Modes of Operation:
+
+1. Cipher Block Chaining (CBC), provides secure encryption and decryption of data blocks.
+
+2. Electronic Codebook (ECB), is used for encrypting small amounts of data.
+
+3. Counter (CTR), is used for streaming data.
+
+
+AES Vulnerabilities and Mitigation:
+
+1. Side-Channel Attack, involves using information obtained from the physical implementation of the algorithm to extract the secret key. SCA can be prevented by using techniques such as masking and blinding, which involve adding random values to the data during encryption and decryption. This attack takes advantage of side information including sound, frequency, and power consumption, and more to obtain the final output such as the plain text from a ciphertext. This means that even the noise your computer makes or the tiny changes in voltage your computer is using may give and attacker the edge they need to break the code.
+
+2. Chosen-Plaintext Attack, the attacker can actively select the plaintext to be encrypted and deduce the key by using the resulting ciphertext. To prevent this attack AES has been modified to use whitening techniques. These techniques involve adding a random value to the plaintext before encryption and removing it after decryption. This makes it harder for an attacker to uncover the key. AES has also been modified to provide authentication encryption which not only ensures confidentiality but also the integrity of the data. Authenticated encryption involves using a message authentication code (MAC) to ensure that the data has not been tampered with during transmission. 
+
+-----------------------------------------
+
+
+The Formation of Digital Signatures:
+
+*Are essential to authenticate digital documents and ensure the integrity of the information that is being exchanged between two parties. 
+
+1. Rivest-Shamir-Adleman (RSA) Algorithm, is based on the mathematical properties of prime numbers and modular arithmetic. It uses a pair of keys, one public and on private, to create digital signatures that can be used to authenticate digital documents and ensure the integrity of information. 
+
+Steps:
+
+1. Key Generation
+
+2. Signing, the sender first generates a hash of the message to be sent. The sender then uses their private key to encrypt this hash. This encrypted hash is the digital signature and is attached to the original message.
+
+3. Verification, the receiver of the message can check the authenticity of the signature using the senders public key. They first decrypt the digital signature using the public key to retrieve the original hash, then they generate a new hash of the received message, if the decrypted hash and the newly generated hash match, it confirms that the message has not been tampered with and that the holder of the private key sent it.
+
+
+List of Hashing:
+
+Secure Hash Algorithm (SHA):
+
+1. SHA-1, generates a 160 bit hash value and was widely used in the past.
+
+2. SHA-2, generates hash values of 224, 256, 384, and 512 bits make it more secure than SHA-1. It is commonly used for digital signatures, data integrity, and password storage.
+
+3. SHA-3, generates has values of 224,256,384, and 512 bits. It uses sponge construction which means that it absorbs the input message and then squeezes out the hash value. This construction provides high level of resistance to collision attacks and is more efficient than the Merkle-Damagard construction used in SHA-2.
+
+Message Digest 5 (MD5), generates a 128 but hash value which makes it faster and more efficient than some other hashing algorithms. Instead more secure hashing algorithms such as SHA-2 and SHA-3 are now recommended for use in cryptographic applications.
+
+RACE Integrity Primitives Evaluation Message Digest (RIPEMD), is a family of cryptographic functions that include RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320. RIPEMD is commonly used for data integrity checks and digital signatures.
+
+Blake2, is a cryptographic hash function that is based on the BLAKE algorithm, it supports hash values of 256 and 512 bits and is designed for performance on modern CPUs. BLAKE2 is commonly used in secure communication protocols, data integrity checks, and password storage.
+
+Tiger, is a cryptographic hash function that generates a hash value of 192 bits. It is commonly used in digital signatures, data integrity, and passwords storage.
+
+
+---------------------------------------------
+
+
+Secure Certificates:
+
+*Are electronic documents that serve as proof of identity for websites and other online services. They enable secure communication between your browser and a web server by encrypting data transmitted between them. 
+
+1. SSL Certificates, employ the sll protocol to establish encrypted connections, they are commonly used for protecting sensitive data such as login credentials, credit card information, and personal details.
+
+2. TLS Certificates, are a kind of SSL certificate but use more relevant and secure TLS protocol. Modern web browsers and servers now default to using TLS makin it the current industry standard for secure communication. 
+
+
+SSL and TLS Protocols:
+
+SSL Protocol, operates in a layered structure with the SSL record protocol at the lowest level providing basic security services to higher SSL levels. Above the Record Protocol are the SSL Handshake Protocol and the SSL Change Cipher Spec Protocol. The SSL Handshake Protocol allows authentication and key exchange while the SSL Change Cipher Spec Protocol signals changes in encryption strategies. The highest level is the SSL Alert Protocol which is responsible for error reporting. SSL Protocol is comprised of three primary phases, establishing a secure connection, exchanging encrypted data, and closing the connection.
+
+TSL Protocol, follows a similar process to SSL with enhancements to security and performance. It is also organized in a layered structure with the TLS Record Protocol at the base providing basic security services to higher TLS levels. The TLS Handshake Protocol and the TLS Change Cipher Spec Protocol sit above the Record Protocol with the TLS Alert Protocol at the highest level. TLS supports more advanced encryption algorithms and offers better protection against potential attacks. The primary difference between SSL  and TLS lies in the cryptographic algorithms and message formats.
+
+
+Setting Up and Enabling Server Certificates:
+
+*To guarantee secure communication and confirm the authenticity of your website its essential to set up and allow server certificates.
+
+1. Obtain a certificate from a certificate authority (CA).
+
+2. Install the certificate on your server.
+
+3. Configure the server to use the certificate.
+
+---------------------------------------------------
+
+
+Authentication and Authorization:
+
+Kerberos Distribution Center (KDC):
+
+*Is a common authentication system employs in computer networking, it operates based on the Kerberos protocol which is widely used for authentication users and providing secure access to network resources.
+
+Identity as a Service:
+
+*Often abbreviated as IDaaS refers to identity and access management services provided through a cloud-based model. These services offer a range of capabilities. The IDaaS model simplifies identity management, improves security, enables scalability and agility by moving these functions to the cloud.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Data Transmission:
+
+
+Data Transmission Intercept Tools:
+
+*There are several tools available that are used for intercepting and analyzing data transmissions for both legitimate and malicious purposes. By sitting somewhere between the sender and recipient these tools intercept network traffic even while its traveling. This interception is done so transparently that neither the receiver nor the sender is aware that they could be under a main-in-the-middle attack or someone could be sniffing their communication.
+
+
+1. Wireshark, is an open-source tool that allows you to analyze your network at a microscopic level. Its commonly known as a network protocol analyzer and allows you to capture and interactively browse the traffic running on a computer network. 
+
+2. Cain and Abel, is a password recovery tool for Microsoft operating systems. It helps users recover various kinds of passwords by sniffing the network traffic, cracking encrypted passwords, and recording VoIP conversations and more.
+
+3. Ettercap, is a comprehensive tool for man-in-the-middle attacks on a LAN  (Local Area Network). It can intercept traffic on a network segment, capture passwords, and perform active eavesdropping against common protocols. Ettercap works like a telephone operator, the operator can listen to your conversation without your knowledge and they can also talk to each person and pretend to be the other.
+
+4. TCP Dump, is a powerful command-line packet analyzer used for displaying TCP/IP packets traveling over your network. This is like a security camera for your network that watches all the data going in and out of your network and recording it for later review. This can be very useful for troubleshooting network problems or investigating suspicious network activity.
+
+-------------------------------------------
+
+
+Endpoint Security Technologies:
+
+*Typically consist of several key components that work together to protect endpoints from cyber threats. 
+
+Common Components:
+
+
+1. Antivirus and Anti-malware, detects and prevents malware infections.
+
+2. Firewall, monitors and controls network traffic to prevent unauthorized access.
+
+3. Intrusion Detection and Prevention System (IDPS), identifies and alerts you about potential security breaches.
+
+4. Data Loss Prevention (DLP), protects sensitive data from unauthorizes access or leakage.
+
+5. Endpoint Encryption, ensures that data stored on endpoints remains secure even if the device is lost, stolen, or compromised. It encrypts data using strong algorithms rendering it unreadable without the appropriate decryption key.
+
+6. Patch Management, deploys security patches and updates to keep endpoints up to date.
+
+7. Device and Application Control, manages access and usage of peripheral devices and applications.
+
+8. Behavioral Analytics, monitors user and endpoint behavior using machine learning and artificial intelligence algorithms to detect anomalies.
+
+9. Endpoint Detection and Response (EDR), provides advanced threat detection, real-time monitoring, and incident response capabilities.
+
+
+Endpoint Security Solutions by Microsoft:
+
+*Microsoft offers a comprehensive suite of endpoint security solutions designed to protect individuals and organizations from evolving cyber threats.
+
+1. Microsoft Defender Antivirus, formerly known as Windows Defender, is a built in antivirus solution that provides real-time protection against malware, viruses, and other malicious software.
+
+2. Microsoft Defender Firewall, is a network level firewall that protects endpoints from unauthorized network access and inbound/outbound traffic. It monitors and controls network communications to prevent intrusions and blocks potentially harmful connections.
+
+3. Microsoft Intune, is a cloud-based endpoint management solution that enables organizations to manage and secure endpoints across different platforms.
+
+4. Microsoft Azure Sentinel, Is a cloud-native security information and event management solution that provides intelligent threat detection and response capabilities. It aggregates and analyzes endpoint and network data helping organizations detect and respond to advanced threats across their entire infrastructure.
+
+5. Microsoft Secure Score, provides organizations with a comprehensive assessment of their endpoint security posture. It offers actionable recommendations and guidance to improve security. Its a measurement of an organizations security posture with a higher number indicating more recommended actions to be taken.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Security and Compliance Concepts:
+
+*Cybersecurity threats continue to present an increasing challenge to organizations worldwide. Many industries and organizations have adopted various standards and compliance frameworks to keep data out of the hands of malicious actors such as ISO 27001, SOC 2, PCI DSS, and HIPAA.
+
+1. ISO 27001, is globally recognized standard that provides a comprehensive framework for establishing, maintaining, and continually improving an Information Security Management System (ISMS). The standard is built around a risk-based approach to information security allowing organizations to identify and analyze, and address their unique information security risks. The six step planning processes is defining an ISMS policy, determining the scope of the ISMS, carrying out a risk assessment, managing the identified risks, selecting control objectives and controls, and preparing a statement of applicability.
+
+2. Service Organization Control (SOC) 2, is a set of auditing procedures developed by the American Institute of Certified Public Accounts (AICPA). SOC 2 focuses on five principles, security, availability, processing integrity, confidentiality, and privacy.
+
+3. Payment Card Industry Dara Security Standard (PCI DSS), is an established set of security regulations to safeguard sensitive credit card data. 
+
+4. Health Insurance Portability and Accountability Act (HIPAA), is a U.S. law enacted to ensure privacy standards to protect patients medical records and other health information. 
+
+------------------------------------------
+
+
+Managing Identities and Access with Azure Active Directory:
+
+*Azure Active Directory is a state-of-the-art Identity and Access Management (IAM) tool that stems from Microsoft Azure. It boasts a collection of features designed to manage user identities and control access to applications and resources. It enables seamless interaction between users, devices, applications, and services within and outside your organization.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Features of Azure AD:
+
+*Is Microsoft's cloud-based identity and access management service. It provides secure and unified way to manage actors identities and governs the manner in which network resources interact across different platforms and locations. It is able to provide a centralized location for managing which devices are available on the cloud network; and which users have access to it.
+
+
+1. Microsoft Intune, Is a cloud-based device management solution that allows a user to manage and secure their devices. In addition to registering their device Intune allows the user to manage the apps and data in the cloud.
+
+2. AD Connect, is a tool developed by Microsoft that allows organizations to synchronize on-premises Active Directory objects and attributes with AAD. Any changes made in the on-premises Active Directory will automatically be synchronized with AAD.
+
+3. Azure AD Connect Health, is designed to monitor and report on the health of AD Connect and AAD and synchronize between them. It provides insights into issues affecting the synchronization between on-premises and cloud-based environments.
+
+4. Azure Portal, Is a centralized web-based interface for administrators to manage and monitor their Azure resources and services. It allows users to perform various tasks such as facilitating the creation, deployment, and management of virtual machines, configuring storage and network services, setting up access control policies, and monitoring resource usage and performance.
+
+-------------------------------
+
+
+Azure AD Pricing Model:
+
+*There are several approaches for charging Azure Services. There are a few factors that are able to be considered before computing the final cost such as the type and size of resources consumed, the length of usage, and the degree of support required.
+
+1. Tenants, is a container created on AAD that contains all references to resources, groups, applications, and all other AAD resources used by one tenant or a user. A company may have many divisions that they want to make and this create several separate tenants. All of these would sit in an organization which would be referent to as multi-tenancy.
+
+2. Subscriptions, include the Free edition, 365 Apps Edition, and Premium P1 and P2 subscriptions. A subscription related to the services and resources that are available from AAD, the tenancy is linked to this, as it determines what access is granted on the use of the subscription features. An Azure tenant can have many subscriptions but a subscription can only have one tenant. 
+
+3. Resource Groups, are containers that allow you to manage and monitor your resources more efficiently. You can apply policies and security controls to resource groups to ensure that they meet your compliance requirements. You can also use resource groups to allocate costs and manage billing for clients or projects.
+
+--------------------------------
+
+
+Pricing Policy:
+
+1. Pay-as-you-go, A flexible usage-based pricing model. There is no upfront cost or penalization for terminating the policy. Customers only pay for the resources they used.
+
+2. Enterprise Agreement, is a contractual agreement whereby a three-year term is engaged with. This includes pre-payment for Azure services to be used.
+
+3. Cloud Solution Provider, is a pay-as-you-go option where a partner is given the right to act as a third party to provide customers with Azure services. It can be provided as an upfront contract or as a pay-as-you-go approach.
+
+--------------------------------------
+
+
+Identity Scope:
+
+*Azure AAD is an Identity Access Management System (IAM) which means it is tasked with creating and profiling identity and the extent to which it can access a system. It does this through the use of roles. Within a business context, different roles or functions need to be executed like a manager, waiter, or accountant. The scope is the set of resources that access applies to.
+
+1. Tenant Scope, applies to all resources within the tenant. An identity with tenant scope has the highest level of access across all resources in the tenant. This is the highest tier of oversight and will typically have roles with "administrator" in the title. A global administrator is assigned when a person signs up for the Azure AD organization. A global administrator cannot remove themselves from their own assignment as this could potentially leave the subscription with no administrator.
+
+2. Management Group, involves groupings or boxes that govern different subscriptions. There can be many levels of Management groups stacked in a hierarchical tree-like structure. Management groups enable you to enforce rules and policies across a number of subscriptions.
+
+3. Subscription Scope, applies to all resources within a subscription. An identity with a subscription scope can access all resources within that subscription but not across subscriptions.
+
+4. Resource Group Scope, applies to all the sources within a resource group. An identity with a resource group scope can access the resources within that group but not across resource groups. A groups administrator sits at this level and issues full capabilities to create, delete, update, and manage group membership but cannot create, manage, or update user accounts.
+
+5. Resource Scope, applies to a specific resource within a resource group. An identity with resource scope has access to a specific resource only. 
+
+----------------------------------
+
+Azure AD Roles:
+
+1. Global Administrator, controls all Azure AD services and identities.
+
+2. Applications Administrator, enables users to create and manage enterprise applications with the ability to configure application proxy settings and monitor application registrations.
+
+3. Global Reader, is a read-only counterpart to Global Administrator. This role has all the scope found within the global role but cannot edit any of the resources found.
+
+-------------------------------------
+
+
+Authentication Methods:
+
+*One of the main features of an identity platform is to verify or authenticate credentials when a user signs into a device, application, or service. Azure AD offers different methods of authentication. 
+
+1. SMS-based Authentication, is a simple and secure method of protecting your business. It can be achieved without the user having to provide a username or passwords, instead a one time passcode is sent via sms to the user mobile device.
+
+2. OATH Hardware Tokens, is a time-based one time password (TOTP) where tokens are generated through the use of hardware or software which is a one time passcode. They are only valid for 30 to 60 seconds.
+
+3. FIDO (Fast Identity Online) Authentication, is a common umbrella term for using biometrics as authentication. FIDO is an authentication standard that uses public-key cryptography to provide strong authentication. Cryptography relates to sending communication securely whereby only the sender and the receiver can view the message content. Any attempt to read the message in transit only displays a jumbled representation of the original message.
+
+-------------------------------------
+
+Password Information:
+
+*There are many ways in which a hacker can circumnavigate a password protected login. At the beginning of your learning journey you heard about phishing. This is when a user is tricked into revealing password information in a seemingly legitimate request for password and personal information. Brute force passwords hacking has been around for a while and when an exploit persists it is because its successful enough to make others continue using it. This approach will continue to persist as long as people use simple passwords, reuse passwords, and create topical passwords that are common and used by many others. 
+
+*There are a number of variations on the type of brute force attacks that are perpetuated which include,
+
+1. Dictionary Attacks, when a store of common passwords is applied to a legitimate username or email.
+
+2. Hybrid Attacks, involve combining dictionary attacks with other measures like adding digits to the end of a common password.
+
+3. Mask Attacks, concern shaping password guesses to adhere to a given template-for example-a password beginning with a capital letter and ending with a symbol.
+
+---------------------------------------
+
+Tracking Triggers:
+
+*Multi-factor authentication can strengthen security and make it more difficult for hackers to gain entry. It also reflects a move away from guarding access points, instead focusing on determining who is accessing the network.
+
+--------------------------------------
+
+Activity-Related MFA Triggers:
+
+*Unauthorized access to a company's accounts and applications can lead to some damaging and expensive fallout. MFA helps prevent unauthorized access by requiring an additional for of verification beyond the use of a username and password. It has proven itself to be an efficient protection against unauthorized account use and cyber attacks. Some sign-on activities that could potentially trigger MFA are,
+
+1. Sign on from a new device.
+
+2. Sign on from an anonymous IP address.
+
+3. Sign on from a location with unusual activity.
+
+4. Sign on from a high-risk country/region.
+
+5. Sign on after a long period of inactivity.
+
+6. Sign on outside of normal business hours.
+
+7. Sign on from an IP address with suspicious activity.
