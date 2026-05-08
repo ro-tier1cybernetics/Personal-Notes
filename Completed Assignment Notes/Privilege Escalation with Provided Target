@@ -1,0 +1,259 @@
+Privilege Escalation with Provided Credentials/ from user1 to user2 to root
+
+
+
+
+
+*this assignment is where i ssh into a server with minimal credentials from User1 and escalating those credentials to User2 in order to capture a flag in "/home/user2/flag.txt".
+
+
+*for this assignment every hashtag is used in front of all codes in order for the file to be marked as safe by Microsoft and Windows Defender. All underlines are used to show space unless directly stated otherwise....
+
+
+
+
+
+1. the first thing i do is open the parrot terminal and type #ssh_user1@94.237.57.115_-p_46350. the dash p is to show the exact port shown thats in use. 
+
+2. then i am prompted to enter the password which i do, accept the terms, and log in. 
+
+3. now that i am in i use the command #whoami so that i can know what user i am operating as. i can also use the command #hostname to see as well.
+
+4. once ive verified my user i begin to look for ways to escalate my priviledges to user2
+
+5. first i start a basic enumeration in parrot using the command #ls_-la_/home.
+
+6. this takes me to the home page where i can see other files or directories.
+
+7. in this directory i can see user2's file. to access user2's file i will use the command #ls_-la_/home/user2.
+
+8. i am in user2's file and i can see that there is a flag.txt. i can try to access it by using the command #ls_-la_/home/user2/flag.txt.
+
+
+9. unfortunately i was not able to access it from the priviliges that user1 has so now i need to begin my privilige escalation.
+
+10. now i use the command #sudo_-l in hopes of being user1 running anything as user2 or root.
+
+11. from the output it says "(user2 : user2) NOPASSWD: #/bin/bash". this means i can run #/bin/bash as user2, i do not need a password, but i cannot use #sudo_su_-_user2 because that would be trying to run #su and not #/bin/bash
+
+12. now i will try to get a shell as user2 by running the command #sudo_-u_user2_/bin/bash. this tells the system to run bash as user2 without asking for a password.
+
+13. to verify if this worked i will use the command #whoami. i have verified that i am now user2 so the command #sudo_-user2_/bin/bash works and we now have user2 privileges.
+
+14. since i now have user2 privileges i can open the flag.txt by using the command #cat_/home/user2/flag.txt. 
+
+15. success, the txt opened and the flag is shown. 
+
+16. the flag was #HTB{l473r4l_m0v3m3n7_70_4n07h3r_u53r}
+
+
+
+
+
+
+
+
+
+
+
+
+*now for this portion i will escalate my privileges further from user2 to root
+
+
+
+
+1. now that i am operating as user2 i need to enumerate the system and find a path to root
+
+2. to do so i start off by using the command #sudo_-l and i look for if i can run anything with #sudo, do they have passwordless access, and are there any weird or restricted commands.
+
+3. after using the command #sudo_-l i can see that user2 needs a password to escalate to root which i dont have because i used a gateway through #/bin/bash that did not require a password.
+
+4. user2 has no #sudo access so i cant do anything through #sudo
+
+5. now i will try another way to escalate my privileges by checking for SUID Binaries (manual enumeration) using the command #find_/_-perm_-4000_-type_f_2>/dev/null.
+
+6. this will list SUID binaries, files that run with the file owners permission (often root). 
+
+7. if any of them are commonly exploitable like #vim, #less, #python, #nmap, etc. i can use #GTFOBins to pop a root shell
+
+8. from the output i can see there are many SUID binaries. all of them seem to be normal and not usually vulnerable.
+
+9. next i will give that up and instead look for #Cron Jobs or scripts. for this i can use the command #cat_/etc/crontab
+
+10. from the output i can see that no such directory exists so i will move on to another enumeration method.
+
+11. since the command #cat_/etc/crontab didn't work because there was no such directory i will use the command #ls_-la_/etc/cron.d in order to see if any scripts with root as the owner, any scripts that are world-writable i.e. #-rw-rw-rw- or similar, and if any scripts that i can edit as user2
+
+12. from using the command #ls_-la_/etc/cron.d i can see from the output that there are two files in #/etc/cron.d which are #e2scrub_all and #php.
+
+13. these are cron job definitions, now i want to read the contents of those files to see what scripts or commands are being executed, whether they are run as #root, and whether i can modify the target of the cron job. this is what the output looked like:
+
+#drwxr-xr-x_1_root_root_4096_Aug_19__2020_.
+#drwxr-xr-x_1_root_root_4096_Feb_12__2021_..
+#-rw-r--r--_1_root_root__201_Feb_14__2020_e2scrub_all
+#-rw-r--r--_1_root_root__712_Mar_27__2020_php
+
+14. to check what these cron jobs are doing i will use the commands #cat_/etc/cron.d/e2scrub_all and #cat_/etc/cron.d/php.
+
+15. after opening these jobs it seems they are default system maintenance jobs that run #root owned binaries, so this is a dead end.
+
+16. using cron jobs was a dead end so now i will use another attack vector which is finding writable root files by using the command #find_/_writable_-user_root_-type_f_2>/dev/null.
+
+17. using the command #find_/_writable_-user_root_-type_f_2>/dev/null will scan for files that belong to #root, these are the best privilege escalation candidates after cron and SUID are ruled out.
+
+18. OK!!! so finally after using the enumeration command #find_/_writable_-user_root_-type_f_2>/dev/null i was able to find a custom script being run as #root via cron which looks like this:
+
+#-rwxrwxrwx1_root_root_109_Mar_25__2020_/opt/shell.sh
+
+19. this file is world writable and executable which is dangerous in real life, it is owned by root, and it is located in #/opt which is a classic spot for misused cron jobs or helper scripts and based on previous context this script is very likely being called by cron as #root
+
+20. now my exploit strategy is to overwrite #/opt/shell.sh with a reverse shell or privilege escalation payload, wait for the cron job to run, and then become root.
+
+21. i will overwrite the #/opt/shell.sh with a listener first by using the command #nc_-lvnp_4444 
+
+_______________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NEXT DAY:
+
+
+
+
+
+
+
+*reflecting on yesterday I was able to escalate privileges from user1 to user2 without user2 credentials using a vulnerability ("(user2 : user2) NOPASSWD: #/bin/bash"). from this vulnerability i gained access to user2 credentials and was able to capture the flag. after capturing the flag i moved onto the next one. i tried many different ways of escalating privileges from user2 to root with none prevailing. i believe it was due to me going off of the script and not applying the information hack the box gives but instead my own gist of what i think the way i can capture the flag. this time instead of thinking outside the box i will think more in the box focusing on the information provided in this section and even in previous sections. i am making the flag harder to find by thinking too deep into it. its not that complicated when it comes to these hack the box flags.
+
+1. the first thing i will do is respawn a new target and login using the bash command #ssh_user1@94.237.121.185_-p_51693 and the password "password1" as given by hack the box. 
+
+2. once logged in i will check for who i am with the command #whoami. once confirmed that i am user1 i will escalate to user2 privileges as i have done the day before. 
+
+3. like the day before, i was able to escalate my privileges from user1 to user2 using the command #sudo_-u+ i was able to observe the output "(user2_:_user2)_NOPASSWD: #/bin/bash" so i used the command #sudo_-u_user2_/bin/bash and was successfully able to escalate my privileges to user2.
+
+4. now that i am sticking to hack the box's way of finding these flags and have successfully escalated to user2 privileges using the command #sudo_-u_user2_bin/bash i will check the kernel version to check if i am on an older kernel and potentially vulnerable to a known kernel exploit by using the commands #uname_-a and #cat_/proc/version.
+
+5. from the commands #uname_-a and #cat_/proc/version i can see that the kernel version is "Linux version: 6.1.0-10-amd64 (Debian)" which is a relatively modern kernel (6.1.37) meaning most public kernel exploits like #DirtyCow_(CVE-2016-5195) and #DirtyPipe will not work here. they've been patched in this kernel version
+
+6. since i have already tried SUID and cron with no luck i will try to systematically proceed using only hack the box's recommended steps. 
+
+7. what i am actually going to do is de-escalate from user2 to user1 and try to find a way from user1 to view user2's credentials so that i can escalate from user2 to root using an actual password for user2.
+
+8. to do this i will use the command #exit. after doing this i verify i am user1 by using the command #whoami which i can see from the output says that i am in fact user1.
+
+9. now that i am back to user1 privileges i will 
+
+
+
+
+
+
+
+#uname_-a and #cat_/proc/version
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A few days after:
+
+
+
+
+
+
+1. this time starting off i tried to do things a different way by sticking to user1 and seeing if i could use the privileges from user1 to upgrade user2s access since i have the credentials for user1 but i wasn't able to.
+
+2. now I'm going back to what i was doing before by using the known vulnerability that i previously found to access user2. this was done with the command: #sudo_-u_user2_/bin/bash 
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A day after:
+
+
+
+1. Retouching on the steps i used to capture the first flag by escalating privileges from user1 to user2 using the command #sudo_-u_user2_/bin/bash, but first i must access the target using the command #ssh_user1@94.237.48.12_-p_37476 
+
+2. after i have used these commands i will use the command #whoami to check if i have successfully gained access to user1. 
+
+3. once done i followed the previous steps from above to capture the first flag. now that i have captured it im going to start working on capturing the second flag below.
+
+
+
+-----
+
+1. instead of trying to continuously try and solve this by myself i am on youtube watching a walkthrough on how to
+
+2. so once i have gained access to user2 using its vulnerability "bin/bash" in the command #sudo -u user2 /bin/bash i can now move forward with escalating privileges from user2 to root.
+
+3. now i will use the command #cat_/root/.ssh/id_rsa to review and copy the openssh private key.
+
+4. then ill open another parrot terminal and use the command ls -l
+
+5. once ive viewed the folders i will use the command #vim_id_rsa, it will open a note for me to input the rsa code that i had copied from before.
+
+6. after i have pasted the rsa code i will press "ESC" to ensure that i am out of insert mode. then i will press ":" then "wq" to save and exit out of the code. 
+
+7. now i can use the command #ls_-l to check and see if the rsa code successfully saved. i can see that it did. 
+
+8. the next thing i will do is use the command #ssh_root@94.237.48.12_-p_37476_-i_id_rsa to gain access to the target system as root, but this did not work 
+
+9. since that failed i will use the command #chmod_600_id_rsa, then the command #ls_-l, to look for writeable files. they should look something like "-rw---------.." which means to read and write.
+
+10. once i have done this i will use the command #ssh_root@94.237.48.12_-p_37476_-i_id_rsa to gain root privileges. after i used that command i will use the command #whoami in order to check if my privilege escalation worked.
+
+11. now that i have root access i will type the command #ls to list the files, i see the flag.txt file, using the command #cat_flag.txt i was successfully able to capture the flag. 
