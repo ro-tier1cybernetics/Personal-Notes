@@ -1,0 +1,3862 @@
+CRISC: Certified in Risk and Information Systems Control
+
+
+
+
+
+
+
+
+
+Governance and Risk Management Concepts:
+
+
+
+
+
+
+
+
+Introduction to IT Risk Management:
+
+
+
+
+
+IT Risk Management Context - Governance:
+
+governance establishes requirements for balancing performance and conformance
+
+not confined to senior management
+
+closely tied to risk management
+
+board of directors are accountable 
+
+governance answers: are we doing the right things? are we doing them the right way? are we getting them done well? are we seeing expected benefits?
+
+
+
+
+
+
+
+
+
+
+
+Organizational Strategy Archetypes:
+
+the enterprise exists solely for achieving the defined strategic vision which is growth/acquisition, innovation/differentiation, cost leadership, and client services/stability
+
+risk practitioner goals are to provide accurate, complete and timely information. identify, assess, and advise on appropriate responses. allow for performance conformance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is Risk Management?:
+
+coordinated activities, processes, practices
+
+informing, directing, and influencing senior management
+
+continuous attention to risk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Major Categories of Risk:
+
+enterprise risk, strategic risk, market/credit risk, compliance risk, and environment risk
+
+IT related risk, it benefit/value enablement, IT project risk, IT operations risk, cyber and info risk
+
+==============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Key Concepts of Risk:
+
+all parties need to understand the taxonomy of risk
+
+likelihood (probability) and consequences (impact)
+
+threats vs. opportunity
+
+vulnerabilities and attacks
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk in the Enterprise:
+
+using risk scenarios helps understand the impact to response costs, legal (fines, penalties, etc.), damaged reputation, health and safety, and productivity
+
+
+
+===================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The RACI Chart:
+
+
+
+
+
+
+
+
+The Power of the RACI Chart:
+
+gives understanding to the team on who does what
+
+tool you would use to help bring comprehension and communication to the organization
+
+there are four main types of roles: responsible, accountable, consulted, and informed
+
+
+
+
+
+
+
+
+
+
+
+
+
+Why is this Important?:
+
+accountability for risk ultimately belongs to the chief risk officer, compliance officer, chief financial officer, and board of directors
+
+
+
+
+==================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Organizational Risk Structure and Culture:
+
+
+
+
+
+
+Key Roles Regarding Risk:
+
+
+
+
+
+
+
+Key Roles for Risk Management:
+
+risk manager - responsible
+
+risk analyst - responsible
+
+risk owner - accountable 
+
+control owner - accountable
+
+control stewards - responsible 
+
+subject matter experts - consult/inform
+
+
+
+===================================================================
+
+
+
+
+
+
+
+
+
+
+
+Organizational Structure and Culture:
+
+structure and culture of an organization is critical to a risk management program
+
+enterprise mandates on participation
+
+behavior and attitude towards risk is part of the culture
+
+collaboration and sharing on information is vital for success
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Culture of an Organization:
+
+risk management is a core part of corporate governance
+
+this requires understanding of the organizations culture
+
+there are many types of cultures
+
+
+===========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Impact on Risk Management of Culture and Behavior:
+
+
+
+
+
+
+What is Culture?:
+
+culture drives the behaviors of personnel
+
+all employees should be aware of their risk culture
+
+subcultures can exist within an organization
+
+risk awareness is a powerful tool in creating the culture and forming ethics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Awareness:
+
+risk is well understood
+
+IT risk issues are identifiable 
+
+enterprise understands what's required to manage risk
+
+awareness education and training are key
+
+awareness of InfoSec policies, standards and procedures are necessary
+
+different training for different levels (i.e. management vs. senior management)
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Culture Elements:
+
+behavior towards taking risk
+
+behavior toward policy compliance
+
+behavior toward negative outcomes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Importance of Risk Communication:
+
+communication is key to successful risk management
+
+not all incidents need to be reported
+
+however lack of communication leads to unhealthy organizations
+
+
+
+=============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Policies, Standards, and Risk Management Principles:
+
+
+
+
+
+
+
+Policies, Standards, and Procedures:
+
+policies provide direction on acceptable behaviors and actions
+
+standards and procedures support the requirements of policies
+
+all three are needed for risk management
+
+
+
+
+
+
+
+
+
+
+
+Type of Risk Management Polices:
+
+enterprise risk policy
+
+information security policy
+
+privacy policy
+
+risk appetite/tolerance policy
+
+risk acceptance policy
+
+
+
+
+
+
+
+
+
+
+
+
+Standards:
+
+mandatory requirements
+
+code of practice
+
+might be based on external standards (ISO, etc.)
+
+might be based internally
+
+
+
+
+
+
+
+
+
+
+
+
+Procedures:
+
+more granular than standards
+
+support implementation of standards
+
+the "how to" for standards
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exceptions:
+
+there may be cases in which an exception is needed
+
+exceptions must be documented
+
+exceptions are only allowed through a formal process
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reviewing the Business Process:
+
+examines the effectiveness of the business in meeting its goals 
+
+requires input from knowledgeable people from all departments
+
+you may also bring in external experts (consultants)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps to Review the Business Processes:
+
+document and evaluate the current processes
+
+identify any potential changes
+
+schedule and implement the changes
+
+gain feedback and evaluate
+
+
+
+
+
+
+
+
+
+
+
+
+Business Process Review:
+
+outdated business processes introduce risk 
+
+periodic review of critical processes should be mandatory
+
+updates should be performed as appropriate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Management Principle, Processes, and Controls:
+
+risk management should not unduly affect business ops
+
+risk practitioners give information to the risk owner to make wise decisions
+
+processes and controls can cause businesses to become slow and ineffective
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principles:
+
+risk associated with process failures, economic trends, or acts of nature need to be considered
+
+any threat that prevents the enterprise from meeting its goals should be managed 
+
+thus the need for guiding principles to help manage risk
+
+connect management of IT risk to business objectives
+
+align management of risk to ERM
+
+balance the costs and benefits of managing IT risk
+
+promote ethical and open communication of all IT risk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Processes and Controls:
+
+care and consideration must be taken when introducing processes and controls
+
+benefits and values must be properly communicated
+
+being transparent with controls and the need for them will limit staff workarounds
+
+try not to hamper productivity if possible
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IT Risk and its Relation To Other Business Functions:
+
+taking on too much risk or exceeding risk capacity can be harmful
+
+senior management is responsible for establishing risk appetite and tolerances
+
+risk practitioners must understand that IT is connected to many other business functions
+
+
+
+
+
+
+
+
+
+
+
+
+Risk and Business Continuity:
+
+IT risk management is closely linked to business continuity
+
+risk management attempts to reduce risk to an acceptable level
+
+as part of this, identifying potential disasters or major incidents is vital for the BCP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk and Audit:
+
+audit is all about insuring compliance with policy and or regulations
+
+IS audits should be conducted by trained professionals
+
+risk practitioners should review the relationship between IS auditor and area being audited 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Risk:
+
+controls are created or chosen to mitigate a risk
+
+controls need to be reviewed continuously
+
+risk owners should be presented with some options to choose from
+
+controls should be judged by efficiency, effectiveness, and exposure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Project Risk:
+
+projects often fail due to lack of proper risk management 
+
+failure of an IT project presents risk to an enterprise
+
+proper identification of risk for a project will increase chances of success
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Change Risk:
+
+risk is not static
+
+technology, regulations, processes, etc. change all the time
+
+risk practitioners must keep a continuous eye on risk
+
+change advisory boards (CABs) should communicate and identify risk
+
+
+
+
+
+
+
+
+
+
+
+
+
+People and Technology:
+
+one of the biggest assets of an enterprise is the people
+
+enterprises are vulnerable to the loss of key employee
+
+cross training, proper communication, financial incentives can be vital to retaining talent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Technology:
+
+tech changes all of the time
+
+equipment needs updating or replacing constantly
+
+systems that are scheduled for disposal might contain sensitive data
+
+data retention is important for regulations and legal reasons
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data:
+
+is extremely valuable for organizations
+
+should be clearly identified for business value
+
+security classification should be clearly defined
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intellectual Property:
+
+trademark
+
+copyright
+
+patent
+
+trade secret
+
+
+
+
+
+
+
+
+
+
+
+
+
+IT Risk Management Good Practices:
+
+it all starts with reviewing existing practices and procedures
+
+IT risk management should be comprehensive, complete, auditable, justifiable, compliant and monitored
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Enterprise Management and Excellence in Frameworks:
+
+risk management is the coordinated activities to direct and control an enterprise in regards to risk
+
+risk is a challenge to achieving objectives
+
+risk management lowers the chances of occurring risks and their impact
+
+
+
+
+
+
+
+
+
+
+
+
+
+Three Lines of Defense:
+
+implemented by many organizations
+
+identifies business functions between risk owner and risk practitioner - specifies roles
+
+first line - operational management
+
+second line - risk and compliance functions
+
+third line - auditor
+
+
+
+
+
+
+
+
+
+
+
+First Line of Defense - Operational management:
+
+implemented by the business unit
+
+ensures the conductive control environment
+
+expected to be fully aware of risk factors
+
+able to execute effective internal control in their business units
+
+first line - operational managers are responsible for managing risk
+
+
+
+
+
+
+
+
+
+
+
+Second Line of Defense - Compliance:
+
+comprised of risk management and compliance functions
+
+focused to ensure that first - line defenses are properly designed
+
+this is where enterprise buy-in occurs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Third Line of Defense - Audit:
+
+gaining the appropriate level of assurances to senior management
+
+needs independent and objective reviews
+
+reviews and evaluates the design and implementation of risk management
+
+
+
+
+
+
+
+
+
+
+
+
+
+Role of the Risk Practitioner for 3 Lines of Defense:
+
+risk practitioner works across the first two lines of defense within an organization
+
+auditors work in the third line of defense
+
+however, the auditor will give information to the risk practitioner to help with delivering information to senior management and the board
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is a Risk Profile?:
+
+based on the overall risk posture of the enterprise
+
+reflected in its attention to monitoring controls
+
+helps the enterprise have proactive identification, analysis, and response to risk
+
+key input to developing a risk culture
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Changing the Risk Profile:
+
+changes occur because of changes to procedures, new or revised regulations, new technologies, actions of competitors, effectiveness of the risk awareness program
+
+risk at the top level of an organization is the result of many individual risks
+
+risk posture may be affected by cascading effects of minor risks
+
+IT risk management objectives should be reviewed consistently
+
+risk is owned by management but risk practitioners work with them to make them aware of those risk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Appetite:
+
+the amount of risk that an entity is willing to accept
+
+the owners or board of directors set the risk appetite for the company
+
+this can also be delegated to senior management
+
+translates into standards and policies to maintain risk at the level of the risk appetite
+
+
+
+
+
+
+
+
+
+
+Risk Capacity:
+
+is the amount of loss an enterprise can take without being in danger of closing
+
+helps to set the risk appetite
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Tolerance:
+
+the acceptable level of variation that management is willing to allow for any particular risk
+
+this allows for occasional (and approved) deviations from the risk
+
+the risk tolerance level is still under the risk capacity
+
+defined at the enterprise level and reflected in policies
+
+
+
+
+
+
+
+
+
+
+
+
+
+Benefits of Defining Risk Capacity and Appetite:
+
+supports risk based decision making
+
+supports the understanding of how everything contributes to the overall risk profile
+
+supports the prioritization and approval process of risk response actions
+
+helps identity specific areas where a risk response should happen
+
+
+
+
+
+
+
+
+
+
+
+
+Best Case Outcomes of Communicating Risk Appetite:
+
+consistent implementation
+
+effective monitoring and communication
+
+consistent understanding of risk appetite and related tolerance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal, Regulatory, and Contractual Requirements:
+
+companies must comply with laws and regulations in their jurisdictions
+
+some laws and regulations can be challenging to a business
+
+some laws and regulations contradict each other
+
+if an enterprise is global, set up global policies and then have regional or country based exceptions as necessary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Types of Regulations:
+
+GDPR, a European union regulation that protects individuals personal data and privacy rights
+
+PCI-DSS, a global security standard that ensures organizations securely handle credit card information
+
+HIPAA, a U.S. law that safeguards the privacy and security of healthcare information
+
+SOX, a U.S. law that enforces financial transparency and accountability in publicly traded companies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Practitioner and Professional Ethics:
+
+risk practitioners should work with legal council when building reporting
+
+must have appropriate controls in place
+
+compliance is a risk decision
+
+risk is often impacted by ethics
+
+ethics apply to how people believe that they have been treated
+
+
+
+
+=====================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IT Risk Assessment Practices:
+
+
+
+
+
+
+
+
+Identifying Risk Events:
+
+seeking to identify loss event scenarios affecting your business goals and objectives
+
+risk practitioners should work closely with business process owners
+
+risk practitioners should consult with IT and cybersecurity experts to understand technological risk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Events:
+
+risk events are specific occurrences that create an impact in a business
+
+these are not threats
+
+risk events = threats with attached probability and impact on a company's assets
+
+risk practitioners should first understand their current and future environment
+
+loss of talented workers
+
+natural disasters
+
+DDOS attack
+
+abuse of authority
+
+new legal or regulatory requirements
+
+terrorism
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Identification Terms:
+
+asset
+
+impact
+
+likelihood
+
+threat
+
+threat actor
+
+threat vector
+
+vulnerability
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Identifying Risk Factors:
+
+risk is made up of a commination of factors
+
+risk factors are typically classified in two way, contextual factors (internal/external) and capability factors (ability to perform IT related activities)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Factors:
+
+threat actors
+
+threats
+
+vulnerabilities
+
+risk
+
+assets
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Analysis and Evaluation:
+
+threat and vulnerability landscape is in a constant flux
+
+use a risk register to manage risk generated during the identification process
+
+risk analysis is the modeling of various threats against assets
+
+risk evaluation considers these risk events in context of the risk appetite, tolerance, and capacity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Methods of Risk Identification:
+
+historical
+
+systematic
+
+inductive
+
+risk libraries
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Identification Process:
+
+identify assets
+
+identify threats
+
+identify existing controls
+
+identify vulnerabilities
+
+identify impacts
+
+risk estimation process
+
+
+
+
+
+
+
+
+
+
+
+
+
+Changes in The Risk Environment:
+
+organizations and technologies change all the time
+
+this changes the risk environment
+
+risk practitioners should constantly monitor the business and external reports (CERT)
+
+emerging threats should be identified, analyzed, evaluated, assessed, and reported
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Maintaining Operational Integrity:
+
+requires procedures such as incident management, change management, etc.
+
+consistent and sustainable operations lessen risk
+
+well defined procedures help business achieve their goals
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Industry Trends:
+
+IT departments need to be aware of changes in the industry
+
+risk practitioners should assess the maturity of the IT department
+
+flexibility is key
+
+
+
+
+
+
+
+
+
+
+
+Forecasting Risk:
+
+risks can occur as the result of preexisting conditions
+
+risk events can also cascade from one another
+
+the greatest threat to an organization is failure to learn from past events and forecast accurately based on those events
+
+
+
+
+
+
+
+
+
+
+
+
+
+Threat Modeling and Threat Landscape:
+
+threats can be external or internal
+
+not all conceivable threats need to be considered
+
+it is best to categorize threats to help organize appropriate responses
+
+
+
+
+
+
+
+
+
+
+
+Threat Modeling:
+
+risk practitioners should document all threats that apply to systems and business processes
+
+threats are the result of accidental actions, intentional actions or natural events
+
+
+
+
+
+
+
+
+
+
+
+
+Information Sources On The Threat Landscape:
+
+service providers
+
+threat monitoring agencies
+
+audits
+
+business continuity
+
+product vendors
+
+insurance companies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Threat Modeling:
+
+threats depend a lot on the mindset and approach of an attacker (threat actor)
+
+threat modeling is all about mapping methods, approaches, steps, and techniques
+
+threat actors use different tools, different techniques
+
+threat modeling, abuse case modeling is different than standard use case modeling
+
+threat modeling is important as part of the risk analysis process as well
+
+its important to understand which controls successfully defend against attacks
+
+we put these answers in a threat profile
+
+
+
+
+
+
+
+
+
+
+Some Threat Modeling Methods:
+
+STRIDE, a Microsoft framework that categorizes threats into spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege
+
+PASTA, a risk centric seven stage methodology that aligns business objectives with technical requirements to model and prioritize threats
+
+LINDDUN, a privacy focused threat modeling framework addressing threats like likability, identifiability, non repudiation, detectability, disclosure, unawareness, and non compliance
+
+Attack Trees, a hierarchical diagram technique that models how an attacker could achieve a specific goal through different paths
+
+PnG (process for attack simulation and threat analysis), a quantitative method using simulation to evaluate potential attack paths and impacts
+
+Trike, a security auditing framework that uses threat modeling to define system requirements and generate risk based security metrics
+
+VAST (visual, agile, and simple threat), a scalable threat modeling approach that integrates with DevOps pipelines to support both application and operational threat analysis
+
+
+
+===========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vulnerability Assessment and Testing:
+
+
+
+
+
+
+
+
+Scores of Vulnerabilities:
+
+vulnerabilities are weaknesses or gaps in an organizations processes, technology, and people
+
+threat actors use these to exploit or harm a business
+
+quire a few of these are pre-existing conditions in systems
+
+risk identification will need to locate and identify so that they can be solved or mitigated
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sources of Vulnerabilities - Networks:
+
+typically due to misconfiguration or poor architecture
+
+open services are p potential attack vector
+
+non hardened devices such as router and switches can be compromised
+
+traffic interception is primarily the goal of an attacker
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sources of Vulnerabilities - Physical Access:
+
+physical access allows for theft, network access, server room, and installing skimmers
+
+testing access control systems, locks, security guards, etc. is vital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sources of Vulnerabilities - Application/Web Services:
+
+web applications are one of the top attack vectors in IT
+
+most applications are written to support job roles vs. being secure
+
+application vulnerabilities include logic flaws, incorrect user access, and buffer overflows
+
+applications that contain sensitive information are placed in secure areas
+
+
+
+
+
+
+
+
+
+
+
+Risk Scenario Development:
+
+risk scenarios are descriptions of possible threat events that have an uncertain impact
+
+used to conceptualize risk
+
+each scenario should be related to a business objective
+
+can be based on past events, but should also look to future events
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Approaches to Risk Scenario Development:
+
+top-down, a method where risk scenarios are developed starting from organizational objectives and strategic goals, then broken down into specific risks that could impact them.
+
+bottom-up, a method where risk scenarios are developed by analyzing detailed operational processes and identifying risks at the ground level, which are then aggregated upward to assess their impact on the organization.
+
+components used, actors, threat types/events, asset/resource, estimated frequency/impact
+
+
+
+
+
+
+
+
+
+
+
+
+Analyzing Risk Scenarios:
+
+risk scenarios are useful to communicate the potential probability and impact
+
+these things are difficult to predict with great precision
+
+using F.A.I.R or H.A.R.M can help with creating multiple simulations and map qualitative statements to quantitative values
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Assessment Standards and Frameworks:
+
+once risk is identified, risk assessment and analysis should take place
+
+IT risk is a subset of enterprise risk
+
+in todays modern enterprise IT risk heavily influences all areas of overall risk
+
+assessment should look at critical functions, controls in place, and prioritization of risk
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Assessment Concepts:
+
+bow tie analysis, a method that visually links potential causes of a risk event to its consequences, showing preventative and mitigating controls in the shape of a bow tie
+
+cause and effect, a diagramming approach that identifies the root causes of a problem and maps how they lead to specific outcomes
+
+Delphi method, a structured process where experts anonymously provide opinions in multiple rounds to reach a consensus on risk assessment.
+
+event tree analysis, a forward looking technique that starts with an initiating event and maps possible outcomes through branching pathways
+
+fault tree analysis, a top down method that uses logic diagrams to analyze the possible causes leading to a specific system failure
+
+Markov analysis, a probabilistic technique that models risk by analyzing state changes over time, assuming future states depend only on the current state
+
+monte Carlo analysis, a simulation technique that uses random sampling and statistical modeling to estimate risk probabilities and impacts
+
+SWIFT (Structured What-If Technique), a guided brainstorming method that uses "what if" questions to identify potential risks systematically
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tools of Risk Assessment:
+
+risk practitioners should use tools wisely and choose appropriately
+
+a consistent assessment technique should be used when the goal is to produce results compared over time
+
+practitioners should not use as many techniques as possible nor only one
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Register:
+
+consolidates risk data into one place and enables tracking
+
+shows impact/probability
+
+should document the organizations entire risk
+
+risk register drives the management of risk
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Ranking:
+
+results of risk assessment need to be prioritized
+
+weighted score derived from all the components of risk
+
+senior management should be involved in the definition of weights
+
+this information is in the risk register
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Maps:
+
+used after qualitative and quantitative analysis is complete
+
+scenarios are considered in the context of risk appetite and risk tolerance
+
+sometimes called a probability and impact matrix
+
+risk maps help the practitioner assess what the appropriate level of response should be
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Assessment Considerations:
+
+risk ownership, the assignment of responsibility to a specific individual or entity for managing and mitigating a particular risk
+
+risk documentation, the formal recording of identified risks, their assessments, and responses, and monitoring activities for accountability and review
+
+risk exclusions, the deliberate acknowledgment of risks that are accepted or left unaddressed, often due to cost, scope, or strategic considerations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Analysis Methodologies - Quantitative Risk Analysis:
+
+used mathematical models to simulate potential outcomes
+
+often referenced by financial or time values
+
+relies on quality data to make accurate predictions
+
+suitable for cost-benefit analysis
+
+uses EMV (expected monetary value) and ALE (annual loss expectancy)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Qualitative Risk Analysis:
+
+considers the quality of risk
+
+uses P/I matrix based on subjective H-M-L values on probability and impact
+
+relies heavily on experience of experts
+
+typically based on scenarios or descriptions of possible risk events
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Root Cause Analysis:
+
+causes of risk are not always obvious
+
+root cause analysis asks a series of questions to get to the root of the issue
+
+uses a "fishbone"/Ishikawa diagram
+
+helps with risk assessment to understand the cause and effect
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Impact Analysis:
+
+a process to help establish disaster recovery and continuity requirements
+
+comprehensive BIA works to establish the escalation of loss over time
+
+BIA helps the risk practitioner in proposing appropriate risk responses
+
+BIA helps senior management select appropriate recovery strategies
+
+
+
+
+
+
+
+
+
+
+
+
+Business Continuity - Fault Tolerance:
+
+BIA concentrates on the activities and resources needed for the most critical services
+
+recovery time objectives (RTO) are established
+
+key processes and resources can be prioritized and put into the business continuity plan (BCP)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BIA and Risk Assessment:
+
+BIA and Risk management are typically performed in close coordination
+
+there are distinctions such as BIA is about business continuity while risk assessment is about understanding the threats facing the business
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inherent, Residual, and Current Risk:
+
+risk is inevitable. it is inherent in anything an organization undertakes
+
+risk practitioners should understand risk, assess and respond to risk outside of risk appetite
+
+practitioners should also understand the difference between inherent, residual, and current risk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inherent Risk:
+
+the risk level or exposure without considering the actions a company has taken or might take
+
+the risk is present in any chosen course of action that I not specifically avoided
+
+
+
+
+
+
+
+
+Residual Risk: 
+
+the remaining risk after management has implemented a risk response
+
+calculated by subtracting the effectiveness of the risk response from inherent risk
+
+residual risk is what risk appetite is based upon
+
+
+
+
+
+
+
+
+
+
+Current Risk:
+
+residual risk is more in line with predictive perspective
+
+current risk can tend to confuse those that aren't following a risk management framework
+
+current risk = current "point in time" risk associated with an asset where actions taken and actions pending are considered
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mitigation, Transference, Avoidance Response:
+
+the goal of risk response is to bring risk into alignment with the business risk appetite and tolerance
+
+risk assessment report and risk register document the risk identified and analyzed/assessed
+
+the recommendations made are guidelines
+
+there are four responses; acceptance, mitigation, transfer and avoid
+
+
+
+
+
+
+
+
+
+
+
+Mitigation of Risk:
+
+actions taken to reduce the impact of risk
+
+typically accomplished by installing controls 
+
+the goal is to reduce risk to an acceptable level, not to eliminate it
+
+generally, less expensive than avoidance and transference
+
+
+
+
+
+
+
+
+
+
+Transferring Risk:
+
+reduces loss by having another organization handle the impact
+
+commonly done through third party insurance
+
+doesn't mean the organization wont feel the impact
+
+stakeholders rarely feel that the organization is not to blame
+
+
+
+
+
+
+
+
+
+
+
+
+Avoidance of Risk:
+
+exiting the activities or conditions that give risk to risk
+
+current exposure is deemed unacceptable by senior management
+
+chosen when it is impossible to mitigate or transfer 
+
+impact here is typically loss of opportunity
+
+
+
+
+
+
+
+
+
+
+
+Risk Acceptance:
+
+acceptance is a conscious decision by senior management
+
+recognizes the existence and impact of a risk
+
+sometimes referred to as "self-insurance"
+
+typically uses management reserves as a backup in case the risk event occurs
+
+risk falls within the company's risk appetite generally will be accepted
+
+management might also choose acceptance if risk is within tolerance
+
+risk that is accepted must be done so formally
+
+informal risk acceptance is called risk ignorance
+
+accepting risk at the onset deals with inherent risk
+
+accepting risk after mitigation deals with residual risk
+
+risk acceptance is not a one-time process
+
+regular reviews need to take place to make sure risk remains within risk appetite or tolerances
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Who Owns and Controls Risk?:
+
+every risk needs an owner at a management level
+
+risk owners should be senior executive or manager of a business process/function
+
+risk practitioners communicate to risk owners the options for risk response for their decision
+
+
+
+
+
+
+
+
+
+
+Ownership:
+
+ownership is all about accountability (RACI)
+
+risk owners must have authority, budget, and mandate to select risk responses
+
+every risk should have a single owner
+
+controls should be owned by the owner of the risk that it mitigates
+
+
+
+
+
+
+
+
+
+
+
+Ownership:
+
+risk and control owners must be documented in the risk register
+
+risk owners need to drive the risk management activities
+
+desired outcomes must be communicated clearly to the risk practitioner
+
+aggregate risk is evaluated against the strategic risk appetite
+
+
+
+
+
+
+
+
+
+
+
+Involving Third Party Risk Management:
+
+Outsourcing to consultants/experts is a form of risk transfer
+
+must watch out for ownership of data issues
+
+it require excellent legal/contract management
+
+outsourcing does not offload the ownership or liability of a risk owner
+
+Concerns to remember are hiring and training practices, time to notify of incidents, liability for non-compliance, location of data, and handling of data after contact ends
+
+mitigation can occur by using SLAs
+
+
+
+
+
+
+
+
+
+
+
+Issues Finding and Exceptions:
+
+any variations from the norm or desired outcome creates risk
+
+formal approaches to configuration, release, and change management helps
+
+controls can only do so much
+
+
+
+
+
+
+
+
+
+
+Configuration Management:
+
+technology changes rapidly
+
+standardizing system configurations can reduce complexity
+
+risk practitioners should talk with configuration management
+
+
+
+
+
+
+
+
+
+
+
+Release Management:
+
+anytime you release a new function or product you introduce risk
+
+understanding how internal development works is vital
+
+verification and protection prior to deployment must align to risk appetite
+
+
+
+
+
+
+
+
+
+
+
+
+Exception Management:
+
+policies and procedures must be in place for exceptions
+
+enterprises encounter circumstances where usual practices are unsuitable
+
+all exceptions must be formally documented and approved by a senior manager
+
+
+
+
+
+
+
+
+
+
+
+
+Change Management:
+
+change happens, which means risk
+
+needs effective change control to help manage risk
+
+Control Advisory Boards (CABs) are helpful
+
+change need to be a formal process to reduce risk
+
+
+
+
+
+
+
+
+
+
+Managing Emerging Risk:
+
+all risk is fundamentally dynamic
+
+thus, risk management must be continuous
+
+technology, configurations, and personnel are constantly changing
+
+this means that controls are constantly being modified
+
+
+
+
+
+
+
+
+
+
+
+Vulnerabilities and Controls:
+
+any changes with controls need to be carefully assessed
+
+deploying new controls or modifying existing controls is risky
+
+sometimes the change is worse than the consequence
+
+
+
+
+
+
+
+
+
+
+
+
+Emerging Technologies:
+
+adoption of new technology must be a formal process to help with risk management
+
+informal adoption is called "shadow IT"
+
+risk practitioners should use automated scanners for systems and networks
+
+
+
+
+
+
+
+
+
+
+
+Control Types, Standards, and Frameworks:
+
+mitigation is the most common response to risk
+
+controls are implemented to reduce or maintain risk at acceptable levels
+
+practitioners should verify the correct balance between technical, administrative, and physical controls
+
+might be useful to use a maturity model to see if enterprise controls are effective overall
+
+
+
+
+
+
+
+
+
+
+
+
+
+Categories of Controls:
+
+preventative
+
+deterrent
+
+detective
+
+corrective
+
+compensating
+
+
+
+
+
+
+
+
+
+
+
+
+Type/Methods of Controls:
+
+controls can also be broken down to three types which are administrative (managerial), technical, and physical
+
+
+
+
+
+
+
+
+
+
+Standards and Frameworks:
+
+selection of controls requires evaluation and implementation
+
+adopting standards and frameworks facilitates the process of selecting controls
+
+ISO 27000 series, PCI DSS, NIST, CSA, etc.
+
+these can also help with governance
+
+
+
+
+
+
+
+
+
+Control Design, Selection, and Analysis:
+
+first step in designing controls is to be aware of the current state of control environment
+
+current risk levels are essential to provide the reference point for gap analysis
+
+audit reports are too much. practitioners should be careful in requesting audits. look at any already completed audit reports
+
+
+
+
+
+
+
+
+
+
+
+Design and Selection:
+
+once shortcomings are identified, next step is to design or select controls to close the gap
+
+decide between proactive controls (safeguards) and reactive controls (countermeasures)
+
+effective controls prevent, detect, or contain an incident
+
+sometimes you will have to use compensating controls
+
+
+
+
+
+
+
+
+
+
+Implementing Controls:
+
+the third step with designing controls is to test new or changed controls in a non-production environment as much as possible
+
+successful testing is necessary before considering a changeover
+
+change management can assist with making sure controls (changes) are tested and analyzed correctly
+
+implementation and testing should not be limited to technical controls
+
+administrative controls such as (SoD) can help with access permissions, etc.
+
+
+
+
+
+
+
+
+
+
+
+Types of Changeover (implementation):
+
+parallel changeover, a method where the old and new systems run simultaneously for a period until the new system is proven reliable
+
+phased changeover, a method where the new system is implemented gradually in stages or modules while the old system is still in use
+
+abrupt changeover, a method where the old system is completely replaced by the new system at once, often called a "big bang" approach
+
+
+
+
+
+
+
+
+
+
+
+Data Migration Issues:
+
+risk practitioners should assess the process used for data migration to identify areas of concern
+
+procedures for data recovery should be in place before changeover
+
+areas to be concerned are completeness of data conversion, data integrity, storage and security, data consistency, and business continuity
+
+
+
+
+
+
+
+
+
+
+Testing the Effectiveness of Controls:
+
+an post implementation review can help setup successful testing of controls
+
+control testing helps to uncover flaws early enough to prevent failures
+
+testing can be done in two ways, progressive or regressive
+
+
+
+
+
+
+
+
+
+Best Practices for Testing:
+
+masking data (fuzzing)
+
+environmental separation
+
+version control and code locking
+
+
+
+
+
+
+
+
+Testing:
+
+unit testing (code review)
+
+integration/system testing
+
+user acceptance testing
+
+quality assurance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Response Plans:
+
+there are several responses to risk that can be utilized
+
+practitioners are consultants that assist the risk owners in deciding the response
+
+based on many different factors
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Response Selection:
+
+risk analysis (qualitative, quantitative)
+
+risks exceeding/risk tolerance
+
+select options (avoid, mitigate, transfer, or accept the risk)
+
+prioritize options (business case, quick wins, and defer)
+
+risk action plan complete!
+
+
+
+
+
+
+
+
+
+Risk Treatment Plans:
+
+should be run as a project
+
+end date of the project determines the critical path of the project
+
+
+
+
+
+
+
+
+
+
+
+
+
+Collecting, Aggregating, Analyzing and Validating Data:
+
+there are many sources of data available to a risk practitioner
+
+having data is valuable, but sifting through the large amounts can be difficult
+
+incorrect analysis can lead to a bad decision or suggestion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Methods for Discovering Hidden Risk Factors:
+
+cause and effect analysis, a method that identifies and maps potential root causes of risks to better understand how they contribute to outcomes
+
+fault tree analysis, a top-down approach that uses logic diagrams to trace the pathways and combinations of failures leading to a specific undesired event
+
+sensitivity analysis, a technique that test how changes in individual variables or assumptions affect overall risk outcomes, revealing hidden vulnerabilities
+
+
+
+
+
+
+
+
+
+Risk Data Collection and Extraction Tools and Techniques:
+
+prior risk assessments
+
+audit and incident reports
+
+logs
+
+security information and event management
+
+integrated test facilities
+
+external sources
+
+
+
+
+
+
+
+
+
+
+
+Monitoring Techniques for Risk and Controls:
+
+its important that processes, logs, and audit books are commonly placed into the control framework
+
+monitoring and reporting controls is in the risk monitoring phase, but the capability must be planned as part of design
+
+
+
+
+
+
+
+
+
+
+
+Monitoring Controls:
+
+risk practitioners work with stakeholder to setup the IS control monitoring
+
+IS control monitoring is all about making sure that IT security requirements are met
+
+remember that the purpose of a control is to mitigate a risk
+
+
+
+
+
+
+
+
+
+Steps for Monitoring Controls:
+
+identify and confirm risk control
+
+engage with stakeholders and communicate the risk and IS requirements
+
+align and maintain the IS monitoring approach with IT staff
+
+stablish IS processes and procedures
+
+determine Life-Cycle management and change control processes
+
+
+
+
+
+
+
+
+
+
+
+
+Control Assessment Types:
+
+self assessment
+
+IS audit
+
+vulnerability assessment
+
+penetration testing
+
+
+
+
+
+
+
+
+
+
+
+
+Reporting techniques for Risk and Controls:
+
+practitioners are expected to give regular reports to management and the board of directors on the status of the risk plan
+
+effectiveness of control monitoring depends on skill of the data analyst, quality of the data, and timeliness
+
+
+
+
+
+
+
+
+
+
+Heat Maps:
+
+graphical representation of risk distribution across a particular scope
+
+useful as a means of expressing the effectiveness of controls
+
+helps illustrate the underlying data in a visually attractive manner
+
+
+
+
+
+
+
+
+
+
+
+
+Scorecards:
+
+basically a grading card for aggregating performance
+
+modern businesses use balanced scorecards to align the right indicators alongside the 4 areas of the scorecard
+
+remember that scorecards are snapshots in time
+
+
+
+
+
+
+
+
+
+
+
+Dashboards:
+
+data presented sequentially with distinct indicators
+
+typically shows data in real time, but not always
+
+best choice when presenting to senior management
+
+
+
+
+
+
+
+
+
+
+
+Using Key Performance Indicators:
+
+performance indicators measure how well a process is performing in terms of its stated goal
+
+key performance indicators (KPIs) measure activity goals 
+
+for example: a KPI may indicate that an error rate of 5% is acceptable
+
+the risk attached would be if the KPI showed something over 5%
+
+
+
+
+
+
+
+
+
+
+
+
+
+KPIs:
+
+KPIs are based on SMART metrics, Specific, Measurable, Attainable, Relevant, and Time bound
+
+
+
+
+
+
+
+
+
+
+
+
+Using Key Risk Indicators:
+
+risk indicators are used to measure risk levels in comparison to defined risk thresholds
+
+KRIs are risk indicators that are highly relevant and possess a high probability of predication accuracy
+
+examples of KRIs include number of unauthorized equipment detected, number of times SLAs exceeded the thresholds, and average time to deploy security patches
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+KRI (Key Risk Indicator) selection:
+
+KRIs should be carefully and sparingly selected
+
+besides SMART metrics, KRIs should consider factors like balance and root cause
+
+KRIs are more dynamic than KPIs
+
+KRIs should be optimized to make sure that the correct data is being collected and reported on
+
+
+
+
+
+
+
+
+
+
+Using Key Control Indicators (KCIs):
+
+certain indicators show the control effectiveness to the team
+
+the indicator should quantify how well a specific control is working
+
+the goal of a KCI is to track performance of control actions relative to tolerances
+
+KCI examples include phishing emails blocked or not blocked, admins with right to both test and production environments, and unsolicited prompts for second-factor authentication
+
+
+
+
+
+
+
+
+
+
+
+
+Key Control Indicators:
+
+each KCI has its own tolerances based on the asset it protects
+
+KCIs are correlated with the risk they are meant to mitigate
+
+this correlation also means that all KCIs are themselves risk indicators
+
+
+
+
+
+
+
+
+
+
+The Scope of Enterprise Architecture:
+
+risk practitioners need to understand the scope of network and information architecture
+
+enterprise view of the architecture allows you to see the link between IT and the company's strategic objectives
+
+organizations commonly use EA frameworks to help make it easier
+
+
+
+
+
+
+
+
+
+
+
+The Four Ares:
+
+are we doing the right things?
+
+are we doing them the right way?
+
+are we getting them done well?
+
+are we seeing expected benefits?
+
+
+
+
+
+
+
+
+
+
+
+
+Enterprise Architecture Categories:
+
+documentation, the recorded descriptions, models, and artifacts that capture the structure, components, and relationships within an enterprise
+
+notation, the standardized symbols, diagrams, and languages used to represent enterprise architecture elements consistently
+
+process, the methods and workflows followed to develop, manage, and maintain enterprise architecture across its lifecycle
+
+organization, the governance structures, roles, and responsibilities that define how enterprise architecture is managed within the business
+
+
+
+
+
+
+
+
+
+
+
+Architecture Frameworks:
+
+TOGAF, The Open Group Architecture Framework, a comprehensive methodology and set of tools for designing, planning, implementing, and governing enterprise architectures
+
+Zachman Framework, a taxonomy that organizes enterprise architecture artifacts into a matrix based on perspectives (who, what, where, why, how) and levels of detail
+
+DODAF, The Department of Defense Architecture Framework, used by the U.S. DoD to ensure systems architecture aligns with military operations and standards
+
+FEAF, The Federal Enterprise Architecture Framework, a U.S. government framework designed to align business processes and IT across federal agencies
+
+SABSA, The Sherwood Applied Business Security Architecture, a framework focused on developing risk-driven enterprise security architectures
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hardware and Software in Operations Management:
+
+risk practitioners do not need to be technical experts in the design, implementation and support of IT systems and applications
+
+practitioners should have a general understanding of networking, applications, and IT systems
+
+there are certain areas that require more attention than others
+
+
+
+
+
+
+
+
+
+
+
+
+Hardware Concerns:
+
+obsolesce
+
+misconfiguration
+
+lack of secure configurations
+
+physical loss or theft
+
+physical access
+
+network "sniffing"
+
+component or system failure
+
+supply chain management
+
+
+
+
+
+
+
+
+
+
+
+
+
+Software Concerns:
+
+logic flaws or semantic errors
+
+lack of patching
+
+disclosure of sensitive information
+
+lack of version control
+
+unnecessary services and protocols running
+
+lack of security software updates
+
+
+
+
+
+
+
+
+
+
+
+
+
+Areas of Software Risk:
+
+applications 
+
+databased
+
+operating systems
+
+software utilities
+
+
+
+
+
+
+
+
+
+
+
+
+Networking Fundamentals:
+
+computers abilities to communicate to one another is fundamental to information systems (IS)
+
+most modern networks are digital which are more resilient than analog
+
+networks are special in the world of IT risk management
+
+because they move data back and forth, they are prime targets by threat actors
+
+
+
+
+
+
+
+
+
+
+
+Protocols and TCP/IP:
+
+networks use signals to transmit data in small pieces that are put back together at the receiving end
+
+the most important protocol to understand is TCP/IP
+
+TCP/IP predates the OSI model
+
+the premise is the same in that you move down the model to transmit and back up as you receive it
+
+*OSI reference model
+7. application
+
+6. presentation
+
+5. session
+
+4. transport
+
+3. network
+
+2. data link
+
+1. physical
+
+
+TCP/IP model
+4. application
+
+3. transport
+
+2. internet
+
+1. network interface
+
+
+
+
+
+
+
+
+
+
+
+
+Cabling and Infrastructure:
+
+while wireless is hugely popular, physical cabling is still very useful
+
+devices in the networking infrastructure are switches, wireless access points, routers, and firewalls
+
+
+
+
+
+
+
+
+
+Software Based Networking:
+
+domain name service DNS
+
+dynamic host configuration protocol DHCP
+
+virtual local are networks VLANs
+
+quality of service QoS
+
+
+
+
+
+
+
+
+
+
+Virtualization and Cloud Computing:
+
+in the mid 2000s the capability to make virtual machines opened up the ability to create software based computing systems
+
+in addition, large companies like Amazon, Google, and Microsoft had massive datacenters that only slightly used their capacity
+
+containerization took it to another level
+
+
+
+
+
+
+
+
+
+
+
+Cloud Computing Risk:
+
+cloud introduces different types of risk to you business
+
+while they are highly secure, they are also huge targets
+
+where you data is stored does matter
+
+this is considered "outsourcing" and brings the same risk
+
+
+
+
+
+
+
+
+
+
+Project Management:
+
+project management is all about communication, managing stakeholders, and risk
+
+large amounts of risk are involved in scheduling, cost and quality
+
+many IT projects fail due to unclear or changing requirements, problems with technology
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Responses for Project Management:
+
+project management methodologies from waterfall to agile are well established
+
+common risk responses are change control boards, project task prioritization, and risk management process
+
+large projects can be aggregated into programs to help with resource management
+
+
+
+
+
+
+
+
+
+
+
+
+Disaster Recovery and Business Continuity:
+
+risk management considered the full spectrum of risk from minor to catastrophic impacts
+
+the business continuity process creates a Business Continuity Plan (BCP) to help with mitigating the risk
+
+BCPs provide sufficient levels of functionality in operations when disaster strikes
+
+
+
+
+
+
+
+
+
+
+
+
+Business Continuity Plans:
+
+BCPs come out of the business impact analysis
+
+the BIA establishes the recovery point objectives (RPOs) and recovery time objectives (RTOs)
+
+environments with low RTOs have high availability systems
+
+environments with low RPOs have high availability data architectures
+
+
+
+
+
+
+
+
+
+
+Disaster Recovery:
+
+disaster recovery refers to the recovery of business and IT services following a disaster
+
+completed within a defined schedule and budget
+
+flows from RTOs established by BIA and built into BCP
+
+should be a primary and alternate for every activity
+
+
+
+
+
+
+
+
+
+
+
+Risk in The data Life Cycle:
+
+data typically follows a six phase lifecycle
+
+there are many caveats to the lifecycle
+
+for example, creation can be original collection or synthesis from other data
+
+
+
+
+
+
+
+
+
+Data Management Lifecycle:
+
+creation
+
+storage
+
+use
+
+sharing
+
+archiving
+
+destruction
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Management:
+
+data is one of business most valuable assets
+
+to protect data you must first identify it in terms of use and then classify it in terms of value
+
+data validation can be done with a whitelist or blacklist
+
+most important is control over the permissions and authorization
+
+
+
+
+
+
+
+
+
+Risk in The System Development Lifecycle:
+
+systems exist in all organizations
+
+there is a lifecycle associated with systems and their development
+
+SDLC can stand for Software Development Lifecycle as well
+
+a SDLC is a methodology intended to support effective project management
+
+
+
+
+
+
+
+
+
+System Development Lifecycle:
+
+intimation
+
+development or acquire
+
+implement
+
+operation
+
+disposal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Key Security Tasks:
+
+document the risk
+
+security categorization
+
+what are the CIA requirements?
+
+privacy impact assessment
+
+vendor/supplier risk assessment
+
+waterfall or agile methodology
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emerging Technologies and Risk:
+
+technology is constantly changing and growing everywhere
+
+pressure to implement new technologies to "keep up" with the competition is huge
+
+this can cause an organization to lose track of its primary goals and objectives
+
+
+
+
+
+
+
+
+
+
+Emerging Technologies:
+
+omnipresent connectivity
+
+bring your own device (BYOD)
+
+internet of things (IoT)
+
+deepfakes and AI
+
+blockchain
+
+
+
+
+
+
+
+
+
+Information Security Concepts:
+
+the goal of risk management is to make sure technology used in organization is adequately protected, reliable, and secure
+
+
+
+
+
+
+
+
+Information Security Concepts:
+
+risk based concerns include creating policies, system identification for backups, assigning risk ownership, reviewing regulatory needs, and training your staff and admins
+
+practitioners should understand that every system needs a system owner
+
+most owners delegate down to operations
+
+Transference of Responsibility does not mean transferring accountability
+
+there can be different cultures within an organization due to size and complexity of groups/teams
+
+
+
+
+
+
+
+
+
+
+Likelihood:
+
+likelihood (probability) is the measure of frequency of which events occur
+
+likelihood is affected by motivation, proximity, skill, volatility, and visibility
+
+
+
+
+
+
+
+
+
+
+
+The CIA Triangle (Iron Triangle):
+
+practitioners need to understand the CIA triad as all security risk derives from these three principles
+
+sometimes called the iron triangle
+
+there is a fourth principle in addiction to confidentiality, integrity, and availability which is called nonrepudiation
+
+all are needed to perform successful risk management
+
+
+
+
+
+
+
+
+
+
+
+
+Data Privacy Fundamentals:
+
+practitioners should understand that privacy is similar to confidentiality
+
+difference between privacy and confidentiality is that rights regarding the handling and retention of a subjects PII 
+
+these rights are still calid even if the data is not in the subjects control
+
+
+
+
+
+
+
+
+
+Components of I-triple-A:
+
+role based access control
+
+auditing and logging 
+
+unique identifiers
+
+
+
+
+
+
+
+
+
+
+
+*PKI is a framework for managing digital keys and certificates
+
+
+
+
+
+
+
+
+
