@@ -1,0 +1,2844 @@
+Infosec Certified Secure Software Lifecycle Professional (CSSLP):
+
+
+
+
+
+
+
+
+Confidentiality:
+
+protecting sensitive information from unauthorized disclosure
+
+ensuring that only authorized users or processes can access information
+
+covers security and privacy
+
+often associated with masing and or encryption. examples include masking components of a social security number on a form or encrypting a disk with a product like Bitlocker
+
+
+
+
+
+
+
+
+
+
+Governance Risk and Compliance Standards:
+
+aligning IT and security with business goals while managing risk, complying with industry standards such as PCI DSS or CIS controls, and also complying with government regulations such as CMMC or HIPPA
+
+
+
+
+
+
+
+
+
+
+
+
+Least Privilege:
+
+use access control to ensure that users and processes have only the privileges they need and no more. 
+
+need-to-know
+
+runtime privileges
+
+zero trust, trust nothing, verify everything every time
+
+
+
+
+
+
+
+
+
+
+Resiliency:
+
+keeping essential systems up and running despite disasters and disruptions
+
+fail safe, fail secure, no single point of failure (SPOF), failover
+
+
+
+
+
+
+
+
+
+Economy of Mechanism:
+
+vulnerabilities increase as software becomes more complex
+
+KISS principle in action
+
+single sign-on (SSO)
+
+password vaults
+
+resource efficiency
+
+
+
+
+
+
+
+
+Open Design:
+
+security must not depend on the secrecy of design or implementation
+
+Kirchhoff's Principle
+
+open source
+
+crowd source
+
+peer review
+
+
+
+
+
+
+
+
+
+
+
+Least Common Mechanism:
+
+mechanisms shared by more than one user or process should be minimized
+
+compartmentalization, isolation, allow/accept list (whitelist)
+
+
+
+
+
+
+
+
+
+
+
+Component Reuse:
+
+using existing software to build new software. 
+
+common libraries, common controls, APIs, object reuse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Domain 1 Review:
+
+secure software concepts, highlights the concepts and methodologies that allow all stakeholders involved in the software development life cycle (SDLC) to design and implement best security practices for software development
+
+
+
+
+
+
+
+
+
+
+
+Common Software Development Methodologies:
+
+waterfall, a linear software development methodology where each phase (requirements, design, implementation, testing, and deployment) must be completed before the next begins
+
+agile, an iterative and flexible methodology that emphasizes collaboration, customer feedback, and adaptive planning to deliver small, incremental improvements
+
+scrum, an agile framework that organizes work into short cycles called sprints, with defined roles (scrum master, product owner, development team) and regular ceremonies
+
+extreme programming, an agile methodology focused on improving software quality and responsiveness through practices like pair programming, continuous integration, and test-driven development
+
+Kanban, a visual workflow management method that uses boards and cards to optimize efficiency, limit work in progress, and promote continuous delivery
+
+rapid application development (RAD), a methodology that emphasizes rapid prototyping and iterative delivery with continuous user involvement to accelerate the development process
+
+
+
+
+
+
+
+
+
+Security Standards:
+
+implement security frameworks such as NIST secure software development framework, CIS controls, and OWASP application security verification standard (ASVS)
+
+promote security awareness
+
+
+
+
+
+
+
+
+Strategy and Roadmap:
+
+strategy, the direction taken to achieve your vision
+
+roadmap, a visualization of your strategic plan. it can be a guide for prioritizing work, allocating resources and tracking dependencies
+
+your strategy and roadmap should include milestones and checkpoints such as control gate and break/build criteria
+
+
+
+
+
+
+
+
+
+
+
+Security Documentation:
+
+document frameworks used, security processes and practices applied, and security testing
+
+documentation should include objective, scope, compliance, standards and process, document owner, effective date, and last reviewed date
+
+
+
+
+
+
+
+
+
+
+Security Metrics:
+
+measures to determine if an organizations cybersecurity program is accomplishing goals and maintaining compliance
+
+tells an organization what is and isn't working
+
+define key performance indicators (KPIs) such as criticality level, average remediation time, and complexity
+
+define objectives
+
+define key results
+
+measure results
+
+
+
+
+
+
+
+
+Decommission Applications:
+
+define end of life (EOL) policies including credential removal, configuration removal, license cancellation, archiving, service level agreements (SLAs), and check NIST 800-160v2r.1 for disposal and EOL considerations
+
+determine and document data disposition including retention, destruction, dependencies, and NIST SP 800-88 covers aspects of media security and sanitization
+
+
+
+
+
+
+
+
+
+Reporting Mechanisms:
+
+keep stakeholders aware of risk to the organizations mission
+
+help support risk-based decisions at an organizational level
+
+mechanisms include reports, dashboards and feedback loops
+
+
+
+
+
+
+
+
+
+
+Integrated Risk Management (IRM):
+
+a set of practices and processes, supported by a risk-aware culture and enabling technologies, that improves decision making and performance through an integrated view of how well an organization manages its unique set of risks
+
+risk assessment
+
+risk analysis
+
+tools
+
+technical risk vs. business risk, risk register, probability and impact matrix (risk matrix)
+
+risk is dynamic and should be reassessed when business or technical conditions change
+
+
+
+
+
+
+
+
+
+
+
+Risk Management Process:
+
+identify risk
+
+analyze risk
+
+rank risk
+
+treat risk
+
+monitor and review risk
+
+
+
+
+
+
+
+
+
+SEI software Risk Management: 
+
+software engineering institute model, identify, analyze, plan, track, and control
+
+
+
+
+
+
+
+Risk Treatment Options:
+
+reduce risk, implement countermeasures
+
+assign risk, buy insurance
+
+accept risk, understand and live with risk
+
+avoid risk, choose not to engage in that risk activity
+
+
+
+
+
+
+
+
+
+Secure Operation Practices:
+
+change management process
+
+incident response plan (IRP)
+
+verification and validation (V&V)
+
+assessment and authorization (A&A) process
+
+
+
+
+
+
+
+
+Change Management:
+
+change management is a systematic approach to ensure changes are successfully implemented
+
+well known models include Kotter model, Kubler-ross model, McKinsey 7-5 model, and Lewin's model
+
+process typically includes these steps which are to prepare for change, plan for change, implement change, manage change, review change, and sustain change
+
+
+
+
+
+
+
+
+Incident Response Plan (IRP):
+
+"the documentation of a predetermined set of instructions for procedures to detect, respond to, and limit consequence of a malicious cyber attacks against an organizations information system." NIST SP 800-34 rev.1
+
+"an incident response plan is a written document, formally approved by the senior leadership team, that helps your organization before, during, and after a confirmed or suspected security incident. your IRP will classify roles and responsibilities and will provide guidance on key activities. it should also include a cybersecurity list of key people who may be needed during a crisis." CISA
+
+
+
+
+
+
+
+
+
+NIST Incident Response Lifecycle:
+
+preparation
+
+detection and analysis
+
+containment, eradication, and recovery
+
+post incident activity
+
+
+
+
+
+
+
+
+
+Verification and Validation:
+
+verification, evaluates an application to determine if the application was designed and developed per the requirements. does not necessarily include code execution. relies on methods like walkthroughs and inspections
+
+validation, evaluates the application to determine if it meets the stakeholders needs and expectations. includes code execution. relies on methods like functional and non-functional testing
+
+
+
+
+
+
+
+
+Assessment and Authorization (A&A) Process:
+
+assessment, a comprehensive analysis of management, operational and technical security controls. determine if controls are implemented correctly, operating as intended, and producing the desired result
+
+authorization, official management decision authorizing operation. explicitly accept the risk oh an agreed upon set of security controls
+
+see NIST SP 800-37 rev.2 for more info
+
+
+
+
+
+
+
+
+
+Domain 2 Review:
+
+domain 2, secure software lifecycle management, focuses on ensuring security is baked into the software development lifecycle from design on to reduce vulnerabilities and enhance the overall security posture of software applications
+
+
+
+
+
+
+
+
+
+
+Functional Software Requirements:
+
+define what an application must do to meet stakeholders needs and expectations
+
+the applications features and functions
+
+typically captured by business requirements, use cases, and stories
+
+
+
+
+
+
+
+
+
+
+
+
+Non-Functional Software Requirements:
+
+describe the general capabilities of an application and how the application performs functions sometimes called quality attributes
+
+includes operational, deployment, security, and continuity
+
+
+
+
+
+
+
+
+
+
+
+
+Requirements of the Requirements:
+
+requirements are they testable? measurable? clear? complete? unambiguous? consistent?
+
+
+
+
+
+
+
+
+
+
+
+Compliance:
+
+two basic forms are external and internal
+
+compliance and security go hand and hand
+
+
+
+
+
+
+
+
+
+
+External Compliance:
+
+statutes, a law enacted by a legislative body of the government
+
+regulations, authorized by statues, sometimes referred to as rules or administrative laws
+
+laws, acronym for statue or regulation
+
+industry requirements, rules promulgated by an industry
+
+all of these are mandatory to some degree
+
+all of these can change over time
+
+examples of statutory and regulatory compliance requirements are federal information security maintenance act (FISMA), Sarbanes-Oxley act (SOX), gramm-leach-Bliley act (GLBA), health insurance portability accountability act (HIPAA), general data protection regulation (GDPR), and California consumer privacy act (CCPA)
+
+examples of industry compliance requirements are payment card industry data security standard (PCI-DSS) or cybersecurity maturity model certification (CMMC)
+
+
+
+
+
+
+
+
+
+Internal Compliance:
+
+promulgated by the organization and includes governance, policy, standards, frameworks, protocols, and procedures
+
+
+
+
+
+
+
+
+
+
+
+Data Classifications:
+
+data is most organizations second most important resource after people
+
+identifying information assets is critical to business
+
+classification, the process of categorizing data to make it easy to store, manage, retrieve, and protect
+
+classification and categorization are based on sensitivity (low, medium, high) and criticality (makes money or costs money)
+
+
+
+
+
+
+
+
+Data Concerns:
+
+data ownership
+
+labeling
+
+types of data
+
+data lifecycle
+
+data handling
+
+
+
+
+
+
+
+
+
+Data Ownership:
+
+data owner is accountable for protecting data
+
+data owner responsibilities include ensuring information assets are appropriately classified, validating that security controls are implemented as needed by reviewing the classification periodically, defining authorized list of users and access criteria based on information classification (SOD and least privilege focus), ensuring appropriate backup and recovery mechanisms are in place, and delegating the classification responsibility, access approval authority backup and recovery duties to a data custodian as needed.
+
+data custodian, has physical access and technical control over the data. does all work delegated by the data owner
+
+
+
+
+
+
+
+
+
+
+Data Labeling:
+
+adding labels (tags) to raw data such as images, videos, text, and audio to help better identify it
+
+in the context of security, labels dictate the level of sensitivity
+
+US government, nation security labels, include top secret, secret, and confidential
+
+corporate labels include sensitive, confidential, personnel, and private
+
+
+
+
+
+
+
+
+
+Data Types:
+
+structured, database, spreadsheets, XML, and JSON
+
+unstructured, free-form, real-time data, internet-based, "big date"
+
+
+
+
+
+
+Data Lifecycle:
+
+policy based approach to protect data throughout its life cycle. generation, storage, retention, and disposal
+
+
+
+
+
+
+
+
+
+Privacy:
+
+broadly speaking, privacy is the right to be let alone, or freedom from interference or intrusion. information privacy is the right to have some control over how your personal information is collected and used." IAPP
+
+"assurance that the confidentiality of, and access to, certain information about an entity is protected." NIST
+
+privacy and security go hand and hand
+
+security is why you lock your doors
+
+privacy is why you close your blinds
+
+
+
+
+
+
+
+
+Data Anonymization:
+
+anonymization, the process of removing identifiers from datasets. "data anonymization is done for the purpose of protecting an individuals or company's private activities while maintaining the integrity of the data gathered and shared." Investopedia
+
+two types, full anonymization, pseudo anonymization
+
+
+
+
+
+
+
+
+User Rights:
+
+the right to be informed, data subject must be informed when their personal data is being collected and used by your business
+
+the right of access, customers can request a copy of the personal data being processed by your business
+
+the right to rectification, if a customers data is incomplete or inaccurate, they can ask you to rectify or complete it
+
+the right to be forgotten, if you no longer need a customers data for its original legal purpose; have processed their data unlawfully; or they formally object to or withdraw their consent to processing, you mist delete their personal data
+
+
+
+
+
+
+
+
+
+Cross-Border:
+
+data residency, defines in which country the organizations data is stored or processed
+
+data sovereignty, defines not only where the data resides but which laws pertain to the data
+
+data localization, requires that data created within a certain border stays within those borders
+
+multi-national data processing boundaries, multi-jurisdictional privacy concerns, who's laws apply and how do they apply?
+
+two major issues, extra territorial application of data protection laws, data transfers from one jurisdiction to another
+
+
+
+
+
+
+
+
+
+Data Access Provisioning Issues:
+
+user provisioning
+
+service accounts
+
+reapproval process
+
+
+
+
+
+
+
+
+
+
+User Provisioning:
+
+creating accounts
+
+assigning the proper permissions
+
+reviewing and changing accounts
+
+disabling accounts
+
+deleting accounts
+
+
+
+
+
+
+Service Accounts:
+
+privileged account used for running services, automated processes and applications
+
+require special handling due to elevated privileges
+
+apply principle of least privilege
+
+
+
+
+
+
+
+
+
+Reapproval Process:
+
+user privileges and data classification should be regularly reviewed to ensure they are still needed
+
+apply principles of least privilege
+
+avoid permissions creep
+
+
+
+
+
+
+
+
+
+
+Security Requirement Traceability Matrix (SRTM):
+
+facilitates derivation of requirements from sources (laws, FIPS, project needs, etc.) showing source, object, rationale, verification, validation and execution, traceable from the result back to the source
+
+an applications agreed upon security requirements
+
+linked to business risk
+
+linked to security requirements from all sources
+
+maps controls to control objectives
+
+
+
+
+
+
+
+
+
+STRM Benefits:
+
+reduces or eliminates scope creep, i.e. the software development team has not inadvertently or intentionally added additional security features that were not requested by the user
+
+assures that the design satisfies the specified security requirements
+
+ensures that implementation does not deviate from secure design
+
+provides a firm basis for defining test cases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Third-Party Risk:
+
+third-party, a separate entity, business, pr individual providing goods, services, or software
+
+third-party risk, the likelihood of a security incident caused by working a third-party
+
+includes software vendors, suppliers, staffing agencies, consultants, and software components (libraries, APIs)
+
+think solar winds or crowdstrike
+
+Mitigations, SOC audits, insurance, software bill of matrix (SBOM), secure by design, or contracts
+
+
+
+
+
+
+
+
+Domain 3 Review:
+
+domain 3, secure software requirements, highlights the controls used during the software requirements phase to integrate security into the software development life cycle (SDLC) to identify key security objectives and to maximize software security while minimizing disruptions to plans and schedules
+
+
+
+
+
+
+
+Security Architecture and Design Patterns:
+
+start with security in mind
+
+build security in by design, see "CISA Secure by Design"
+
+design pattern, a reusable template based on best practices that software engineers use to solve common problems
+
+secure design patterns, reusable templated to solve security problems in software design and development
+
+many resources available, such as Sherwood applied business security architecture and SEI secure design patterns
+
+
+
+
+
+
+
+
+
+
+
+Security Control Identification and Prioritization:
+
+prioritize security controls based on risk
+
+methods for identification and prioritization of controls are delphi rankings and DREAD rankings, consequence rankings (probability x impact)
+
+
+
+
+
+
+
+
+
+
+Service-Oriented Architecture (SOA):
+
+enterprise service bus
+
+web services, representative state transfer (REST), javascript object notation (JSON), universal description discovery and interface (UDDI)
+
+microservices
+
+security needs, secure messaging, resource protection, contract negotiation, and trust relationships
+
+
+
+
+
+
+
+
+
+
+Rich Internet Applications:
+
+bring the richness of the desktop environment and software onto the web. common frameworks include AJAX, Angular, Meteor, Flex, Microsoft Silverlight and JavaFX. typically require constant connectivity
+
+same origin policy prevent a resource from one source to interact with resources in another
+
+sandbox, run within browser, restricted from accessing system resources unless explicitly granted 
+
+RIA increases attack surface, client side exploits or threats, remote code execution
+
+protections, data encryption and encoding, determine the actual origin not just the last referrer
+
+
+
+
+
+
+
+
+
+
+
+Embedded Software:
+
+computing system which is component of larger system
+
+real-time computing devices and components, secure book, secure memory, secure updates
+
+firmware-type systems
+
+SCADA systems, supervisory control and data acquisition systems, are industrial control systems used to monitor, collect data from, and control critical infrastructure processes (such as power plants, water treatment facilities, oil pipelines, and manufacturing) in real time, often across geographically dispersed sites.
+
+
+
+
+
+
+
+
+
+
+Cloud Architectures:
+
+the NIST SP 800-144 defines cloud computing as a model for enabling convenient, on demand network access to a shared pool of configurable computing resources (e.g. networks, servers, storage, applications and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction
+
+types, public, private, community, hybrid
+
+service models, infrastructure as a service (IaaS), platform as a service (PaaS), software as a service (SaaS)
+
+
+
+
+
+
+
+
+
+Cloud Security Issues:
+
+misconfiguration
+
+unauthorized access
+
+data disclosure, loss and/or remanence 
+
+man in the middle and traffic hijacking
+
+insecure and proprietary APIs
+
+service interruptions
+
+malicious personnel (insiders)
+
+nefarious use of shared computing resources
+
+insufficient due diligence/unknown risk profile
+
+
+
+
+
+
+
+
+
+
+Mobile Applications:
+
+OWASP mobile top 10 2023, 
+
+m1 insecure authentication/authorization
+
+m2 insecure communication
+
+m3 inadequate supply chain security
+
+m4 inadequate privacy controls
+
+m5 improper credential usage
+
+m6 insufficient input/output validation
+
+m7 security misconfiguration
+
+m8 insufficient cryptography
+
+m9 insecure data storage
+
+m10 insufficient binary protections
+
+
+
+
+
+
+
+
+
+
+
+Cognitive Computing:
+
+artificial intelligence (AI), the term artificial intelligence means a machine based system that can, for a given set of human defined objectives, make predictions, recommendations or decisions influencing real or virtual environments." National Artificial Intelligence Act of 2020
+
+
+
+
+
+
+
+Industrial Internet of Things (IIoT):
+
+SCADA, supervisory control and data acquisition
+
+ICS, industrial control systems
+
+IIoT, industrial internet of things
+
+these systems monitor and control physical processes, primary target for hackers are technologies were mostly proprietary, promoted the security through obscurity, systems were physically secured and not connected to the internet
+
+these systems were not originally designed with security in mind, predominant threat unauthorized access to the control software, packet control protocol is rudimentary or lacking, attacks tend to be overflow/injection, physical breach by insider, mandates end-to-end authentication and authorization
+
+
+
+
+
+
+
+
+
+
+Security Management Interfaces:
+
+out of band management, allows the security operator to establish trust boundaries for accessing the management function. sometimes referred to as light out management (LOM)
+
+log interfaces, gives access to log files and log management, normally "in band", must be adequately protected
+
+configuration management, allows security administrators to harden a system or soften a system, normally "in band", must also be adequately protected
+
+
+
+
+
+
+
+
+
+
+
+Upstream/Downstream Dependencies:
+
+most software components have dependencies to other software components, libraries, APIs
+
+the software bill of materials (SBOM) is key to understanding dependencies and the vulnerabilities they create
+
+
+
+
+
+
+
+
+Protocol Design Choices:
+
+application programming interfaces (APIs)
+
+weaknesses
+
+state
+
+models
+
+
+
+
+
+
+
+
+
+
+
+
+
+Credential Management:
+
+host-based authentication, a method where a system verifies user identity based on the originating host or device rather than individual credentials
+
+creation of credential - provisioning, the process of generating and assigning user credentials (e.g. usernames, passwords, keys) to establish initial access
+
+use of credential, the stage where credentials are presented and validated to grant authorized access to systems or data
+
+term of credential, the defined validity period during which a credential remains active and usable
+
+end of life of credential, the retirement or revocation of a credential when it expires, is compromised, or is no longer needed
+
+x.509 certificates, a standard format for public key certificates used in PKI to verify identity and enable secure communications
+
+single sign on (SSO), an authentication method that allows users to access multiple applications or systems with one set of credentials
+
+federated identity, a system that enables users digital identities to be shared securely across multiple organizations or domains
+
+
+
+
+
+
+
+
+
+Flow Control:
+
+firewalls (network layer firewalls) separate internal/external subnetworks. security policy enforcer at perimeter
+
+limitation, governed by network architecture
+
+packet filtering (1st-gen), content based filtering, stateless, check headers but not payloads, commonly implemented using access control lists (ACLs). independent, scalable, faster, provides little security, defenseless against malware
+
+stateful (2nd-gen), track dialog, maintain a state and data context. not as resource intensive. usually transparent to the user
+
+proxy (3rd-gen), middleman between internal trusted networks and the outside untrusted. don't allow direct connection between untrusted and trusted systems
+
+application layer (trendy), application level firewall uses information gathered at application level to make decisions. intercept data and examine for malicious content. contain/terminate on threat detection or redirect to honeypot. PCI-DSS req. 6.6 either have a (web) application firewall (WAF) or perform application code reviews
+
+
+
+
+
+
+
+
+
+
+Data Loss Prevention:
+
+ingress filtering
+
+egress filtering
+
+DLP through technology, monitor tagged data, detecting and preventing loss, remediation. protect gateways (control usually applied here) and channels. uneducated people could breach DLP
+
+DLP through policy disallow printing and storing in storage devices
+
+DLP solutions common approach, screen traffic, examine for traffic that meets profile parameters
+
+
+
+
+
+
+
+
+
+
+
+Virtualization:
+
+technology that divides a physical resource (such as a server) into multiple virtual resources called a virtual machine (VM).
+
+advantages, consolidation of physical (server) resources and thereby reduced cost. green computing; reduced power and cooling. deployment and administration ease. increased agility to scale IT environment and services to the business
+
+relies on a hypervisor, software that creates and runs VMs
+
+infrastructure as a code (IaC), manages infrastructure as software, allows automation, key DevOps practice
+
+containers, software bundles that contain everything needed to run in a given environment
+
+
+
+
+
+
+
+
+Trusted Computing:
+
+trusted platform module (TPM), a hardware chip that provides secure storage for cryptographic keys and supports hardware-based security functions like device authentication and encryption
+
+trusted computing base (TCB), the collection of all hardware, software, and controls within a system that are critical to enforcing its security policy
+
+trusted connections, secure communication links established between systems or devices to ensure authenticity, confidentiality, and integrity of data in transit
+
+
+
+
+
+
+
+
+
+
+
+
+Database Security:
+
+encryption
+
+triggers
+
+view
+
+privilege management
+
+input validation
+
+secure connections
+
+
+
+
+
+
+
+
+
+Programming Language Environment:
+
+integrated development environment (IDE)
+
+common language runtime (CLR)
+
+managed code
+
+unmanaged code
+
+compiler switches
+
+
+
+
+
+
+
+
+
+
+
+
+Managed vs. Unmanaged Code:
+
+unmanaged, C/C+ code execution directly managed by OS
+
+needs to be compiled 
+
+memory allocation unmanaged; pointers can be directly controlled
+
+requires routines to handle such as memory allocation, check array bounds, handle data type conversions explicitly, force garbage collection
+
+benefit, performance
+
+
+
+managed, python, javascript, java (JVM), powershell, MS .NET (CLR) code execution managed by runtime environment
+
+not compiled into native code
+
+memory allocation managed by runtime
+
+time to develop software is relatively shorter
+
+benefits, sandboxing, garbage collection, index checking, type-safe, memory allocation, multiplatform capability
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operating System:
+
+address space layout randomization (ASLR), a security technique that randomizes memory address locations of key program components to make it harder for attackers to predict and exploit vulnerabilities
+
+data execution prevention (DEP), a security feature that prevents code from running in certain regions of memory reserved for data, helping to block buffer overflow attacks.
+
+encapsulating space protection (ESP), a protocol within IPsec that provides encryption, authentication, and integrity for IP packets during transmission
+
+code access security (CAS), a .NET security model that restricts what managed code can do based on its origin and identity, limiting potential damage from untrusted code
+
+
+
+
+
+
+Secure Backup and Restoration Planning:
+
+protects availability, unintentional data loss, intentional data loss, ransomware
+
+core security concepts apply, confidentiality, integrity, least privilege, separation of duty, chain of custody
+
+offsite storage requirements should be at same level
+
+
+
+
+
+
+
+
+
+
+
+Secure Data Retention, Retrieval, and Destruction:
+
+longer-term storage of business-critical information. consider protection needs, confidentiality, integrity, and availability
+
+other security considerations, chain of custody, data/code escrow, media sanitization
+
+
+
+
+
+
+
+
+
+
+
+
+Threat Modeling Methodologies:
+
+model threats for spoofing, tampering, repudiation, information disclosure, denial of service (DoS), elevation of privilege, and process for attack simulation (PASTA)
+
+hybrid threat modeling from SEI
+
+CVSS, common vulnerability scoring system, provides a qualitative measure of severity. owned and managed by FIRST.Org, inc. (FIRST), a US based nonprofit organization. currently at version 3.1
+
+threat model validation, diagrams of attack vectors, textual descriptions, iterative process for development, consistent method for documentation, validate each vector and treatment option
+
+
+
+
+
+
+
+
+Common Threats:
+
+advanced persistent threat (APT)
+
+insider threat
+
+malware
+
+phishing
+
+spoofing
+
+social engineering
+
+cloud vulnerabilities
+
+mobile computing
+
+third-party exposure
+
+mistaking compliance for protection
+
+outdated solutions
+
+
+
+
+
+
+
+
+
+
+
+Attack Surface Measurement:
+
+open sockets
+
+open remote procedure call endpoints
+
+open named pipes
+
+services
+
+services running by default
+
+services running as SYSTEM
+
+dynamic webpages
+
+executable virtual directories
+
+active web handlers
+
+enabled accounts
+
+enabled accounts in admin group
+
+null sessions to pipes and shares
+
+guest account enabled
+
+weak ACLs in the file system
+
+weak ACLs in the registry
+
+weak ACLs on shares
+
+active internet server application programming interface (ISAPI) filters
+
+
+
+
+
+
+
+
+
+
+
+
+Attack Surface Minimization:
+
+once baselines, reassess regularly to find new issues and opportunities to reduce surface 
+
+hardening, turn off unneeded services
+
+disable unneeded ports
+
+code for least privilege
+
+run without privileges
+
+
+
+
+
+
+
+
+
+
+
+
+
+Threat Analysis:
+
+"process of formally evaluating the degree of threat to an information system or enterprise and describing the nature of the threat". NIST
+
+for each threat and vulnerability there is an appropriate mitigation strategy
+
+layers of control can further reduce risk
+
+combining mitigation strategies is a practical business approach to managing risk
+
+
+
+
+
+
+
+
+
+
+Threat Intelligence:
+
+"threat information that has been aggregated, transformed, analyzed, interpreted, or enriched to provide the necessary context for decision making processes." NIST
+
+three types of assessments, strategic, operational, tactical
+
+analyze threats based on actors, intent, and capability
+
+
+
+
+
+
+
+
+
+
+Most Security Properties and Constraints:
+
+some programming languages, like java, allow the use of security properties to configure how security will work within an application. for example, statically registering the cryptography package provider
+
+java also supports security constraints, used to define access privileges to a collect of resource. example, authorization constraint establishes a requirement for authentication
+
+not all programming languages use security properties or constraints
+
+understand and implement those that make sense for your project and risk tolerance
+
+
+
+
+
+
+
+
+
+
+
+
+Secure Operational Architecture:
+
+deployment topology, the structural arrangement of hardware, software and network components that defines how systems and services are deployed and interact in an environment
+
+operational interfaces, the points of interaction between systems, applications, or users that define how operational processes and data flows are managed securely
+
+continuous integration and continuous delivery (CI/CD), a development practice that automates building, testing, and deploying code changes to ensure rapid, reliable, and secure software delivery
+
+
+
+
+
+
+
+
+
+
+
+
+
+Secure Deployment Topology:
+
+use well known and generally accepted practices like internet firewall DMZ firewall intranet. all incoming internet HTTP traffic must be processed by HTTP servers in the DMZ zone connected to the internet. all systems in a DMZ that contain HTTP servers will not have direct access to the intranet. all outbound http traffic must go through a proxy in a DMZ
+
+
+
+
+
+
+
+
+
+
+Secure Operational Interfaces:
+
+physical interfaces used to interact with systems, touchscreen to control a SCADA system. old school dials and buttons. new school mobile remote controller
+
+need both logical and physical security controls
+
+
+
+
+
+
+
+
+
+
+Continuous Integration and Continuous Delivery:
+
+continuous integration (CI), automated integration of code changes
+
+continuous delivery (CD), code changes automatically released to production
+
+unauthorized access to the CI/CD environment could allow an attacker to perform malicious activities
+
+
+
+
+
+
+
+
+
+Domain 4 Review:
+
+domain 4, secure software architecture and design, defines secure software structure. it also covers the documentation of software attack surface elements, the threat modeling process and the creation of security criteria for software release
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency:
+
+thread safety, is applicable to multi-threaded code. can only manipulate shared data structures in a manner that ensures that all threads behave properly. meant to fulfill design specifications without unintended interaction
+
+goes by many names, thread safe; implementation is guaranteed to be free of race conditions when accessed by multiple threads simultaneously. conditionally safe, different threads can access different object simultaneously and access to shared data is protected from race conditions. not thread safe, data structures should not be accessed simultaneously by different threads
+
+database concurrency controls, ensure that correct results for concurrent operations are generated. help prevent deadlocks in databases. acid test
+
+
+
+
+
+
+
+
+
+
+ACID Model for Database Transactions:
+
+database transaction requirements for developing reliable database systems; atomicity, each transaction is treated as a single unit, which either succeeds completely or fails completely. consistency, transaction can only bring the database from one valid state to another, preventing data corruption from an illegal transaction. isolation, ensures that concurrent execution of transactions leaves the database in the same state that would have been obtained if the transactions were executed sequentially. durability, once a transaction has been committed, it will remain committed even in the case of a system failure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Input Validation and Sanitization:
+
+trust but verify
+
+what to validate; correct data type and format, falls within the expected and allowed range of values, is not interpreted as code when it should not be, does not masquerade in alternative forms that bypass security controls
+
+when to validate is important, too
+
+input sanitization is cleaning or sanitizing user inputs to ensure safety. basically removing or modifying data that could potentially lead to system vulnerabilities or errors
+
+
+
+
+
+
+
+
+
+
+
+Output Sanitization:
+
+output sanitization is cleaning or sanitizing application outputs 
+
+encoding; performed by transforming data from its original form to an acceptable form either by removal of that data or by encoding or decoding it. common encoding methods used in web applications include the HTML entity encoding schemes. HTML entity encoding serves the need for encoding literal representations of certain meta-characters to their corresponding character entity references. 
+
+obfuscation; the act or an instance of making something obscure, dark or difficult to understand. used to prevent people from understanding the meaning of a programs output. often used with computer code to help prevent successful reverse-engineering
+
+
+
+
+
+
+
+
+
+
+
+
+
+Error Handling:
+
+the error messages must be non verbose and explicitly specified in the software
+
+limit information that could be used by an attacker
+
+use an index of the value or reference map
+
+redirect errors and exceptions to a custom and default error handling location. depending on the context of where the user has logged in (remote or local), appropriate message details can be displayed.
+
+log exceptions and errors and audit them regularly
+
+
+
+
+
+
+
+
+
+
+
+
+
+Secure Logging and Auditing:
+
+log location; local, simple, quick, but requires another storage location to aggregate and secure logs
+
+examine logs across applications for user events and activities
+
+deciding what to log; when and what information is needed, when security is needed for logged information, privacy is a concern
+
+important; log consolidation, time synchronization
+
+logs need to be protected (stored/in transit). admin/users should have access to logs
+
+incident response often relies on auditing logs
+
+
+
+
+
+
+
+
+
+
+
+Auditing:
+
+activities; logging, monitoring, alarm triggers, log analysis, intrusion detection
+
+accountability
+
+compliance
+
+audit time frames
+
+audit trails
+
+
+
+
+
+
+
+
+
+
+
+Secure Code Reuse:
+
+old code should be considered in attack surface evaluation and minimization
+
+old code should be subjected to all the same security steps and tests as new code
+
+libraries and APIs should be vetted and subjected to the same security test
+
+SBOMs can help
+
+
+
+
+
+
+
+
+
+
+Static Application Security Testing (SAST):
+
+white box testing
+
+analyze source code to find security vulnerabilities
+
+source code required
+
+find vulnerabilities early in the SDLC process
+
+less expensive to fix
+
+typically supported in all kinds of software
+
+cannot discover run-time or environmental issues
+
+automated code coverage
+
+linting; static analysis that flags problematic patterns
+
+
+
+
+
+
+
+
+
+
+
+Dynamic Application Security Testing (DAST):
+
+black box testing
+
+behavioral analysis
+
+requires a running application
+
+discovers vulnerabilities late in the SDLC
+
+more expensive to fix
+
+can discover run-time and environmental issues
+
+
+
+
+
+
+
+
+
+
+
+
+Interactive Application Security Testing (IAST):
+
+analyzes code for security vulnerabilities while the application is run 
+
+techniques; automated testing, human tester testing, interacting with the application functionality
+
+works inside the application to test functionality
+
+advantages; speed of results, API testing, promotes reuse of existing test cases, IAST avoids the need to recreate scripts for security testing
+
+
+
+
+
+
+
+
+
+
+
+
+
+Manual Code Review:
+
+AKA peer review
+
+identify poor coding, bugs, malware, security issues, inefficiencies, syntax errors, et al
+
+good practices; review fewer than 200-400 lines of code at a time. aim for an inspection rate of fewer than 300-500 lines of code per hour. take enough time for a proper, slow review, but not more than 60-90 minutes. be sure that authors annotate source code before the review begins. establish quantifiable goals for code review and capture metrics so you can improve your processes. use checklists because they substantially improve results for both authors and reviewers. verify that the defect are actually fixed. foster a good code review culture in which finding defects is viewed positively. adopt lightweight, tool assisted code reviews
+
+
+
+
+
+
+
+
+
+Inspect for Malicious Code:
+
+malicious code describes any code intended to cause an undesirable effect.
+
+ways of detecting malicious code; static analysis (SAST), interactive analysis (IAST), dynamic analysis security test (DAST), software composition analysis (SCA), manual review
+
+
+
+
+
+
+
+
+
+
+
+
+
+Implement Security Controls:
+
+watchdog timer; an electronic or software timer that is used to detect and recover from computer malfunctions
+
+file integrity monitoring (FIM); technology that monitors and detects changes in files that may indicate a cyberattack (tripware)
+
+anti-malware; type of software program designed to prevent, detect, and remove malicious software
+
+
+
+
+
+
+
+
+
+
+
+Address the Identified Security Risks:
+
+assess risks
+
+risk treatment methods; avoid, choose not to take on the risk. mitigation, choose to reduce the risk. transfer, choose to share the risk. accept, choose to live with risk.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Systems-of-Systems (SoS) Integration:
+
+system integration is the process of combining subsystems or sub-components into one all encompassing larger system so they can function together
+
+system of systems (SoS) is defined as integrating systems, each capable of independent operation, together to achieve additional desired capabilities
+
+systems of systems engineering (SoSE) is the process of planning, analyzing, organizing, and integrating the capabilities of a mix of existing and new systems into a system-of-systems capability that is greater than the sum of the capabilities of the constituent parts
+
+
+
+
+
+
+
+
+
+
+
+
+Reusing Third-Party Code in a Secure Manner:
+
+vet third party code carefully; libraries, APIs
+
+software composition analysis (SCA) is an automated process that can identify dependencies in software
+
+without access to source code you are limited to dynamic analysis security testing (DAST), penetration testing, reverse engineering (which is proper for suspected malware, risk for COT solutions (DMCA))
+
+software bill of materials (SBOM) can help identify dependencies and vet software
+
+
+
+
+
+
+
+
+
+
+
+
+
+Anti Tampering Techniques:
+
+code signing
+
+symmetric versus asymmetric technologies; digital signature, hashed message authentication code (HMAC)
+
+obfuscation
+
+
+
+
+
+
+
+
+
+
+Compiler Switches:
+
+are command-line parameters passed to a compiler to modify how source code is translated into executable code, such as enabling optimizations, debugging information, security features, or warnings
+
+
+
+
+
+
+
+
+
+
+Address Compiler Warnings:
+
+warnings are diagnostic messages from the compiler
+
+the compiler is reporting issues that are not errors but are risky or problematic
+
+
+
+
+
+
+
+
+
+Domain 5 Review:
+
+domain 5, secure software implementation, highlights the concepts and methodologies that allow all stakeholders involved in the software development life cycle (SDLC), from operations personnel to architects, to execute best application security practices and deliver secure software
+
+
+
+
+
+
+
+
+
+
+Functional vs. Nonfunctional Security Testing:
+
+functional involves testing what security has to do; describes a function (behavior) that enforces security. can be directly testing and observed. example, stop unauthorized access attempts
+
+nonfunctional security testing involves testing what security has to be; describes a function that supports a security process. example, audit logs created from access control will be verbose enough to support forensics. supporting auditability is not a direct functional requirement for access control
+
+derived requirements are inspired by functional and nonfunctional requirements. example, an access control system uses two-factor authentication; a derived requirement would be the number of allowable incorrect tries before a user is locked out of the system. for the audit log, a derived requirement might support log integrity (log injection protection)
+
+
+
+
+
+
+
+
+
+
+
+Security Testing:
+
+white-box, privileged insider
+
+black-box, outsider perspective
+
+gray-box, normal insider, guest, external user, internet facing
+
+
+
+
+
+
+
+
+
+
+
+Testing Methodology:
+
+create a test strategy; create a test plan, gather necessary tools, implement the plan, document the results, fix the problems
+
+
+
+
+
+
+
+
+
+
+
+Testing Techniques:
+
+alpha testing; normally conducted by insiders. completed before limited release
+
+beta testing; limited release, performed by "real" users
+
+pilot testing; AKA field testing or market testing. small scale preliminary test conducted to evaluate feasibility, duration, cost and adverse events and improve upon the design prior to performance of a full-scale implementation
+
+regression testing; testing after changes. confirm changes did not break functionality or security
+
+
+
+
+
+
+
+
+
+
+
+
+
+Testing Environment:
+
+testing in an environment very similar to production
+
+check for interoperability
+
+use test harness; collection of software and data, automate testing, create repeatability of tests
+
+
+
+
+
+
+
+
+
+
+
+
+
+Security Researcher Outreach:
+
+leverage security researchers
+
+off bug bounties
+
+use commonly available security research
+
+
+
+
+
+
+
+
+
+
+
+
+Attack Surface Validation:
+
+identify the parts of software that need to be reviewed for vulnerabilities
+
+testing to see if the software can be broken
+
+motive, opportunity and means
+
+
+
+
+
+
+
+
+
+
+
+
+
+Attack Surface Analyzer:
+
+Microsoft built open source tool
+
+enables development team to view changes in the windows attack surface resulting from the installation of the application, assess the aggregate attack surface change associated with the application in the enterprise environment, evaluate the risk to the platform where the application is proposed to exist, and provide incident response teams detailed information associated with a windows platform
+
+operates independently from the application under review
+
+
+
+
+
+
+
+
+
+
+Simulation Testing:
+
+when software that functions without any problems in the development environment experiences hiccups in the production environments, it is indicative of issues with configuration management
+
+this means that the development and production environments are disparate in their configurations
+
+since it is not advisable to conduct software testing in the production environment, a mirrored or simulated environment needs to be created. the software should be tested in this simulated environment
+
+because the configuration settings of the production (operational) environment are simulated, any issues of the software not working can be determined early and addressed prior to deployment
+
+the simulated environment may used synthetic data and transaction rather than actual production data
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cryptographic Validation:
+
+standards conformance; especially FIPS 140-2 requirements
+
+environment validation
+
+data validation
+
+cryptographic implementation tests
+
+use pseudo-random number generators and entropy
+
+
+
+
+
+
+
+
+
+
+
+FIPS 140-2:
+
+the prescribed standard, part of the federal information processing standards series that relates to the implementation of cryptographic functions
+
+deals with issues such as the selection of approved algorithms; AES, RSA, and DSA
+
+deals with the environment where the cryptographic functions are used
+
+deals with ways of implementation
+
+
+
+
+
+
+
+
+
+
+
+Regression Tests:
+
+business requirements change over time and new functionality is added whenever code is modified, there is the potential for breaking existing functionality
+
+regression tests; performed to determine if the software still meets all its requirements and modifications
+
+involves repeating existing validation tests, not developing new tests
+
+primarily focused on implementation issues over design flaws
+
+performed before software is release to ensure that the software does not regress to a non functional or insecure state
+
+sometime referred to as verification tests
+
+
+
+
+
+
+
+
+
+
+
+Unit Testing and Code Coverage:
+
+tests the smallest parts of an application (functions, procedure) to ensure they are fit for use
+
+done during coding by developers
+
+typically automated
+
+often focused on code coverage; code coverage is how much of your code has been tested. in most cases, more is better and increases the trust in the code. it may be impossible to get 100% coverage and in many cases 80% is considered good coverage. calculated by lines of code tested/number of lines of code
+
+
+
+
+
+
+
+
+
+
+
+Integration Tests:
+
+the security of the sum of all parts should be tested
+
+when an individual units of code are integrated and tested, it is referred to as integration testing
+
+next logical testing step after unit testing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Continuous Testing:
+
+process of executing automated tests as part of the software delivery pipeline in order to obtain feedback on the business risks associated with a software release candidate as rapidly as possible
+
+test artifacts can then be used to determine if the software is ready to progress through the delivery pipeline at any given time
+
+can be used for both functional and security functional testing as well as other non functional testing
+
+automation is key to continuous testing. however, automated testing is not the same as continuous testing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Documentation:
+
+installation instructions
+
+setup instructions
+
+error messages
+
+user guidelines
+
+release notes
+
+
+
+
+
+
+
+
+
+
+
+Identify Undocumented Functionality:
+
+undocumented functionality is a catch-all phrase for software problems; flaws and bugs
+
+undocumented functions have been the root of many proof-of-concept (exploit) attacks
+
+some bugs are unavoidable; unknown buds create intangible risk to the business, known bugs create tangible risk and should be assessed accordingly
+
+should be identified, assessed, and prioritized for mitigation
+
+
+
+
+
+
+
+
+
+
+
+Risk Scoring:
+
+a number that quantifies the level of risk you are exposed to 
+
+in relation to vulnerabilities, a higher risk score means the vulnerability is more risky
+
+risk scores are designed to be; simple to calculate, easily interpreted, and actionable
+
+risk scoring method; DREAD (damage, potential, exploitability, affected users, discovery). how severe would the impact be if the vulnerability were exploited? how easily can the attack be repeated? how simple is it to carry out the attack? how many users would be impacted? how easy is it to find the vulnerability?
+
+
+
+
+
+
+
+
+
+
+
+Generate Test Data:
+
+several tools are available for generating test data; redgate SQL data generator, informatica test data management, double, infosphere optim, CA test data manager, solix EDMS, SAP test data migration server
+
+these are just a few of the offerings available today
+
+there are also a few online solutions
+
+
+
+
+
+
+
+
+
+
+
+
+Reuse of Production Data:
+
+avoid when possible
+
+major concerns; disclosure of information, unauthorized access to sensitive data
+
+when required, production data should be sanitized, anonymized, tokenized, obfuscated, and approved for use
+
+
+
+
+
+
+
+
+
+
+
+Domain 6 Review:
+
+domain 6, secure software implementation, covers the proper testing of software for security, including the overall strategies and plans
+
+
+
+
+
+
+
+
+
+
+
+
+
+Authority to Operate:
+
+formal acceptance of risk
+
+more and more systems and software solutions are being required to submit to a security authorization and assessment process prior to being deployed in a production environment
+
+what was once a government-centric approach to securing and evaluating systems is now emerging as a mainstream requirement in many industries
+
+acquire signoff from appropriate parties
+
+
+
+
+
+
+
+
+
+
+
+
+Incident Management:
+
+incident management activities are about the proper protocols to follow and the steps to take when a security breach (or incident) occurs
+
+it is no longer about if it will happen; in todays world it is about when it will happen
+
+three supporting areas of focus; root cause analysis, finding and fixing the real problem. incident triage, prioritizing a treatment strategy. forensics, discovering evidence. remediation, correcting problems
+
+
+
+
+
+
+
+
+
+
+SP 800-61 rev.2:
+
+computer security incident handling guide;
+
+provides practical guidance on responding to incidents effectively and efficiently
+
+system agnostic guidance
+
+focuses on four parts of incident response; detecting, analyzing, prioritizing, and handling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Patch Management:
+
+patches are additional pieces of code developed to address problems (commonly called "bugs") in software
+
+patches enable additional functionality or address security flaws within a program. not all vulnerabilities have related patched; this, system administrators must not only be aware of applicable vulnerabilities and available patches, but also other methods of remediation (e.g. device or network configuration changes, employee training) that limit the exposure of systems to vulnerabilities
+
+patches should be carefully testing before release
+
+patches should be secured and released when ready for production
+
+
+
+
+
+
+
+
+
+
+
+
+NIST SP 800-40 rev.4:
+
+creating a patch and vulnerability management plan; provides guidelines on creating and running a patch management program. timely patching of security issues is generally recognized as critical. recommenfs a patch and vulnerability group (PVG)
+
+
+
+
+
+
+
+
+
+
+
+Vulnerability Management:
+
+finding, evaluating, mitigating, and reporting vulnerabilities
+
+you need to manage vulnerabilities in all environments
+
+the CVE database can help you evaluate and mitigate vulnerabilities 
+
+this includes triaging and tracking vulnerabilities
+
+
+
+
+
+
+
+
+
+
+
+
+Runtime Protection:
+
+technology which embeds into an application or application runtime environment, examine requests at the application layer to detect attacks and misuse in real time
+
+runtime application self protection (RASP) capabilities include unpack and inspect application requests, monitor and block application requests, protect against all classes of application attacks, pinpoint where a vulnerability exists, instrument application functions and report on usage.
+
+implement a web application firewall (WAF) for web applications
+
+utilize hardware protection including address space layout randomization (ASLR) and dynamic execution prevention (DEP)
+
+
+
+
+
+
+
+
+
+
+
+Service Level Agreements (SLA):
+
+one of an organizations primary contracting vehicles
+
+a contract with indemnities; a commitment between a service provider and a client. a particular aspect of the service, quality, availability, and timely. responsibilities are agreed between the service provider and the service user and may cover performance, availability, and personnel
+
+basic components of an SLA include but are not limited to type of service to be provided, the services desired by performance level, monitoring process and service level reporting, the steps for reporting issues with the service, response and issue resolution timeframe, repercussions for service provider not meeting its commitment
+
+
+
+
+
+
+
+
+
+
+
+Service Level Objectives:
+
+a key element of a service level agreement between a service provider and a customer
+
+SLOs are agreed upon as a means of measuring the performance of the service provider
+
+typically defined as a way of avoiding disputes between the two parties based on misunderstanding. example; the application will be available 99.95% of the time
+
+
+
+
+
+
+
+
+
+
+Domain 7 Review:
+
+domain 7, secure software development, operations maintenance, covers ensuring that software is secure during deployment, operations and maintenance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NIST 800-161:
+
+recommends 19 families of control for managing supply chain risk; 
+
+access control
+
+awareness and training
+
+audit and accountability
+
+security assessment and authorization
+
+configuration management
+
+contingency planning
+
+identification and authentication
+
+incident response
+
+maintenance
+
+physical and environmental protection
+
+planning
+
+program management
+
+personnel security
+
+provenance
+
+risk assessment
+
+system and service acquisition
+
+system and communication protection
+
+system and information integrity
+
+
+
+
+
+
+
+
+
+
+
+
+
+Identification and Selection of the Components:
+
+its critical to carefully vet all third-party components to ensure they don't create vulnerabilities in your software
+
+rely on well-known, trusted libraries and APIs
+
+be wary of libraries and APIs from questionable or unknown sources
+
+avoid and/ort replace libraries and APOs with known issues
+
+avoid and/or replace libraries and APIs that are no longer supported
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Assessment of the Components:
+
+identify and document dependencies on third-party components
+
+assess the risk of third=party components on an ongoing basis
+
+apply appropriate risk treatment to mitigate risk; accept, mitigate, transfer, avoid
+
+
+
+
+
+
+
+
+Monitor for Changes and Vulnerabilities:
+
+use a software bill of materials (SBOM) to manage dependencies
+
+regularly check for and apply changes
+
+perform vulnerability and/or penetration testing to find vulnerabilities in third-party components
+
+
+
+
+
+
+
+
+
+
+
+Third-Party Software and Security:
+
+third party certifications, an independent organization has reviewed the software and has determined it complies with standards and/or regulations
+
+assessment reports, can provide insight into the security of third-party components, SOC 2, and cloud security matrix
+
+origin and support, understand and vet the origin of all third-party components. use supported components and replace those that are not supported
+
+
+
+
+
+
+
+
+
+
+
+
+Provenance Versus Pedigree:
+
+provenance, the documentation of where something comes from and the processes and methodologies by which it was produced
+
+pedigree, includes not only the history but also the quality of something. include accuracy, correctness, timeliness, completeness, compliance with standards, and trustworthiness. an attribute of provenance
+
+
+
+
+
+
+
+
+
+
+
+Third-part Software Security Pedigree:
+
+requires due care and due diligence
+
+security pedigree; the security lineage of an organization, system, or software
+
+attributes that show pedigree; secure transfer, secure system sharing/interconnections, code repository security, build environment security, cryptographically hashed, digitally signed, right to audit
+
+
+
+
+
+
+
+
+
+
+Supplier Security Requirements:
+
+some basic considerations; security track record, scope of testing, audit of security compliance, vulnerability/incident management such as notification and incident response and incident coordination and incident reporting, maintenance and support structure.
+
+
+
+
+
+
+
+
+
+
+
+Contractual Requirements:
+
+for third-party security requirements to be enforceable, they must be contractually binding, mutually agreed upon (contract driven), have the appropriate level of transparency, measurable, and enforced
+
+all contracting vehicles must make potential vendors aware of the security requirements, which should be; transparent, tied to business requirements (possibly to compliance), non-negotiable, and unambiguous
+
+
+
+
+
+
+
+
+
+
+
+
+
+Domain 8 Review:
+
+domain 8, secure software supply chain, acknowledges that modern software often relies on third-party tools, platforms and components that introduce new risks and that software developers must assure trust and confidence that the software will function as expected without any malicious logic or functions
+
+
+
+
