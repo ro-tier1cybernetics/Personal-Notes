@@ -1,0 +1,113 @@
+Ethical Hacking in 12hrs (https://www.youtube.com/watch?v=fNzpcB7ODxQ&t=4s)
+
+**** We'll be Using Python
+
+Sockets, can be used to connect two nodes together, this can be used to connect to an open port and IP address.
+
+1. ex of socket script:
+
+root@kali: ~/python# gedit s.py&, this creates a file
+
+#1/bin/python3
+
+import socket
+host= (input local address) #this is a variable with our local address
+PORT = (local port) #this defines our port
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM), # this says we want "s" to equal or contain "socket.socket(socket.AF_INET, socket.SOCK_STREAM). "AF_INET" means we'll be using an ivp4 address. "socket.SOCK_STREAM) is a port.
+s.connect((HOST,PORT)) #this is to make a connection, the parameters "((HOST,PORT))" are the local and port addresses assigned above. 
+
+# Now save this file.
+-----------------------
+
+2. Now we can use netcat to establish a listening port
+
+ex script:
+
+nc -nvlp 7777 #this means were using netcat to listen in on any port thats 7777
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Building a Port Scanner:
+
+1. root@kali:~/python# gedit scanner.py #this creates a file called "scanner.py" and now you need to insert the contents for the file.
+
+2. File contents:
+
+#!/bin/python
+import sys #this 
+import socket #this is to make a node to node connection from datetime import datetime #this makes a pretty banner
+
+#Now this defines our target
+if len(sys.argv) == 2: #We put an "if" statements that says if the length of sys.argv is equal to 2, then we'll do something
+	target = socket.gethostbyname(sys.argv[1]) #this declares a variable of target, translates hostname to IPv4 address, then we'll get sys.argv[1]. this is an extra step so that incase you use a host name 						   #instead of an IP address, if the host name does DNS and resolves to an IP address it will do so with the argument above.
+else: #this is used so incase theres an invalid input, the user will know what to do.
+	print("Invalid amount of arguments,")
+	print("Syntax: python3 scanner.py <ip>")
+
+#add a pretty banner
+print("-" * 50) #this print out 50 "-" dashes.
+print("scanning target "+target) #this prints that its "scanning target" followed by the target Ip or host name that was used.
+print("Time started: "+str(datetime.now())) #this prints "time started" followed by the date and time that the scan was made.
+
+#this is going to try to do something and if we cant do it we have exceptiions
+try: 
+	for port in range(1,65535): #This says that for the port in the range from 1 to 65535, this does a range of a full port scan.
+		s = socket.socket(socket,AF_INET, socket.SOCK_STREAM) #if the port is in our designated range then this code will activate 
+		socket.setdefaulttimeout(1) #this says that if the port is not connectable it will timeout after 1 second and move on to the next port.
+		results = s.connect_ex((target,port)) #this returns a error indicator
+		if result -- 0 #this says that if a port is open it will return 0
+			print("port () is open".format(port)) #this will print when a port is open 
+		s.close() #this will close the connection, then it will continue to loop through the rest of the ports
+
+except keyboardInterrupt: #this is an exception for exiting the program
+	print("\nExiting Program.")
+	sys.exit() #this is what will exit the system, you can use control+c to exit the program.
+
+except socket.gaierror: #this says that if there is no hostname resolution we will exit the program
+	print(Hostname could not be resolved.")
+	sys.exit() 
+
+except socket.error: #this says if we cant connect to the IP address we specified we will exit the program
+	print("Could'nt connect to server.")
+	sys.exit()
+
+3. Save and run
+
+code: 
+python3 scanner.py (followed by the IP address)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Five Stages of Ethical Hacking:
+
+1. Reconnaissance, information gathering, active and passive. 
+
+2. Scanning and Enumeration, nmap, nessus, nikto
+
+3. Gaining Access, exploitation
+
+4. Maintaining Access
+
+5. Covering Tracks, cleanup, delete any logs, accounts, malware that were left behind
+
+-------------------------------
+
+Passive Reconnaissance:
+
+1. Physical/social engagement, utilizing location information to see if there are badge readers, break areas, security and fencing. 
+
+2. Job Information, utilizing employees name, job title, phone number, manager, pictures of badges, desktop photos, and computer photos.
+
+3. Web/Host, using target validation such as WHOIS, nslookup, dnsrecon. Finding subdomains such as Google Fu, dig, Nmap, Sublist3r, Bluto, crt.sh. Fingerprinting such as Nmap, Wappalyzer, WhatWeb, BuiltWith, Netcat. Data Breaches such as HavelBeenPwned, Breach-Parse, WeLeakinfo, this is about past breaches on our targets.
+
+------------------------
+
+*youtube video timestamp: 5:36:14
+
+Identifying our Target:
+
+1. 
+
+
+
