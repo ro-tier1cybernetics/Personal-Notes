@@ -1,0 +1,2254 @@
+CISSP Exam Cram Full Course (All 8 Domains) 
+
+Youtube Video URL: https://www.youtube.com/watch?v=_nyZhYnCNLA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8 Domains (2022)
+
+Security and Risk Assessment
+
+Asset Security
+
+Security Architecture and Engineering
+
+Communication and Network Security
+
+Identity and Access Management
+
+Security Assessment and Testing
+
+Security Operations
+
+Software Development Security
+
+
+
+
+
+
+
+
+
+
+
+Due Diligence vs. Due Care:
+
+Diligence, practicing the activities that maintain the due care effort. Involves research, planning, and evaluation. "think before you act"
+
+Care, doing what a reasonable person would do in a given situation. It is sometimes called the "prudent man" rule. Involves implantation, operation (upkeep), and reasonable measures. "actions speak louder than words"
+
+*together these will reduce senior managements culpability and (downstream) liability when a loss occurs.
+
+
+
+
+
+
+
+
+
+
+
+
+Security Planning Horizons:
+
+*Roles and Risks
+
+CISO, strategic (long term), human safety, business continuity, protect profits, reduce liability and risk
+
+IT Director or Manager, tactical (midrange), policy and planning
+
+IT Engineer, operational (short term), implement and operate
+
+
+
+
+
+
+
+
+
+
+
+*During the exam, think of yourself as an outside security consultant advising an organization. You are advising on strategy, priorities, and safety, not doing. brings focus to process, role, due diligence and due care.
+
+
+
+
+
+
+
+
+
+
+
+
+
+The OSI Model:
+
+*Remember "please do not throw sausage pizza away" this will list them in correct order number one starting with the physical layer.
+
+Application
+
+Presentation
+
+Session
+
+Transport
+
+Network
+
+Data link
+
+Physical
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Incident Management Framework:
+
+*this order could be remembered as drmrrrrl "drumroll"
+
+Detection
+
+Response
+
+Mitigation
+
+Reporting
+
+Recovery
+
+Remediation
+
+Lessons Learned
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cryptography:
+
+Asymmetric, a method that uses a pair of mathematically linked keys (public and private) where one encrypts and the other decrypts.
+
+Symmetric, method that uses the same secret key for both encryption and decryption
+
+Block Ciphers, a symmetric encryption algorithm that processes fixed size blocks of data (e.g. 128 bits) at a time using a shared key.
+
+Hashing, a one way function that transforms data of any size into a fixed length string (hash) that cannot be feasibly reversed
+
+SHA, Securing Hashing Algorithm, a family of cryptographic hash functions (like SHA-256) designed to produce unique, fixed length digests for secure data integrity verification.
+
+MD, Message Digest, a family of cryptographic hash functions like (md5) that produce a fixed length digest of input data, mainly used for integrity checks but now considered weak against modern attacks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Some Key Areas:
+
+Understand risk and apply risk analysis process
+
+Threat modeling concepts and processes
+
+Compliance, legal, regulatory, and privacy
+
+Professional ethics - know the ISC2 code by heart
+
+Security Governance principles (ITIL, Oversight)
+
+Security policies, standards, procedures and guidelines (know "suggested" vs. "mandatory")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Memorize the ISC2 Code of Ethics:
+
+protect society, the commonwealth, and the infrastructure
+
+act honorable, honestly, justly, responsibly, and legally
+
+provide diligent and competent service to principals
+
+advance and protect the profession
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Security Policy Development:
+
+*document that defines the scope of security needed by an organization, the assets which need to be protected.
+
+Acceptable Use Policy, assign roles and responsibilities
+
+Security Baselines, define "minimum levels"
+
+Security Guidelines, offer recommendations
+
+Security Procedures, detailed step-by-step
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Categories:
+
+Damage, results in physical loss of an asset or the inability to access the asset.
+
+Disclosure, disclosing critical information regardless of where or how it was disclosed
+
+Losses, these might be permanent or temporary, including altered data or inaccessible data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Security Planning:
+
+Strategic, long term, stable plan that should include a risk assessment. (5 year horizon, annual updates)
+
+Tactical, midterm plan developed to provide more details on goals of the strategic plan. (usually 1 year)
+
+Operational, short term, highly detailed plan based on the strategic and tactical plans. (monthly, quarterly)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Response to Risk:
+
+Risk Acceptance, do nothing, and you mist accept the risk and potential loss if threat occurs.
+
+Risk Mitigation, you do this by implementing a countermeasure and accepting the residual risk.
+
+Risk Assignment, transfer (assign) risk to 3rd party, like by purchasing insurance against damage.
+
+Risk Avoidance, when costs of mitigation or accepting are higher than benefits of the service
+
+Risk Deterrence, implementing deterrents to would be violators of security and policy
+
+Risk Rejection, an unacceptable possible response to risk is to reject risk or ignore risk
+
+
+*remember, handling risk is not a one time process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From the CISSP Study Guide:
+
+*consider the following RMSs for use in the real world
+
+Octave, operationally critical threat, asset, and vulnerability evaluation
+
+FAIR, factor analysis of information risk
+
+TARA, threat agent risk assessment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7 Steps of NIST 800-37:
+
+prepare to execute the RMF
+
+categorize information systems
+
+select security controls
+
+implement security controls
+
+assess the security controls
+
+authorize the system
+
+monitor security controls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*it is managements job to decide how that risk is handled 
+*when multiple priorities present, human safety is most important
+*when legal issues are involved, "call an attorney" is a valid choice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Residual Risk:
+
+the risk that remains even with all conceivable safeguards in place. the risk management has chosen to accept rather than mitigate. 
+
+
+
+
+
+
+Inherent Risk: 
+
+newly identified risk not yet addressed with risk management strategies. the amount of risk that exists in the absence of controls.
+
+
+
+
+
+
+
+Total Risk:
+
+the amount of risk an organization would face if no safeguards were implemented.
+
+
+
+
+
+*residual is after, inherent is before, and total is without
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*be able to explain total risk, residual risk, and controls gap
+*formula: to calculate total risk, know this formula: threats times vulnerabilities times asset value equals total risk. (threats * vulnerabilities * asset value = total risk
+*risk can be defined as follows: risk equals threat times vulnerability (risk = threat * vulnerability)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Risk Ananlysis:
+
+*two ways to evaluate risk to assets: qualitative and quanitiative
+
+Quantitative, assigns a dollar value to evaluate effectiveness of countermeasures
+
+*risk analysis steps
+
+1. inventory assets and assign a value (asset value, or AV)
+
+2. identify threats. research each asset and produce a list of all possible threats of each asset. (and calculate EF and SLE)
+
+3. perform a threat analysis to calculate the likelihood of each threat being realized within a single year (ARO)
+
+4. estimate the potential loss by calculating the annyalized loss expectancy (ALE)
+
+5. research countermeasures for each threat, and then calculate the changes to ARO and ALE based on an applied countermeasure
+
+6. perform a cost/benefit analysis of each countermeasure for each threat for each asset
+
+
+
+
+Qualitative, uses a scoring system to rank threats and effectiveness of countermeasures
+
+*Delphi Technique, an anonymous feedback-and-response process used to arrive at a consensus.
+
+*Should also consider: loss potential, what would be lost if the threat agent is successful in exploiting a vulnerability. Delayed loss, this is the amount of loss that can occur over time.
+
+*threat agents, are what cause the threats by exploiting vulnerabilities
+
+
+Terms and Formulas:
+
+*important elements in quantifying potential loss 
+
+exposure factor (EF), single loss expectancy (SLE), annualized rate of occurrence (ARO), annualized loss expectancy (ALE), safeguard evaluation
+
+
+Exposure Factor, percentage of loss that an organization would experience if a specific asset were violated by a realized risk
+
+Single Loss Expectancy, represents the cost associated with a single realized risk against a specific asset. (SLE = Asset Value (AV) * Exposure Factor (EF).... EX: AV is $100,000 * EF .3 (30%) = $30,000
+
+Annualized Rate of Occurrence (ARO), the expected frequency with which a specific threat or risk will occur within a single year. 
+
+Annualized Loss Expectancy (ALE), the possible yearly cost of all instances of a specific realized threat against a specific asset. ALE = single loss expectancy (SLE) * annualized rate of occurrence (ARO)..... EX: (AV * EF = SLE) $200,000 * .5 = $100,000....  (SLE * ARO = ALE) $100,000 * .1 = $10,000 ($10,000 being the value of the safeguard annually)
+
+Safeguard Evaluation, good security controls mitigate risk, are transparent to users, difficult to bypass, and are cost effective. (ALE before safeguard - ALE after safeguard - annual cost of safeguard = value of safeguard)...... (value of safeguard = ALE1 - ALE2 - ACS)
+
+Controls Gap, the amount of risk reduced by implanting safeguards (total risk - controls gap = residual risk)
+
+
+
+Quantitative Risk Analysis (just the formulas):
+
+Supply Chain, today most services are delivered through a chain of multiple entities. A secure supply chain includes vendors who are secure, reliable, trustworthy, and reputable.
+
+Supply Chain Evaluation:
+
+*when evaluating third parties in the chain consider,
+
+onsite assessment: visit organization, interview personnel, and observe their operating habits
+
+document exchange and review: investigate dataset and doc exchange, review process
+
+process/policy review: request copies of their security policies, processes, or procedures.
+
+third party audit: having an independent auditor provide unbiased review of an entity's security infrastructure.  
+
+
+
+
+Threat Modeling, can be proactive or reactive, but in either case the goal is to eliminate or reduce threats
+
+3 Approaches to Threat Modeling:
+
+focused on assets, uses asset valuation results to identify threats to the valuable assets.
+
+focused on attacters, identify potential attackers and identify threats based on the attackers goals.
+
+focused on software, considers potential threats against the software the org develops
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STRIDE:
+
+spoofing
+
+tampering
+
+repudiation
+
+information disclosure
+
+denial of service
+
+elevation of privilege
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PASTA:
+
+stage 1, definition of objectives
+
+stage 2, definition of technical scope
+
+stage 3, app decomposition and analysis
+
+stage 4, threat analysis
+
+stage 5, weakness and vulnerability analysis
+
+stage 6, attack modeling and simulation
+
+stage 7, risk analysis and management
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VAST:
+
+*goal: scalable integration of threat management into an agile programming environment.
+
+Visual
+
+Agile
+
+Simple
+
+Threat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DREAD:
+
+damage potential
+
+reproducibility
+
+exploitability
+
+affected users
+
+discoverability
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trike (focused on acceptable risk):
+
+*an open source threat modeling process that implements a requirements model. ensures the assigned level of risk for each asset is "acceptable" to stakeholders.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COBIT (security control framework):
+
+*IT management and governance framework
+
+principle 1, meeting stakeholder needs
+
+principle 2, convering the enterprise end-to-end
+
+principle 3, applying a single integrated framework
+
+principle 4, enabling a holistic approach
+
+principle 5, separating governance from management 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diagramming Potential Attacks, determining potential attack concepts is often achieved through diagramming
+
+
+
+
+
+
+
+
+
+
+
+Reduction Analysis:
+
+trust boundaries, any location where the level of trust or security changes
+
+data flow paths, the movement of data between locations
+
+input points, locations where external input is received
+
+privileged operations, any activity that requires greater privileges than of a standard user account
+
+details about security stance and approach, declaration of security policy, security foundations, and security assumptions. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Prioritization and Response, then threats are ranked or rated using DREAD, high/medium/low rating, etc.
+
+
+
+
+
+
+
+
+
+Security Controls, security measures for countering and minimizing loss or unavailability of services or apps due to vulnerabilities. the terms safeguards and countermeasure may seem to be used interchangeably. Safeguard are proactive, countermeasure are reactive.
+
+
+
+
+
+
+
+
+
+
+
+Control Categories:
+
+*there are three categories of security controls
+
+technical, aka "logical", involves the hardware or software mechanisms used to manage access.
+
+administrative, policies and procedures defined by org's security policy, other regulations and requirements
+
+physical, are items you can physically touch
+
+
+
+
+
+
+
+
+
+Control Types:
+
+deterrent, deployed to discourage violation of security policies
+
+preventative, deployed to thwart or stop unwanted or unauthorized activity from occurring
+
+detective, deployed to discover or detect unwanted or unauthorized activity
+
+compensation, provides options to other existing controls to aid in enforcement of security policies
+
+corrective, modifies the environment to return systems to normal after an unwanted or unauthorized activity has occurred
+
+recover, an extension of corrective controls but have more advanced or complex abilities
+
+directive, direct, confine, or control the actions of subject to force or encourage compliance with security policies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal and Regulatory, issues that pertain to information security in a global context:
+
+cyber crimes and data breaches
+
+trans-border data flow
+
+licensing and intellectual property requirements
+
+privacy
+
+import/export controls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Types of Law:
+
+criminal law, contains prohibitions against acts such as murder, assault, robbery, and arson.
+
+civil law, include contract disputes, real estate transactions, employment, estate, and probate
+
+administrative law, government agencies have some leeway to enact administrative law.
+
+*CISSP exam focuses on security related generalities of law, regulations, investigations, and compliance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Laws:
+
+computer fraud and abuse act (CFAA), the first major piece of US cybercrime specific legislation
+
+federal sentencing guidelines, provided punishment guidelines to help federal judges interpret computer crime laws
+
+federal information security management act (FISMA), required a formal infosec operations for federal government 
+
+copyright and the digital millennium copyright act, covers literary, musical, and dramatic works
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IP and Licensing:
+
+trademarks, covers words, slogans, and logos used to identify a company and its products or services
+
+patents, patents protect the intellectual property rights of inventors
+
+trade secrets, intellectual property that is absolutely critical to their business and must not be disclosed
+
+licensing, 4 types you should know are contractual, shrink-wrap, click-through, and cloud services
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Encryption and Privacy:
+
+computer export controls, US companies cant export to Cuba, Iran, north Korea, Sudan, and Syria
+
+encryption export controls, dept of commerce details limitations on export of encryption products outside the US
+
+privacy (US), the basis for privacy rights is in the fourth amendment to the US constitution
+
+privacy (EU), general data protection regulation (GDPR) is not a US law, but very likely to be mentioned
+
+*applies to any company with customers in the EU
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Other US Privacy Laws:
+
+HIPPA (health insurance portability and accountability act)
+
+HITECH (health information technology for economic and clinical health)
+
+Gramm-Leach-Bliley Act (financial institutions)
+
+COPPA (children's online privacy protection act)
+
+ECPA (electronic communications privacy act)
+
+CALEA (communications assistance for law enforcement act
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Continuity Plan:
+
+strategy development
+
+provisions and processes
+
+plan approval
+
+plan implementation
+
+training and education
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BCP Definitions:
+
+BCP (business continutity plan), the overall organizational plan for how to continue business
+
+DRP (disaster recovery plan), the plan for recovering from a disaster impacting IT and returning the IT infrastructure to operation
+
+COOP (continuity of operations plan), the plan for continuing to do business until the IT infrastructure can be restored 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BCP vs. DRP:
+
+*BCP focuses on the whole business, DRP focuses more on the technical aspects of recovery. BCP will cover communication and process more broadly. BCP is an umbrella policy and DRP is part of it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User Education:
+
+*establish and maintain a security awareness, education, and training program.
+
+methods and rechiniques to present awareness and training
+
+periodic content reviews
+
+program effectiveness evaluation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consequence of Privacy and Data Breaches:
+
+reputational damage, can result in loss of customer trust and loss of revenue
+
+identity theft, involves someone using a persons private information to impersonate that individual, usually for financial gain
+
+intellectual property theft (IP theft), might quickly cost customers, credit ratings, and brand reputation. losing IP could mean forfeiture of first to market advange, loss of profitability, or even an entire lines of business to competitors or counterfieters
+
+fines, failing to report a breach can result in fines that can reach into the millions of dollars. GDPR outlines fines of up to 4% of a companys annual global revenues or 20 million euros for failing to report a breach
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Notification of Breaches:
+
+data breach notification/laws
+
+*if a data breach occurs, failing to report a breach can result in fines that can reach into the millions of dollars. the EU sets their standard GDPR, and notifications of data breaches must be reported within 72 hours.
+
+escalations, to external sources, like law enforcement or outside experts to stop/investigate breach. other countries have their own reporting timescale. delays sometimes allowed for criminal investigation
+
+
+
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DOMAIN 2 Asset Security:
+
+
+
+
+
+The Data Lifecycle:
+
+create, store, use, share, archive, destroy
+
+
+
+
+
+
+The Information Lifecycle:
+
+creation, classification, storage, usage, archive, destruction. Classification focuses a but more on information protection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Classification:
+
+GOV,
+
+class 0, unclassified
+
+class 1 confidential
+
+class 2 secret
+
+class 3 top secret
+
+
+
+
+
+
+Non Gov/public
+
+class 0, public
+
+class 1, sensitive
+
+class 2, private
+
+class 3, confidential/proprietary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Security Controls:
+
+marking, labeling, handling, classification. classification is the most important
+
+data handling, shipping, chain of custody. don't open boxes
+
+data destruction, erasing, clearing (overwriting w/unclassified data)
+
+record retention, if the retention policy is 1 year, it should be destroyed when it ages out, so the day after that one year is up.
+
+tape backup security, secure facility, tapes labeled ensures all understand the classification of the data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Destruction Methods:
+
+erasing, performing a delete operation against a file, files, or media. data is typically recoverable
+
+clearing (overwriting), preparing media for reuse and ensuring data cannot be recovered using traditional recovery tools
+
+purging, a more intense form of clearing that prepares media for reuse in less secure environments
+
+degaussing, creates a strong magnetic field that erases data on some media
+
+destruction, the final stage in the lifecycle of media and is the most secure method of sanitizing media
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Security Control Baseline, provides a listing of controls that an organization can apply as a baseline
+
+
+
+
+
+
+
+*be familiar with record retention and data destruction
+
+*keeping data longer than necessary presents unnecessary legal issues
+
+
+
+
+
+
+
+
+
+
+Asset classifications should match the data classifications
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Defining Sensitive Data:
+
+*sensitive data is any information that isn't public or unclassified
+
+PII (personably identifiable information), any information that can identify an individual 
+
+PHI (protected health information), health related information that can be related to a specific person, covered by HIPAA from Domain 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Know These Two Roles:
+
+Data Owner, usually a member of senior management. Can delegate some day-to-day duties. cannot delegate total responsibility
+
+Data Custodian, usually someone in the IT department. does not decide what controls are needed, but does implement controls for data owner
+
+
+**if questions mentions "day-to-day" its custodian
+
+
+
+
+
+
+
+
+
+Other Roles:
+
+Data Administrator, responsible for granting appropriate access to personnel (often via RBAC)
+
+User, any person who accesses data via a computing system to accomplish work tasks
+
+Business/Mission Owners, can overlap with the responsibilities of the system owner or be same role
+
+Asset Owners, owns asset or system that processes sensitive data and associated security plans
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GRPR Terms and Requirements:
+
+Data Processor, a natural or legal person, public authority, agency, or other body which processes personal data solely on behalf of the data controller
+
+Data Controller, the person or entity that controls processing of the data
+
+Data Transfer, GDPR restricts data transfers to countries outside the EU
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reducing GDPR Exposure:
+
+*steps to reduce or eliminate GDPR requirements
+
+Anonymization, the process of removing all relevant data so that it is impossible to identify original subject or person. if done effectively the GDPR is no longer relevant for the anonymized data.
+
+Pseudonymization, the process of using pseudonyms (aliases) to represent other data. can result in less stringent requirements than would otherwise apply under the GDPR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*be familiar with the GDPR terms, data roles, security controls.
+
+*notification of data breach must be made within 72 hours
+
+
+
+_________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Domain 3: Security Architecture and Engineering
+
+
+
+
+Exam Outline:
+
+3.1 research, implement and manage engineering processes using secure design principles
+
+3.2 understand the fundamental concepts of security model (Biba, star model, bell-lapadula
+
+3.3 select controls based upon systems security requirements
+
+3.4 understand security capabilities of information systems (TMP, encryption/decryption)
+
+3.5 asses and mitigate the vulnerabilities of security architectures, designs, and solution elements
+
+3.6 select and determine cryptographic solutions
+
+3.7 understand methods of cryptanalytic attacks
+
+3.8 apply security principles to site and facility design
+
+3.9 design site and facility security controls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zero Trust Security:
+
+addresses the limitations of the legacy network perimeter-based security model. treats user identity as the control plane. assumes compromise/breach in verifying every request. no entity is trusted by default.
+
+*verify identity, manage devices, manage apps, protect data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Secure Design Principles:
+
+secure defaults, default configuration reflects a restrictive and conservative enforcement of security policy
+
+fail security, indicates that components should fail in a state that denies rather than grants access
+
+trust but verify, depended on an initial authentication process to gain access to the internal "secured" environment then relied on generic access control methods
+
+
+
+*taken from NIST SP 800-160
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Privacy by Design:
+
+*making privacy an integral part of every system, technology, policy, and design process.
+
+1. proactive and not a reactive approach
+
+2. privacy as the default setting
+
+3. privacy must be embedded in the design
+
+4. privacy should be a positive-sum approach and not a zero-sum approach
+
+5. end to end full lifecycle data protection
+
+6. visibility and transparency
+
+7. keep privacy user-centric
+
+
+
+*apply these principles in implementing a layered defense as part of a zero trust strategy ensures privacy.
+
+
+*Keep it Simple, complexity is the worst enemy of security. best-in-suite over best-in-breed solutions are one approach used to simplify defense in-depth. simplicity also helps to avoid configuration mistakes. enables organizations to move forward, improving incrementally, rather than demanding perfection. fresh application of a classic "kiss" principle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Security-as-a-Service:
+
+A cloud provider concept in which security is provided to an organization through or by an online entity
+
+
+
+
+
+
+
+
+
+Internet of Things (IoT):
+
+a class of devices connected to the internet in order to provide automation, remote control, or AI processing in a home or business setting
+
+
+
+
+
+
+
+
+
+
+Smart Devices:
+
+mobile devices that offer customization options, typically through installing apps, and may use on-device or in-the-cloud artificial intelligence (AI) processing
+
+
+
+
+
+
+
+
+
+
+Security Information Event Management (SIEM) and Security Orchestration Automation and Response (SOAR):
+
+siem, system that collects data from many other sources within the network. provides real-time monitoring, traffic analysis and notification of potential attacks
+
+soar, centralized alert and response automation with threat-specific playbooks. response may be fully automated or single-click
+
+
+*these capabilities are usually delivered together in a single solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microservices and SOA:
+
+soa, is creation of discrete services that may be accessed by users in a black box fashion
+
+microservices, are fine-grained services with a discrete function. a modern adaption of soa to cloud computing 
+
+code-level vulnerabilities, should be identified early in the development lifecycle
+
+
+*static code analysis and dynamic testing incorporated early in the CI/CD process can identify deficiencies before release.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Containerization:
+
+a lightweight, granular, and portable way to package applications for multiple platforms. reduces overhead of server virtualization by enabling containerized apps to run on a shared OS kernel. containers dont have their own OS. share many concerns of server virtualization: isolation at host, process, network, and storage levels
+
+*focus is on DevOps security (container-level) and application-level security (AuthN and AuthZ)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+APIs (SOAP or REST):
+
+is a set of exposed interfaces that allow programmatic interaction between services. REST uses the HTTPS protocol for web communications to offer API end points. all communications between client and server should be encrypted and access limited with API keys. 
+
+*also ensure that storage, distribution, and transmission of access keys is done in a secure fashion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Embedded Systems:
+
+the technology component of an IOT device is often referred to as an embedded system. a full computer system embedded inside of another larger system. Examples: hosts of embedded systems include printers, gps, drones, semi-autonomous vehicles.
+
+*consider authentication practices on embedded devices to ensure that they meet security best practices (avoid implied trust)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+High Performance Computing:
+
+an alternative to client-server computing model for compute-intensive operations with large data sets. for problems that require the use of extremely large data sets and large-scale parallel processing. SETI project is a well known example. grid computing employs a centralized controller that makes computing assignments to grid members.
+
+*key concerns include protecting grid controller from takeover by bad actor or use of grid for illicit activities.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Edge Computing:
+
+some compute operations require processing activities to occur locally, far from the cloud. common in various internet-of-things scenarios, like agricultural, science/space, military. fog computing places gateway devices in the field to collect and correlate data centrally at the edge. 
+
+*with large network-connected device counts in varied locations, data encryption, spoofing protection, and authentication are key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Compare CLOUD Models and Services:
+
+Internet-as-a-Service, private, a single tenant private cloud that gives you on-demand virtual compute/storage/network with you managing OS/apps/data while the provider (or your IT) manages the underlying hardware/virtualization.
+
+Platform-as-a-Service, hybrid, a managed runtime/middleware platform that spans on-prem/private + public cloud, where the provider patches/scales the platform and you deploy and secure your code, configs, and data across both environments
+
+Security-as-a-Service, public, multitenant cloud security tools (e.g. CASB, SSE/SASE, SIEM, email security) delivered from the public cloud, where the provider runs the controls and you integrate them, manage policies, and validate coverage in you environment. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shared Responsibility Model:
+
+CSP Responsibilities per Model: On-premises none all responsibilities are on customer, IaaS, virtualization, servers, storage, networking. PaaS, runtime, middleware, OS, virtualization, servers, storage, networking. SaaS, applications, data, runtime, middleware, OS, virtualization, servers, networking. 
+
+
+Customer Responsibilities per Model: On-premises, applications, data, runtime, middleware, OS, virtualization, servers, storage, networking. IaaS, applications, data, runtime, middleware, OS. PaaS, applications, data. SaaS, all responsibilities are on CSP.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cloud Models and Services IaaS:
+
+CSP provides building blocks, like networking, storage, and compute
+
+CSP manages staff, HW, and datacenter
+
+
+
+
+
+
+
+
+Cloud Models and Services PaaS: 
+
+Customer is responsible for deployment and management of apps.
+
+CSP manages provisioning, configuration, hardware, and OS
+
+
+
+
+
+
+
+
+
+Cloud Models and Services SaaS:
+
+Customer just configures features
+
+CSP is responsible for management, operation, and service availability 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cloud Model:
+
+Public Cloud, advantages include scalability, agility, pay as you go, no maintenance, and low skills
+
+
+Hybrid Cloud, combines public and private clouds, allowing you to run your apps in the right location. advantages include flexibility in legacy, compliance, and scalability scenarios
+
+
+
+
+
+
+
+
+
+
+
+Cloud Access Security Broker:
+
+is a security policy enforcement solution that may be installed on-premises or in the cloud.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Post Quantum Cryptography:
+
+the development of new kings of cryptographic approaches that can be implemented using today's conventional computers. but will be impervious (resistant) to attacks from tomorrows quantum computers.
+
+*"which algorithms are susceptible? which algorithms are resistant?"
+
+
+
+Symmetric (shared key): bulk encryption (fast), holds up fairly well to quantum computing. Grover's algorithm shows that a quantum computer speeds up these attacks to effectively halve the key length. this would mean that a 258 bit key is as strong as a quantum computer as a 128 bit key is against a conventional computer.
+*doubling length from 128 to 256 does not make the key twice as strong, it makes it 2^128 times as strong!!!
+
+Asymmetric (public key cryptography): key exchange, digital signatures, quantum poses more immediate threats here. Shor's algorithm can easily break all of the commonly used public key algorithms based on both factoring and the discrete logarithm problem. this means RSA is vulnerable. this means Elliptic Curve is vulnerable. 
+*doubling the key length increases the difficulty to break by a factor of eight. that's not a sustainable advantage.
+
+
+
+
+LATTICE:
+
+lattice offers some resistance. based on different types of problems: the shortest vector problem and the closest vector problem. potentially enables us to replace essentially all of our current endangered schemes. Lattice-based cryptographic schemes make up the lion's share of scientific publications on post-quantum cryptography
+*research, selection, and standards development is ongoing.
+
+*"what is Lattice?", its a 3-dimensional array of regularly spaced points. so a cube not a square, but a cube shown with all of the same length of points connecting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+****FOR THE EXAM:
+
+if you see a question asking for which types of public key (asymmetric) algorithms are "quantum resistant", the answer is lattice.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cryptography:
+
+Code, cryptographic systems of symbols that operate on words or phrases and are sometimes secret but dont always provide confidentiality
+
+Cipher, are always meant to hide the true meaning of a message
+
+
+
+
+
+
+
+
+
+
+
+Cryptology - Types of Ciphers:
+
+Stream Cipher, is a symmetric key cipher where plaintext digits are combines with a pseudorandom cipher digit stream (keystream). in a stream cipher each plaintext digit is encrypted one at a time with the corresponding digit of the keystream, to give a digit of the ciphertext stream
+
+Block Cipher, is a method of encrypting text (to produce ciphertext) in which a cryptographic key and algorithm are applied to a block of data (for example, 64 contiguous bits) at once as a group rather than to one bit at a time.
+
+Substitution, use the encryption algorithm to replace each character or bit of the plaintext message with a different character. Julius Caesar developed one of the earliest ciphers of this type now known as the Caesar Cipher. 
+
+Transposition, uses an encryption algorithm to rearrange the letters of a plaintext message, forming the ciphertext message
+
+Initialization Vector (IV), cryptographic version of a random number, is a random bit string (a nonce) that is XORed with the message, reducing predictability and repeatability. size of the IV varies by algorithm but is normally the same length as the block size of the cipher or as large as the encryption key.
+
+Caesar, Vigenère, One-time Pad, three very similar stream ciphers. the main difference between these ciphers is key length. Caesar shift cipher text uses a key of length one. Vigenère cipher uses a longer key (usually a word or sentence). One-time Pad uses a key that is as long as the message itself.
+
+
+
+
+
+
+
+
+
+
+
+
+fd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
